@@ -36,37 +36,6 @@ export default function FoodPage() {
         </div>
       </section>
 
-      {/* About Haute Services Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-[100rem] mx-auto px-12">
-          <div className="grid grid-cols-2 gap-24 items-center">
-            <div>
-              <Image 
-                src="https://static.wixstatic.com/media/e86273_ea10230387b3448f8d3a6e1d2b667039~mv2.png?originWidth=640&originHeight=576"
-                alt="Haute Services culinary expertise"
-                className="w-full h-[600px] object-cover"
-                width={700}
-              />
-            </div>
-            
-            <div>
-              <h2 className="font-heading text-4xl text-primary mb-8">
-                About Haute Services
-              </h2>
-              <p className="font-paragraph text-base text-foreground mb-6">
-                Haute Services is a boutique consultancy dedicated to creating exceptional culinary experiences and providing strategic guidance to the food sector. With deep industry connections and a passion for excellence, we orchestrate events and initiatives that celebrate the art of gastronomy.
-              </p>
-              <p className="font-paragraph text-base text-foreground mb-6">
-                Our approach combines culinary expertise with creative vision, ensuring every event we produce is memorable, impactful, and aligned with our clients' objectives. Whether you're seeking to launch a new food brand, host an exclusive culinary gathering, or explore innovative dining concepts, we bring the expertise and connections to make it exceptional.
-              </p>
-              <p className="font-paragraph text-base text-foreground">
-                We believe that food is more than sustenance—it's a medium for connection, culture, and creativity. This philosophy guides every project we undertake.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Food For Thought Fest Section */}
       <section className="py-32">
         <div className="max-w-[100rem] mx-auto px-12">
