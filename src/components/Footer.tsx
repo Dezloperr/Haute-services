@@ -2,7 +2,7 @@ import { ExternalLink, Instagram, Linkedin } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-background border-t border-gray-200 mt-32">
+    <footer className="bg-background border-t border-gray-200">
       <div className="max-w-[100rem] mx-auto px-12 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div>
