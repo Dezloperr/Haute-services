@@ -83,7 +83,7 @@ export default function ArtPage() {
         </div>
       </section>
 
-      {/* Art Advisory Overview */}
+      {/* Art Advisory Overview 
       <section className="py-20">
         <div className="max-w-[100rem] mx-auto px-12">
           <div className="grid grid-cols-2 gap-24 items-center">
@@ -110,6 +110,7 @@ export default function ArtPage() {
           </div>
         </div>
       </section>
+      */}
 
       {/* Services Grid */}
       <section className="py-32">
