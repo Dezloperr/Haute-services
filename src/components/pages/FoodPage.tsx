@@ -30,7 +30,7 @@ export default function FoodPage() {
               Culinary Events
             </h1>
             <p className="font-paragraph text-xl text-secondary max-w-3xl mx-auto">
-              Creating exceptional culinary experiences and providing expert consultancy for the food sector.
+              Creating exceptional culinary experiences around the world.
             </p>
           </div>
         </div>
