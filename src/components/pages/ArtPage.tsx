@@ -234,44 +234,6 @@ export default function ArtPage() {
         </div>
       </section>
 
-      {/* Masonry Grid of Art Images */}
-      <section className="py-32">
-        <div className="max-w-[100rem] mx-auto px-12">
-          <h2 className="font-heading text-5xl text-primary text-center mb-20">
-            Our Collection
-          </h2>
-          
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-0 w-full">
-  {/* Masonry Item */}
-  {[
-    "https://static.wixstatic.com/media/e86273_ef52a94d65e04eb5baba36492d97c2c4~mv2.png?originWidth=576&originHeight=512",
-    "https://static.wixstatic.com/media/e86273_363dd37680ec4558a9be7c69722f88c3~mv2.png?originWidth=576&originHeight=512",
-    "https://static.wixstatic.com/media/e86273_53f7aabafa704ecfbaf8b5de9b86a6d1~mv2.png?originWidth=576&originHeight=512",
-    "https://static.wixstatic.com/media/e86273_9c63793f9dc84320a9bc773d9cb44836~mv2.png?originWidth=576&originHeight=512",
-    "https://static.wixstatic.com/media/e86273_54073ef0a80d47d39fcdfe1283821701~mv2.png?originWidth=576&originHeight=512",
-    "https://static.wixstatic.com/media/e86273_74c9b196b37b4ddf8324ae6e852626e5~mv2.png?originWidth=576&originHeight=512"
-  ].map((src, i) => (
-    <div
-      key={i}
-      className="relative bg-red-400 overflow-hidden hover:shadow-2xl transition-all duration-300"
-    >
-       <Image
-         src={src}
-         alt="Art image"
-         width={900}
-         height={1200}
-         className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-       /> 
-
-      {/* White Shadow at Bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white to-transparent"></div>
-    </div>
-  ))}
-</div>
-
-        </div>
-      </section>
-
       {/* Spaces We Work With Section */}
       <section className="py-32">
         <div className="max-w-[100rem] mx-auto px-12">
@@ -319,7 +281,7 @@ export default function ArtPage() {
         </div>
       </section>
 
-      {/* Why Choose Haute Services Section */}
+            {/* Why Choose Haute Services Section */}
       <section className="py-32 bg-gray-50">
         <div className="max-w-[100rem] mx-auto px-12">
           <h2 className="font-heading text-5xl text-primary text-center mb-20">
@@ -357,37 +319,41 @@ export default function ArtPage() {
         </div>
       </section>
 
-       {/* Newsletter CTA Section */}
-      <section className="py-20">
+      {/* Masonry Grid of Art Images */}
+      <section className="py-32">
         <div className="max-w-[100rem] mx-auto px-12">
-          <div className="max-w-2xl mx-auto">
-            <h3 className="font-heading text-3xl text-primary text-center mb-8">
-              Stay Updated on Art Trends
-            </h3>
-            <form onSubmit={handleNewsletterSubmit} className="flex gap-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="flex-1 px-6 py-3 border border-gray-300 focus:border-gold-accent focus:outline-none transition-colors"
-              />
-              <button
-                type="submit"
-                disabled={submitStatus === 'loading'}
-                className="px-8 py-3 bg-gold-accent text-secondary-foreground hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center gap-2"
-              >
-                <Mail size={18} />
-                Subscribe
-              </button>
-            </form>
-            {submitStatus === 'success' && (
-              <p className="text-center text-gold-accent mt-4 font-paragraph">
-                Thank you for subscribing!
-              </p>
-            )}
-          </div>
+          <h2 className="font-heading text-5xl text-primary text-center mb-20">
+            Our Collection
+          </h2>
+          
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-0 w-full">
+  {/* Masonry Item */}
+  {[
+    "https://static.wixstatic.com/media/e86273_ef52a94d65e04eb5baba36492d97c2c4~mv2.png?originWidth=576&originHeight=512",
+    "https://static.wixstatic.com/media/e86273_363dd37680ec4558a9be7c69722f88c3~mv2.png?originWidth=576&originHeight=512",
+    "https://static.wixstatic.com/media/e86273_53f7aabafa704ecfbaf8b5de9b86a6d1~mv2.png?originWidth=576&originHeight=512",
+    "https://static.wixstatic.com/media/e86273_9c63793f9dc84320a9bc773d9cb44836~mv2.png?originWidth=576&originHeight=512",
+    "https://static.wixstatic.com/media/e86273_54073ef0a80d47d39fcdfe1283821701~mv2.png?originWidth=576&originHeight=512",
+    "https://static.wixstatic.com/media/e86273_74c9b196b37b4ddf8324ae6e852626e5~mv2.png?originWidth=576&originHeight=512"
+  ].map((src, i) => (
+    <div
+      key={i}
+      className="relative bg-red-400 overflow-hidden hover:shadow-2xl transition-all duration-300"
+    >
+       <Image
+         src={src}
+         alt="Art image"
+         width={900}
+         height={1200}
+         className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+       /> 
+
+      {/* White Shadow at Bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white to-transparent"></div>
+    </div>
+  ))}
+</div>
+
         </div>
       </section>
 
