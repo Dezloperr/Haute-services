@@ -47,21 +47,6 @@ export default function Footer() {
               </a>
             </div>
           </div>
-
-          <div>
-            <h4 className="font-heading text-lg text-primary mb-6">Company</h4>
-            <div className="flex flex-col gap-4">
-              <a 
-                href="https://www.hauteservices.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="font-paragraph text-base text-foreground hover:text-gold-accent transition-colors flex items-center gap-2"
-              >
-
-                Main Website
-              </a>
-            </div>
-          </div>
         </div>
         
         <div className="mt-12 pt-8 border-t border-gray-200">
