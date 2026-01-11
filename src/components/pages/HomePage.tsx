@@ -1,0 +1,395 @@
+// HPI 1.6-G
+import React, { useRef, useEffect, useState } from 'react';
+import { motion, useScroll, useTransform, useSpring, useMotionValueEvent } from 'framer-motion';
+import { Image } from '@/components/ui/image';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import { ArrowRight, Star, Heart, Lightbulb } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+// --- Utility Components for Motion & Interaction ---
+
+/**
+ * AnimatedElement: A reusable component for scroll-triggered reveals using IntersectionObserver.
+ * Adheres to the "Safety & Performance" mandate.
+ */
+type AnimatedElementProps = {
+  children: React.ReactNode;
+  className?: string;
+  delay?: number;
+  animation?: 'fade-up' | 'fade-in' | 'slide-in-right';
+};
+
+const AnimatedElement: React.FC<AnimatedElementProps> = ({ 
+  children, 
+  className = '', 
+  delay = 0,
+  animation = 'fade-up' 
+}) => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        // Add a small delay via style if needed, or just let CSS handle the transition
+        setTimeout(() => {
+          element.classList.add('is-visible');
+        }, delay);
+        observer.unobserve(element);
+      }
+    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [delay]);
+
+  const getAnimationClass = () => {
+    switch (animation) {
+      case 'fade-in': return 'opacity-0 transition-opacity duration-1000 ease-out';
+      case 'slide-in-right': return 'opacity-0 translate-x-10 transition-all duration-1000 ease-out';
+      case 'fade-up': default: return 'opacity-0 translate-y-8 transition-all duration-1000 ease-out';
+    }
+  };
+
+  return (
+    <div ref={ref} className={`${getAnimationClass()} ${className} group`}>
+      {children}
+    </div>
+  );
+};
+
+/**
+ * ParallaxImage: Uses scroll progress to create a subtle parallax effect.
+ * Safe implementation using CSS variables and minimal JS.
+ */
+const ParallaxImage: React.FC<{ src: string; alt: string; className?: string; id: string }> = ({ src, alt, className, id }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+  
+  return (
+    <div ref={ref} className={`overflow-hidden ${className}`}>
+      <motion.div style={{ y }} className="w-full h-[120%] -mt-[10%]">
+        <Image 
+          src={src}
+          alt={alt}
+          width={1200}
+          className="w-full h-full object-cover"
+        />
+      </motion.div>
+    </div>
+  );
+};
+
+// --- Main Page Component ---
+
+export default function HomePage() {
+  // Canonical Data Sources (Preserved from original code logic)
+  const missionText = "Haute Services is a boutique consultancy dedicated to creating exceptional experiences in the lifestyle and art sectors. We combine deep industry expertise with a passion for excellence to deliver unparalleled service to our clients.";
+  
+  const services = [
+    {
+      id: 'food',
+      title: 'Food Services',
+      description: "Whether you're looking to create a memorable culinary experience or build a distinguished art collection, our team brings the expertise and connections to make it happen.",
+      link: '/food',
+      image: "https://static.wixstatic.com/media/12d367_71ebdd7141d041e4be3d91d80d4578dd~mv2.png?id=service-food-main"
+    },
+    {
+      id: 'art',
+      title: 'Art Services',
+      description: "Comprehensive art advisory services rooted in authenticity, creativity, and a commitment to excellence.",
+      link: '/art',
+      image: "https://static.wixstatic.com/media/12d367_71ebdd7141d041e4be3d91d80d4578dd~mv2.png?id=service-art-main"
+    }
+  ];
+
+  const values = [
+    {
+      title: "Excellence",
+      description: "We maintain the highest standards in everything we do, ensuring exceptional results for our clients.",
+      icon: Star
+    },
+    {
+      title: "Authenticity",
+      description: "We believe in genuine connections and authentic experiences that resonate with audiences.",
+      icon: Heart
+    },
+    {
+      title: "Innovation",
+      description: "We continuously explore new ideas and approaches to create unique and memorable experiences.",
+      icon: Lightbulb
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-background text-primary font-paragraph selection:bg-gold-accent selection:text-white overflow-clip">
+      <style>{`
+        .is-visible {
+          opacity: 1 !important;
+          transform: translate(0, 0) !important;
+        }
+        .text-stroke {
+          -webkit-text-stroke: 1px rgba(51, 51, 51, 0.2);
+          color: transparent;
+        }
+      `}</style>
+
+      <Header />
+
+      {/* --- HERO SECTION --- */}
+      <section className="relative min-h-screen flex flex-col justify-center pt-20 pb-12 overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gray-50/50 -z-10 hidden lg:block" />
+        <div className="absolute top-1/4 left-12 w-px h-64 bg-gold-accent/30 hidden lg:block" />
+
+        <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-12 items-center h-full">
+          
+          {/* Text Content */}
+          <div className="lg:col-span-5 relative z-10 flex flex-col justify-center">
+            <AnimatedElement animation="fade-up" delay={100}>
+              <span className="inline-block py-1 px-3 border border-gold-accent/30 rounded-full text-xs tracking-widest uppercase text-gold-accent mb-6">
+                Boutique Consultancy
+              </span>
+            </AnimatedElement>
+            
+            <AnimatedElement animation="fade-up" delay={200}>
+              <h1 className="font-heading text-6xl lg:text-8xl leading-[0.9] text-primary mb-8">
+                Haute <br />
+                <span className="italic text-secondary font-light">Services</span>
+              </h1>
+            </AnimatedElement>
+
+            <AnimatedElement animation="fade-up" delay={300}>
+              <div className="w-12 h-px bg-primary mb-8" />
+              <p className="text-lg lg:text-xl text-secondary max-w-md leading-relaxed">
+                Elevating lifestyle experiences through expert consultancy in food sector events and art advisory services.
+              </p>
+            </AnimatedElement>
+          </div>
+
+          {/* Hero Image Composition */}
+          <div className="lg:col-span-7 relative h-[60vh] lg:h-[85vh] w-full">
+            <div className="absolute inset-0 lg:left-12 lg:right-0">
+              <ParallaxImage 
+                id="hero-main"
+                src="https://static.wixstatic.com/media/12d367_71ebdd7141d041e4be3d91d80d4578dd~mv2.png?id=hero-lifestyle-main"
+                alt="Elegant lifestyle event setting"
+                className="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-1000"
+              />
+            </div>
+            
+            {/* Floating Accent Image */}
+            <div className="absolute -bottom-12 -left-6 lg:left-0 w-48 lg:w-72 aspect-[3/4] shadow-2xl hidden md:block">
+              <AnimatedElement animation="fade-in" delay={500} className="w-full h-full">
+                <Image 
+                  src="https://static.wixstatic.com/media/12d367_71ebdd7141d041e4be3d91d80d4578dd~mv2.png?id=hero-detail-accent"
+                  alt="Artistic detail"
+                  width={400}
+                  className="w-full h-full object-cover border-4 border-white"
+                />
+              </AnimatedElement>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- MISSION STATEMENT (Editorial Layout) --- */}
+      <section className="py-32 lg:py-48 relative">
+        <div className="max-w-[100rem] mx-auto px-6 lg:px-12">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-24 items-start">
+            
+            {/* Sticky Title */}
+            <div className="lg:col-span-4 lg:sticky lg:top-32">
+              <AnimatedElement>
+                <h2 className="font-heading text-5xl lg:text-6xl text-primary mb-6">
+                  Our Mission
+                </h2>
+                <div className="w-full h-px bg-gray-200 mb-6" />
+                <p className="text-sm text-gold-accent uppercase tracking-widest font-medium">
+                  Est. 2024
+                </p>
+              </AnimatedElement>
+            </div>
+
+            {/* Content Flow */}
+            <div className="lg:col-span-8">
+              <AnimatedElement delay={200}>
+                <p className="font-heading text-3xl lg:text-5xl leading-tight text-primary/90 mb-12">
+                  "{missionText}"
+                </p>
+              </AnimatedElement>
+              
+              <div className="grid md:grid-cols-2 gap-12">
+                <AnimatedElement delay={300}>
+                  <p className="text-secondary text-lg leading-relaxed mb-8">
+                    We specialize in two distinct yet complementary areas: lifestyle events in the food sector and comprehensive art advisory services. Our approach is rooted in authenticity, creativity, and a commitment to excellence.
+                  </p>
+                  <div className="flex items-center gap-2 text-primary font-medium group cursor-pointer">
+                    <span className="w-8 h-px bg-primary transition-all group-hover:w-12" />
+                    <span>Read our story</span>
+                  </div>
+                </AnimatedElement>
+                
+                <AnimatedElement delay={400} className="relative mt-12 md:mt-0">
+                  <div className="aspect-[4/5] bg-gray-100 overflow-hidden">
+                    <Image 
+                      src="https://static.wixstatic.com/media/12d367_71ebdd7141d041e4be3d91d80d4578dd~mv2.png?id=mission-vertical"
+                      alt="Curated art piece"
+                      width={600}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                </AnimatedElement>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- DUAL SERVICES (Split Screen / Alternating) --- */}
+      <section className="py-0">
+        {services.map((service, index) => (
+          <div key={service.id} className="relative group overflow-hidden">
+            <div className={`grid lg:grid-cols-2 min-h-[80vh] ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
+              
+              {/* Image Side */}
+              <div className={`relative h-[60vh] lg:h-auto overflow-hidden ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                <ParallaxImage 
+                  id={`service-img-${service.id}`}
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full absolute inset-0"
+                />
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
+              </div>
+
+              {/* Content Side */}
+              <div className={`flex flex-col justify-center p-12 lg:p-24 bg-white ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                <AnimatedElement animation={index % 2 === 0 ? 'fade-up' : 'fade-up'}>
+                  <div className="flex items-center gap-4 mb-6">
+                    <span className="text-6xl font-heading text-gray-100 absolute -translate-y-8 -translate-x-8 select-none z-0">
+                      0{index + 1}
+                    </span>
+                    <span className="relative z-10 text-xs font-bold tracking-widest uppercase text-gold-accent">
+                      {service.title}
+                    </span>
+                  </div>
+                  
+                  <h3 className="relative z-10 font-heading text-5xl lg:text-6xl text-primary mb-8">
+                    {service.title}
+                  </h3>
+                  
+                  <p className="relative z-10 text-lg text-secondary mb-12 max-w-md">
+                    {service.description}
+                  </p>
+
+                  <Link to={service.link} className="relative z-10 inline-flex items-center gap-3 text-primary hover:text-gold-accent transition-colors group/btn">
+                    <span className="text-lg border-b border-primary/30 pb-1 group-hover/btn:border-gold-accent">
+                      Explore {service.title}
+                    </span>
+                    <ArrowRight className="w-5 h-5 transform group-hover/btn:translate-x-1 transition-transform" />
+                  </Link>
+                </AnimatedElement>
+              </div>
+            </div>
+          </div>
+        ))}
+      </section>
+
+      {/* --- VALUES (Sticky Horizontal Layout) --- */}
+      <section className="py-32 bg-gray-50 relative overflow-hidden">
+        {/* Decorative Background Text */}
+        <div className="absolute top-20 left-0 w-full overflow-hidden opacity-[0.03] pointer-events-none">
+          <div className="whitespace-nowrap font-heading text-[15rem] leading-none">
+            Values Values Values Values
+          </div>
+        </div>
+
+        <div className="max-w-[120rem] mx-auto px-6 lg:px-12">
+          <div className="grid lg:grid-cols-12 gap-12">
+            
+            {/* Sticky Header */}
+            <div className="lg:col-span-4">
+              <div className="lg:sticky lg:top-32">
+                <AnimatedElement>
+                  <h2 className="font-heading text-5xl lg:text-6xl text-primary mb-8">
+                    Core Values
+                  </h2>
+                  <p className="text-secondary text-lg max-w-xs mb-12">
+                    The principles that guide our every interaction and decision.
+                  </p>
+                  <div className="hidden lg:block w-24 h-px bg-gold-accent" />
+                </AnimatedElement>
+              </div>
+            </div>
+
+            {/* Cards Grid */}
+            <div className="lg:col-span-8">
+              <div className="grid md:grid-cols-2 gap-8">
+                {values.map((value, idx) => (
+                  <AnimatedElement 
+                    key={value.title} 
+                    delay={idx * 100}
+                    className={`bg-white p-10 border border-gray-100 hover:border-gold-accent/30 transition-colors duration-300 ${idx === 2 ? 'md:col-span-2 md:w-1/2' : ''}`}
+                  >
+                    <value.icon className="w-8 h-8 text-gold-accent mb-6" strokeWidth={1.5} />
+                    <h3 className="font-heading text-3xl text-primary mb-4">
+                      {value.title}
+                    </h3>
+                    <p className="text-secondary leading-relaxed">
+                      {value.description}
+                    </p>
+                  </AnimatedElement>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- VISUAL INTERLUDE / CTA --- */}
+      <section className="relative py-40 flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src="https://static.wixstatic.com/media/12d367_71ebdd7141d041e4be3d91d80d4578dd~mv2.png?id=footer-cta-bg"
+            alt="Abstract texture"
+            className="w-full h-full object-cover opacity-5"
+            width={1920}
+          />
+        </div>
+        
+        <div className="relative z-10 text-center max-w-4xl px-6">
+          <AnimatedElement animation="fade-up">
+            <h2 className="font-heading text-5xl lg:text-7xl text-primary mb-12">
+              Ready to elevate your <br />
+              <span className="italic text-gold-accent">experience?</span>
+            </h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Link to="/food">
+                <button className="px-8 py-4 bg-primary text-white min-w-[200px] hover:bg-primary/90 transition-colors duration-300">
+                  Food Services
+                </button>
+              </Link>
+              <span className="font-heading italic text-2xl text-secondary">or</span>
+              <Link to="/art">
+                <button className="px-8 py-4 bg-transparent border border-primary text-primary min-w-[200px] hover:bg-primary hover:text-white transition-colors duration-300">
+                  Art Advisory
+                </button>
+              </Link>
+            </div>
+          </AnimatedElement>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+}
