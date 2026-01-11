@@ -64,7 +64,7 @@ export default function ArtPage() {
       {/* Philosophy Section with Gray Background */}
       <section className="py-32 bg-gray-50">
         <div className="max-w-[100rem] mx-auto px-12">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-6xl mx-auto text-center">
             <h2 className="font-heading text-5xl text-primary mb-8">
               Our Philosophy
             </h2>
