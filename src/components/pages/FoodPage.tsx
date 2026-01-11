@@ -116,7 +116,6 @@ export default function FoodPage() {
           <div className="grid grid-cols-2 gap-12 mb-20">
             <div className="bg-white p-8 border border-gray-200">
               <h4 className="font-heading text-2xl text-primary mb-4 flex items-center gap-3">
-                <Globe size={24} className="text-gold-accent" />
                 Global Reach
               </h4>
               <p className="font-paragraph text-base text-foreground">
@@ -126,7 +125,6 @@ export default function FoodPage() {
 
             <div className="bg-white p-8 border border-gray-200">
               <h4 className="font-heading text-2xl text-primary mb-4 flex items-center gap-3">
-                <Sparkles size={24} className="text-gold-accent" />
                 Festival Format
               </h4>
               <p className="font-paragraph text-base text-foreground">
@@ -136,7 +134,6 @@ export default function FoodPage() {
 
             <div className="bg-white p-8 border border-gray-200">
               <h4 className="font-heading text-2xl text-primary mb-4 flex items-center gap-3">
-                <Users size={24} className="text-gold-accent" />
                 Participants & Community
               </h4>
               <p className="font-paragraph text-base text-foreground">
@@ -146,7 +143,6 @@ export default function FoodPage() {
 
             <div className="bg-white p-8 border border-gray-200">
               <h4 className="font-heading text-2xl text-primary mb-4 flex items-center gap-3">
-                <Award size={24} className="text-gold-accent" />
                 Media & Recognition
               </h4>
               <p className="font-paragraph text-base text-foreground">
