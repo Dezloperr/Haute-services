@@ -28,14 +28,15 @@ export default function Footer() {
 
           <div className="w-full flex flex-col justify-center items-center">
             <h4 className="font-heading text-lg text-primary mb-6">Socials</h4>
-            <div className="flex flex-col gap-4">
+            <div className="flex gap-4">
               <a 
                 href="https://www.instagram.com/hauteservices" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="font-paragraph text-base text-foreground hover:text-gold-accent transition-colors flex items-center gap-2"
               >
-                Instagram
+              <Instagram />
+                // Instagram
               </a>
               <a 
                 href="https://www.linkedin.com/company/hauteservices" 
@@ -43,7 +44,8 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="font-paragraph text-base text-foreground hover:text-gold-accent transition-colors flex items-center gap-2"
               >
-                LinkedIn
+              <Linkedin />
+                // LinkedIn
               </a>
             </div>
           </div>
