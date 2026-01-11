@@ -285,7 +285,7 @@ export default function ArtPage() {
   ].map((src, i) => (
     <div
       key={i}
-      className="relative overflow-hidden hover:shadow-2xl transition-all duration-300"
+      className="relative overflow-hidden hover:shadow-2xl bg-red-500 transition-all duration-300"
     >
       <Image
         src={src}
