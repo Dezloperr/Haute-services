@@ -373,8 +373,8 @@ export default function HomePage() {
               <span className="italic text-gold-accent">experience?</span>
             </h2>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Link to="/art">
-                <button className="px-8 py-4 bg-transparent border border-primary text-primary min-w-[200px] hover:bg-primary hover:text-white transition-colors duration-300">
+              <Link to="/food">
+                <button className="px-8 py-4 bg-primary text-white min-w-[200px] hover:bg-primary/90 transition-colors duration-300">
                  Contact Us
                 </button>
               </Link>
