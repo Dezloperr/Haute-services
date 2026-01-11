@@ -23,7 +23,7 @@ export default function ArtPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="py-32">
+      <section className="py-12">
         <div className="max-w-[100rem] mx-auto px-12">
           <div className="text-center mb-20">
             <h1 className="font-heading text-6xl text-primary mb-8">
