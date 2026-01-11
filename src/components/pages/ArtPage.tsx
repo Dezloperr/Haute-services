@@ -71,9 +71,10 @@ export default function ArtPage() {
             <p className="font-paragraph text-lg text-foreground mb-8 leading-relaxed">
               At Haute Services, we believe that art is a transformative force that enriches lives, inspires creativity, and connects us to our shared humanity. Our art advisory practice is rooted in authenticity, expertise, and a deep commitment to helping clients build meaningful collections that reflect their values and vision.
             </p>
-            <p className="font-paragraph text-lg text-foreground mb-12 leading-relaxed">
+           {/*  <p className="font-paragraph text-lg text-foreground mb-12 leading-relaxed">
               We approach each client relationship with personalized attention, combining market knowledge with curatorial insight. Whether you're a seasoned collector, a corporate institution, or a first-time buyer, we provide guidance tailored to your unique goals and aesthetic preferences.
             </p>
+            */}
             <div className="w-12 h-px bg-gold-accent mx-auto mb-12" />
             <p className="font-paragraph text-base text-secondary">
               Our mission is to demystify the art world and empower our clients to make informed, confident decisions about their collections.
