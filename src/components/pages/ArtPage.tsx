@@ -82,40 +82,6 @@ export default function ArtPage() {
         </div>
       </section>
 
-      {/* Newsletter CTA Section */}
-      <section className="py-20">
-        <div className="max-w-[100rem] mx-auto px-12">
-          <div className="max-w-2xl mx-auto">
-            <h3 className="font-heading text-3xl text-primary text-center mb-8">
-              Stay Updated on Art Trends
-            </h3>
-            <form onSubmit={handleNewsletterSubmit} className="flex gap-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="flex-1 px-6 py-3 border border-gray-300 focus:border-gold-accent focus:outline-none transition-colors"
-              />
-              <button
-                type="submit"
-                disabled={submitStatus === 'loading'}
-                className="px-8 py-3 bg-gold-accent text-secondary-foreground hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center gap-2"
-              >
-                <Mail size={18} />
-                Subscribe
-              </button>
-            </form>
-            {submitStatus === 'success' && (
-              <p className="text-center text-gold-accent mt-4 font-paragraph">
-                Thank you for subscribing!
-              </p>
-            )}
-          </div>
-        </div>
-      </section>
-
       {/* Art Advisory Overview */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-[100rem] mx-auto px-12">
@@ -385,6 +351,40 @@ export default function ArtPage() {
                 We take time to understand your goals, preferences, and values, providing guidance tailored specifically to your unique situation and vision.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+       {/* Newsletter CTA Section */}
+      <section className="py-20">
+        <div className="max-w-[100rem] mx-auto px-12">
+          <div className="max-w-2xl mx-auto">
+            <h3 className="font-heading text-3xl text-primary text-center mb-8">
+              Stay Updated on Art Trends
+            </h3>
+            <form onSubmit={handleNewsletterSubmit} className="flex gap-3">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="flex-1 px-6 py-3 border border-gray-300 focus:border-gold-accent focus:outline-none transition-colors"
+              />
+              <button
+                type="submit"
+                disabled={submitStatus === 'loading'}
+                className="px-8 py-3 bg-gold-accent text-secondary-foreground hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center gap-2"
+              >
+                <Mail size={18} />
+                Subscribe
+              </button>
+            </form>
+            {submitStatus === 'success' && (
+              <p className="text-center text-gold-accent mt-4 font-paragraph">
+                Thank you for subscribing!
+              </p>
+            )}
           </div>
         </div>
       </section>
