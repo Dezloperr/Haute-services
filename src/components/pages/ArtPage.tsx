@@ -353,7 +353,6 @@ export default function ArtPage() {
           <div className="grid grid-cols-2 gap-12">
             <div className="bg-white p-8 border border-gray-200">
               <h4 className="font-heading text-2xl text-primary mb-4 flex items-center gap-3">
-                <Building2 size={24} className="text-gold-accent" />
                 Museums & Institutions
               </h4>
               <p className="font-paragraph text-base text-foreground">
@@ -363,7 +362,6 @@ export default function ArtPage() {
 
             <div className="bg-white p-8 border border-gray-200">
               <h4 className="font-heading text-2xl text-primary mb-4 flex items-center gap-3">
-                <Users size={24} className="text-gold-accent" />
                 Private Collections
               </h4>
               <p className="font-paragraph text-base text-foreground">
@@ -373,7 +371,6 @@ export default function ArtPage() {
 
             <div className="bg-white p-8 border border-gray-200">
               <h4 className="font-heading text-2xl text-primary mb-4 flex items-center gap-3">
-                <Award size={24} className="text-gold-accent" />
                 Galleries & Auction Houses
               </h4>
               <p className="font-paragraph text-base text-foreground">
@@ -383,7 +380,6 @@ export default function ArtPage() {
 
             <div className="bg-white p-8 border border-gray-200">
               <h4 className="font-heading text-2xl text-primary mb-4 flex items-center gap-3">
-                <Lightbulb size={24} className="text-gold-accent" />
                 Artist Studios & Foundations
               </h4>
               <p className="font-paragraph text-base text-foreground">
