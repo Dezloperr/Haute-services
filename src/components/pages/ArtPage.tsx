@@ -390,57 +390,6 @@ export default function ArtPage() {
         </div>
       </section>
 
-      {/* Spaces We Work With Section */}
-      <section className="py-32">
-        <div className="max-w-[100rem] mx-auto px-12">
-          <h2 className="font-heading text-5xl text-primary text-center mb-20">
-            Spaces We Work With
-          </h2>
-          
-          <div className="grid grid-cols-2 gap-12">
-            <div className="bg-white p-8 border border-gray-200">
-              <h4 className="font-heading text-2xl text-primary mb-4 flex items-center gap-3">
-                <Building2 size={24} className="text-gold-accent" />
-                Museums & Institutions
-              </h4>
-              <p className="font-paragraph text-base text-foreground">
-                We collaborate with museums, galleries, and cultural institutions on acquisitions, exhibitions, and collection development. Our relationships with institutional partners provide access to significant works and curatorial expertise.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 border border-gray-200">
-              <h4 className="font-heading text-2xl text-primary mb-4 flex items-center gap-3">
-                <Users size={24} className="text-gold-accent" />
-                Private Collections
-              </h4>
-              <p className="font-paragraph text-base text-foreground">
-                We work with private collectors to build, manage, and evolve their collections. Our personalized approach ensures each collection reflects the collector's vision and values.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 border border-gray-200">
-              <h4 className="font-heading text-2xl text-primary mb-4 flex items-center gap-3">
-                <Award size={24} className="text-gold-accent" />
-                Galleries & Auction Houses
-              </h4>
-              <p className="font-paragraph text-base text-foreground">
-                Our extensive network includes leading galleries, auction houses, and art dealers worldwide. These relationships provide clients with access to exceptional works and market insights.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 border border-gray-200">
-              <h4 className="font-heading text-2xl text-primary mb-4 flex items-center gap-3">
-                <Lightbulb size={24} className="text-gold-accent" />
-                Artist Studios & Foundations
-              </h4>
-              <p className="font-paragraph text-base text-foreground">
-                We maintain direct relationships with artists' studios and artist foundations, providing clients with direct access to works and insights into artistic practice and development.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Why Choose Haute Services Section */}
       <section className="py-32 bg-gray-50">
         <div className="max-w-[100rem] mx-auto px-12">
