@@ -273,7 +273,7 @@ export default function ArtPage() {
             Our Collection
           </h2>
           
-          <div className="columns-1 sm:columns-2 lg:columns-3">
+          <div className="columns-1 sm:columns-2 lg:columns-3 w-full">
   {/* Masonry Item */}
   {[
     "https://static.wixstatic.com/media/e86273_ef52a94d65e04eb5baba36492d97c2c4~mv2.png?originWidth=576&originHeight=512",
@@ -285,7 +285,7 @@ export default function ArtPage() {
   ].map((src, i) => (
     <div
       key={i}
-      className="relative overflow-hidden hover:shadow-2xl transition-all duration-300"
+      className="relative w-full overflow-hidden hover:shadow-2xl transition-all duration-300"
     >
       <Image
         src={src}
