@@ -26,7 +26,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="w-full flex justify-center items-center">
+          <div className="w-full flex flex-col justify-center items-center">
             <h4 className="font-heading text-lg text-primary mb-6">Socials</h4>
             <div className="flex flex-col gap-4">
               <a 
