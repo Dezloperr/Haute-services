@@ -36,7 +36,6 @@ export default function Footer() {
                 className="font-paragraph text-base text-foreground hover:text-gold-accent transition-colors flex items-center gap-2"
               >
               <Instagram />
-                // Instagram
               </a>
               <a 
                 href="https://www.linkedin.com/company/hauteservices" 
@@ -45,7 +44,6 @@ export default function Footer() {
                 className="font-paragraph text-base text-foreground hover:text-gold-accent transition-colors flex items-center gap-2"
               >
               <Linkedin />
-                // LinkedIn
               </a>
             </div>
           </div>
