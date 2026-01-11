@@ -285,15 +285,15 @@ export default function ArtPage() {
   ].map((src, i) => (
     <div
       key={i}
-      className="relative w-full h-[50vh] bg-red-400 overflow-hidden hover:shadow-2xl transition-all duration-300"
+      className="relative bg-red-400 overflow-hidden hover:shadow-2xl transition-all duration-300"
     >
-     {/*  <Image
-      //   src={src}
-      //   alt="Art image"
-      //   width={900}
-      //   height={1200}
-      //   className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-      // /> */}
+       <Image
+         src={src}
+         alt="Art image"
+         width={900}
+         height={1200}
+         className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+       /> 
 
       {/* White Shadow at Bottom */}
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white to-transparent"></div>
