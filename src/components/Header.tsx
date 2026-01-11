@@ -20,7 +20,7 @@ export default function Header() {
               to="/food" 
               className="font-paragraph text-base text-foreground hover:text-gold-accent transition-colors"
             >
-              Food
+              Culinary Events
             </Link>
             <Link 
               to="/art" 
