@@ -273,73 +273,34 @@ export default function ArtPage() {
             Our Collection
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Image 1 */}
-            <div className="relative h-[60vh] overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
-              <Image 
-                src="https://static.wixstatic.com/media/e86273_ef52a94d65e04eb5baba36492d97c2c4~mv2.png?originWidth=576&originHeight=512"
-                alt="Contemporary art piece"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                width={600}
-              />
-              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
-            </div>
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+  {/* Masonry Item */}
+  {[
+    "https://static.wixstatic.com/media/e86273_ef52a94d65e04eb5baba36492d97c2c4~mv2.png?originWidth=576&originHeight=512",
+    "https://static.wixstatic.com/media/e86273_363dd37680ec4558a9be7c69722f88c3~mv2.png?originWidth=576&originHeight=512",
+    "https://static.wixstatic.com/media/e86273_53f7aabafa704ecfbaf8b5de9b86a6d1~mv2.png?originWidth=576&originHeight=512",
+    "https://static.wixstatic.com/media/e86273_9c63793f9dc84320a9bc773d9cb44836~mv2.png?originWidth=576&originHeight=512",
+    "https://static.wixstatic.com/media/e86273_54073ef0a80d47d39fcdfe1283821701~mv2.png?originWidth=576&originHeight=512",
+    "https://static.wixstatic.com/media/e86273_74c9b196b37b4ddf8324ae6e852626e5~mv2.png?originWidth=576&originHeight=512"
+  ].map((src, i) => (
+    <div
+      key={i}
+      className="relative mb-6 break-inside-avoid overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300"
+    >
+      <Image
+        src={src}
+        alt="Art image"
+        width={800}
+        height={1200}
+        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+      />
 
-            {/* Image 2 */}
-            <div className="relative h-[60vh] overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
-              <Image 
-                src="https://static.wixstatic.com/media/e86273_363dd37680ec4558a9be7c69722f88c3~mv2.png?originWidth=576&originHeight=512"
-                alt="Modern art installation"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                width={600}
-              />
-              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
-            </div>
+      {/* White Shadow at Bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
+    </div>
+  ))}
+</div>
 
-            {/* Image 3 */}
-            <div className="relative h-[60vh] overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
-              <Image 
-                src="https://static.wixstatic.com/media/e86273_53f7aabafa704ecfbaf8b5de9b86a6d1~mv2.png?originWidth=576&originHeight=512"
-                alt="Abstract artwork"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                width={600}
-              />
-              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
-            </div>
-
-            {/* Image 4 */}
-            <div className="relative h-[60vh] overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
-              <Image 
-                src="https://static.wixstatic.com/media/e86273_9c63793f9dc84320a9bc773d9cb44836~mv2.png?originWidth=576&originHeight=512"
-                alt="Sculptural work"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                width={600}
-              />
-              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
-            </div>
-
-            {/* Image 5 */}
-            <div className="relative h-[60vh] overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
-              <Image 
-                src="https://static.wixstatic.com/media/e86273_54073ef0a80d47d39fcdfe1283821701~mv2.png?originWidth=576&originHeight=512"
-                alt="Photography artwork"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                width={600}
-              />
-              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
-            </div>
-
-            {/* Image 6 */}
-            <div className="relative h-[60vh] overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
-              <Image 
-                src="https://static.wixstatic.com/media/e86273_74c9b196b37b4ddf8324ae6e852626e5~mv2.png?originWidth=576&originHeight=512"
-                alt="Mixed media piece"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                width={600}
-              />
-              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
-            </div>
-          </div>
         </div>
       </section>
 
