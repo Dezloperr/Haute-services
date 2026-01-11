@@ -84,7 +84,7 @@ export default function ArtPage() {
       </section>
 
       {/* Art Advisory Overview */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20">
         <div className="max-w-[100rem] mx-auto px-12">
           <div className="grid grid-cols-2 gap-24 items-center">
             <div>
