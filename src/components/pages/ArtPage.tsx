@@ -296,7 +296,7 @@ export default function ArtPage() {
       />
 
       {/* White Shadow at Bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-42 bg-gradient-to-t from-white to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white to-transparent"></div>
     </div>
   ))}
 </div>
