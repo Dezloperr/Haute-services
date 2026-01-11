@@ -21,7 +21,6 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="font-paragraph text-base text-foreground hover:text-gold-accent transition-colors flex items-center gap-2"
               >
-                <ExternalLink size={18} />
                 Food For Thought Fest
               </a>
             </div>
@@ -36,7 +35,6 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="font-paragraph text-base text-foreground hover:text-gold-accent transition-colors flex items-center gap-2"
               >
-                <Instagram size={18} />
                 Instagram
               </a>
               <a 
@@ -45,7 +43,6 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="font-paragraph text-base text-foreground hover:text-gold-accent transition-colors flex items-center gap-2"
               >
-                <Linkedin size={18} />
                 LinkedIn
               </a>
             </div>
@@ -60,7 +57,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="font-paragraph text-base text-foreground hover:text-gold-accent transition-colors flex items-center gap-2"
               >
-                <ExternalLink size={18} />
+
                 Main Website
               </a>
             </div>

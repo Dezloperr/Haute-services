@@ -97,17 +97,17 @@ export default function HomePage() {
   const services = [
     {
       id: 'food',
-      title: 'Culinary Events',
+      title: 'Food Services',
       description: "Whether you're looking to create a memorable culinary experience or build a distinguished art collection, our team brings the expertise and connections to make it happen.",
       link: '/food',
-      image: "https://static.wixstatic.com/media/e86273_437f24e3ad4d4ae99c18169d301766c3~mv2.png?originWidth=1152&originHeight=576"
+      image: "https://static.wixstatic.com/media/e86273_6ed3ac2e3a1043aab162cb3b20065ea5~mv2.png?originWidth=1152&originHeight=576"
     },
     {
       id: 'art',
-      title: 'Art Advisory',
+      title: 'Art Services',
       description: "Comprehensive art advisory services rooted in authenticity, creativity, and a commitment to excellence.",
       link: '/art',
-      image: "https://static.wixstatic.com/media/e86273_01f7ab7b15e5434c93c3474b34f18270~mv2.png?originWidth=1152&originHeight=576"
+      image: "https://static.wixstatic.com/media/e86273_5544b433099a4239815d3c652fa6d118~mv2.png?originWidth=1152&originHeight=576"
     }
   ];
 
@@ -180,7 +180,7 @@ export default function HomePage() {
             <div className="absolute inset-0 lg:left-12 lg:right-0">
               <ParallaxImage 
                 id="hero-main"
-                src="https://static.wixstatic.com/media/e86273_857676e31bb74d14b7b145adf78e0f86~mv2.png?originWidth=1152&originHeight=832"
+                src="https://static.wixstatic.com/media/e86273_3cf2a07072524c97affc88166c70e75d~mv2.png?originWidth=1152&originHeight=832"
                 alt="Elegant lifestyle event setting"
                 className="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-1000"
               />
@@ -190,7 +190,7 @@ export default function HomePage() {
             <div className="absolute -bottom-12 -left-6 lg:left-0 w-48 lg:w-72 aspect-[3/4] shadow-2xl hidden md:block">
               <AnimatedElement animation="fade-in" delay={500} className="w-full h-full">
                 <Image 
-                  src="https://static.wixstatic.com/media/e86273_7418bcaf52934fddacf73615d396020e~mv2.png?originWidth=1152&originHeight=832"
+                  src="https://static.wixstatic.com/media/e86273_57cdee80347a45fa8d0d12a449a0768b~mv2.png?originWidth=1152&originHeight=832"
                   alt="Artistic detail"
                   width={400}
                   className="w-full h-full object-cover border-4 border-white"
@@ -241,7 +241,7 @@ export default function HomePage() {
                 <AnimatedElement delay={400} className="relative mt-12 md:mt-0">
                   <div className="aspect-[4/5] bg-gray-100 overflow-hidden">
                     <Image 
-                      src="https://static.wixstatic.com/media/e86273_bcfefd2ab3b94d22a303df1942f9c51a~mv2.png?originWidth=576&originHeight=704"
+                      src="https://static.wixstatic.com/media/e86273_8a10a09d8bd64642af70e14850bab417~mv2.png?originWidth=576&originHeight=704"
                       alt="Curated art piece"
                       width={600}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
@@ -293,7 +293,7 @@ export default function HomePage() {
 
                   <Link to={service.link} className="relative z-10 inline-flex items-center gap-3 text-primary hover:text-gold-accent transition-colors group/btn">
                     <span className="text-lg border-b border-primary/30 pb-1 group-hover/btn:border-gold-accent">
-                      Explore {service.title.split(' ')[0]}
+                      Explore {service.title}
                     </span>
                     <ArrowRight className="w-5 h-5 transform group-hover/btn:translate-x-1 transition-transform" />
                   </Link>
@@ -359,7 +359,7 @@ export default function HomePage() {
       <section className="relative py-40 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="https://static.wixstatic.com/media/e86273_044d2fff73264cada6b6e0da5943d536~mv2.png?originWidth=1920&originHeight=1024"
+            src="https://static.wixstatic.com/media/e86273_ac8a530d1a5f432aa03681dba1b67ebc~mv2.png?originWidth=1920&originHeight=1024"
             alt="Abstract texture"
             className="w-full h-full object-cover opacity-5"
             width={1920}
