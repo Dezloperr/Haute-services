@@ -217,7 +217,6 @@ export default function FoodPage() {
         </div>
         
         <div className="relative z-10 text-center max-w-4xl px-6">
-          <AnimatedElement animation="fade-up">
             <h2 className="font-heading text-5xl lg:text-7xl text-primary mb-12">
               Ready to elevate your <br />
               <span className="italic text-gold-accent">experience?</span>
@@ -229,7 +228,6 @@ export default function FoodPage() {
                 </button>
               </Link>
             </div>
-          </AnimatedElement>
         </div>
       </section>
 
