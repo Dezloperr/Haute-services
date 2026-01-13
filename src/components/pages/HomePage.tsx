@@ -249,7 +249,7 @@ export default function HomePage() {
                       src="https://static.wixstatic.com/media/e86273_733e8cac0d2a4461b6e62be12e290674~mv2.jpg"
                       alt="Curated art piece"
                       width={600}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-cover bg-top hover:scale-105 transition-transform duration-700"
                     />
                   </div>
                 </AnimatedElement>
