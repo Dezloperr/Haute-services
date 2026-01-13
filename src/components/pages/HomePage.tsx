@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform, useSpring, useMotionValueEvent } from 
 import { Image } from '@/components/ui/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ContactDialog from '@/components/ContactDialog';
 import { ArrowRight, Star, Heart, Lightbulb } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -91,6 +92,8 @@ const ParallaxImage: React.FC<{ src: string; alt: string; className?: string; id
 // --- Main Page Component ---
 
 export default function HomePage() {
+  const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
+
   // Canonical Data Sources (Preserved from original code logic)
   const missionText = "Haute Services is a boutique consultancy dedicated to creating exceptional experiences in the lifestyle and art sectors. We combine deep industry expertise with a passion for excellence to deliver unparalleled service to our clients.";
   
@@ -145,38 +148,38 @@ export default function HomePage() {
       <Header />
 
       {/* --- HERO SECTION --- */}
-      <section className="relative min-h-screen flex flex-col justify-center pt-20 pb-12 overflow-hidden">
+      <section className="relative min-h-screen flex flex-col justify-center pt-12 sm:pt-20 pb-8 sm:pb-12 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute top-0 right-0 w-1/3 h-full bg-gray-50/50 -z-10 hidden lg:block" />
-        <div className="absolute top-1/4 left-12 w-px h-64 bg-gold-accent/30 hidden lg:block" />
+        <div className="absolute top-1/4 left-6 sm:left-12 w-px h-64 bg-gold-accent/30 hidden lg:block" />
 
-        <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-12 items-center h-full">
+        <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 lg:px-12 grid lg:grid-cols-12 gap-8 sm:gap-12 items-center h-full">
           
           {/* Text Content */}
           <div className="lg:col-span-5 relative z-10 flex flex-col justify-center">
             <AnimatedElement animation="fade-up" delay={100}>
-              <span className="inline-block py-1 px-3 border border-gold-accent/30 rounded-full text-xs tracking-widest uppercase text-gold-accent mb-6">
+              <span className="inline-block py-1 px-3 border border-gold-accent/30 rounded-full text-xs tracking-widest uppercase text-gold-accent mb-6 w-fit">
                 Boutique Consultancy
               </span>
             </AnimatedElement>
             
             <AnimatedElement animation="fade-up" delay={200}>
-              <h1 className="font-heading text-6xl lg:text-8xl leading-[0.9] text-primary mb-8">
+              <h1 className="font-heading text-5xl sm:text-6xl lg:text-8xl leading-[0.9] text-primary mb-6 sm:mb-8">
                 Haute <br />
                 <span className="italic text-secondary font-light">Services</span>
               </h1>
             </AnimatedElement>
 
             <AnimatedElement animation="fade-up" delay={300}>
-              <div className="w-12 h-px bg-primary mb-8" />
-              <p className="text-lg lg:text-xl text-secondary max-w-md leading-relaxed">
+              <div className="w-12 h-px bg-primary mb-6 sm:mb-8" />
+              <p className="text-base sm:text-lg lg:text-xl text-secondary max-w-md leading-relaxed">
                 Elevating lifestyle experiences through expert consultancy in food sector events and art advisory services.
               </p>
             </AnimatedElement>
           </div>
 
           {/* Hero Image Composition */}
-          <div className="lg:col-span-7 relative h-[60vh] lg:h-[85vh] w-full">
+          <div className="lg:col-span-7 relative h-[50vh] sm:h-[60vh] lg:h-[85vh] w-full">
             <div className="absolute inset-0 lg:left-12 lg:right-0">
               <ParallaxImage 
                 id="hero-main"
@@ -202,18 +205,18 @@ export default function HomePage() {
       </section>
 
       {/* --- MISSION STATEMENT (Editorial Layout) --- */}
-      <section className="py-32 lg:py-48 relative">
-        <div className="max-w-[100rem] mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-24 items-start">
+      <section className="py-16 sm:py-24 lg:py-32 xl:py-48 relative">
+        <div className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="grid lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-24 items-start">
             
             {/* Sticky Title */}
             <div className="lg:col-span-4 lg:sticky lg:top-32">
               <AnimatedElement>
-                <h2 className="font-heading text-5xl lg:text-6xl text-primary mb-6">
+                <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-primary mb-6">
                   Our Mission
                 </h2>
                 <div className="w-full h-px bg-gray-200 mb-6" />
-                <p className="text-sm text-gold-accent uppercase tracking-widest font-medium">
+                <p className="text-xs sm:text-sm text-gold-accent uppercase tracking-widest font-medium">
                   Est. 2024
                 </p>
               </AnimatedElement>
@@ -222,23 +225,23 @@ export default function HomePage() {
             {/* Content Flow */}
             <div className="lg:col-span-8">
               <AnimatedElement delay={200}>
-                <p className="font-heading text-3xl lg:text-5xl leading-tight text-primary/90 mb-12">
+                <p className="font-heading text-2xl sm:text-3xl lg:text-5xl leading-tight text-primary/90 mb-8 sm:mb-12">
                   "{missionText}"
                 </p>
               </AnimatedElement>
               
-              <div className="grid md:grid-cols-2 gap-12">
+              <div className="grid md:grid-cols-2 gap-8 sm:gap-12">
                 <AnimatedElement delay={300}>
-                  <p className="text-secondary text-lg leading-relaxed mb-8">
+                  <p className="text-secondary text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
                     We specialize in two distinct yet complementary areas: lifestyle events in the food sector and comprehensive art advisory services. Our approach is rooted in authenticity, creativity, and a commitment to excellence.
                   </p>
                   <div className="flex items-center gap-2 text-primary font-medium group cursor-pointer">
                     <span className="w-8 h-px bg-primary transition-all group-hover:w-12" />
-                    <span>Read our story</span>
+                    <span className="text-sm sm:text-base">Read our story</span>
                   </div>
                 </AnimatedElement>
                 
-                <AnimatedElement delay={400} className="relative mt-12 md:mt-0">
+                <AnimatedElement delay={400} className="relative mt-8 sm:mt-12 md:mt-0">
                   <div className="aspect-[4/5] bg-gray-100 overflow-hidden">
                     <Image 
                       src="https://static.wixstatic.com/media/e86273_8a10a09d8bd64642af70e14850bab417~mv2.png?originWidth=576&originHeight=704"
@@ -258,10 +261,10 @@ export default function HomePage() {
       <section className="py-0">
         {services.map((service, index) => (
           <div key={service.id} className="relative group overflow-hidden">
-            <div className={`grid lg:grid-cols-2 min-h-[80vh] ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
+            <div className={`grid lg:grid-cols-2 min-h-[60vh] sm:min-h-[70vh] lg:min-h-[80vh] ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
               
               {/* Image Side */}
-              <div className={`relative h-[60vh] lg:h-auto overflow-hidden ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+              <div className={`relative h-[50vh] sm:h-[60vh] lg:h-auto overflow-hidden ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                 <ParallaxImage 
                   id={`service-img-${service.id}`}
                   src={service.image}
@@ -272,10 +275,10 @@ export default function HomePage() {
               </div>
 
               {/* Content Side */}
-              <div className={`flex flex-col justify-center p-12 lg:p-24 bg-white ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+              <div className={`flex flex-col justify-center p-6 sm:p-12 lg:p-24 bg-white ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
                 <AnimatedElement animation={index % 2 === 0 ? 'fade-up' : 'fade-up'}>
                   <div className="flex items-center gap-4 mb-6">
-                    <span className="text-6xl font-heading text-gray-100 absolute -translate-y-8 -translate-x-8 select-none z-0">
+                    <span className="text-5xl sm:text-6xl font-heading text-gray-100 absolute -translate-y-8 -translate-x-8 select-none z-0">
                       0{index + 1}
                     </span>
                     <span className="relative z-10 text-xs font-bold tracking-widest uppercase text-gold-accent">
@@ -283,16 +286,16 @@ export default function HomePage() {
                     </span>
                   </div>
                   
-                  <h3 className="relative z-10 font-heading text-5xl lg:text-6xl text-primary mb-8">
+                  <h3 className="relative z-10 font-heading text-4xl sm:text-5xl lg:text-6xl text-primary mb-6 sm:mb-8">
                     {service.title}
                   </h3>
                   
-                  <p className="relative z-10 text-lg text-secondary mb-12 max-w-md">
+                  <p className="relative z-10 text-base sm:text-lg text-secondary mb-8 sm:mb-12 max-w-md">
                     {service.description}
                   </p>
 
                   <Link to={service.link} className="relative z-10 inline-flex items-center gap-3 text-primary hover:text-gold-accent transition-colors group/btn">
-                    <span className="text-lg border-b border-primary/30 pb-1 group-hover/btn:border-gold-accent">
+                    <span className="text-base sm:text-lg border-b border-primary/30 pb-1 group-hover/btn:border-gold-accent">
                       Explore {service.title}
                     </span>
                     <ArrowRight className="w-5 h-5 transform group-hover/btn:translate-x-1 transition-transform" />
@@ -305,25 +308,25 @@ export default function HomePage() {
       </section>
 
       {/* --- VALUES (Sticky Horizontal Layout) --- */}
-      <section className="py-32 bg-gray-50 relative overflow-hidden">
+      <section className="py-16 sm:py-24 lg:py-32 bg-gray-50 relative overflow-hidden">
         {/* Decorative Background Text */}
         <div className="absolute top-20 left-0 w-full overflow-hidden opacity-[0.03] pointer-events-none">
-          <div className="whitespace-nowrap font-heading text-[15rem] leading-none">
+          <div className="whitespace-nowrap font-heading text-[8rem] sm:text-[12rem] lg:text-[15rem] leading-none">
             Values Values Values Values
           </div>
         </div>
 
-        <div className="max-w-[120rem] mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-12 gap-12">
+        <div className="max-w-[120rem] mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="grid lg:grid-cols-12 gap-8 sm:gap-12">
             
             {/* Sticky Header */}
             <div className="lg:col-span-4">
               <div className="lg:sticky lg:top-32">
                 <AnimatedElement>
-                  <h2 className="font-heading text-5xl lg:text-6xl text-primary mb-8">
+                  <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-primary mb-6 sm:mb-8">
                     Core Values
                   </h2>
-                  <p className="text-secondary text-lg max-w-xs mb-12">
+                  <p className="text-secondary text-base sm:text-lg max-w-xs mb-8 sm:mb-12">
                     The principles that guide our every interaction and decision.
                   </p>
                   <div className="hidden lg:block w-24 h-px bg-gold-accent" />
@@ -333,18 +336,18 @@ export default function HomePage() {
 
             {/* Cards Grid */}
             <div className="lg:col-span-8">
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
                 {values.map((value, idx) => (
                   <AnimatedElement 
                     key={value.title} 
                     delay={idx * 100}
-                    className={`bg-white p-10 border border-gray-100 hover:border-gold-accent/30 transition-colors duration-300 ${idx === 2 ? 'md:col-span-2 md:w-1/2' : ''}`}
+                    className={`bg-white p-6 sm:p-10 border border-gray-100 hover:border-gold-accent/30 transition-colors duration-300 ${idx === 2 ? 'md:col-span-2 md:w-1/2' : ''}`}
                   >
                     <value.icon className="w-8 h-8 text-gold-accent mb-6" strokeWidth={1.5} />
-                    <h3 className="font-heading text-3xl text-primary mb-4">
+                    <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-4">
                       {value.title}
                     </h3>
-                    <p className="text-secondary leading-relaxed">
+                    <p className="text-secondary text-sm sm:text-base leading-relaxed">
                       {value.description}
                     </p>
                   </AnimatedElement>
@@ -356,7 +359,7 @@ export default function HomePage() {
       </section>
 
       {/* --- VISUAL INTERLUDE / CTA --- */}
-      <section className="relative py-40 flex items-center justify-center overflow-hidden">
+      <section className="relative py-24 sm:py-32 lg:py-40 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image 
             src="https://static.wixstatic.com/media/e86273_ac8a530d1a5f432aa03681dba1b67ebc~mv2.png?originWidth=1920&originHeight=1024"
@@ -366,24 +369,25 @@ export default function HomePage() {
           />
         </div>
         
-        <div className="relative z-10 text-center max-w-4xl px-6">
+        <div className="relative z-10 text-center max-w-4xl px-4 sm:px-6">
           <AnimatedElement animation="fade-up">
-            <h2 className="font-heading text-5xl lg:text-7xl text-primary mb-12">
+            <h2 className="font-heading text-4xl sm:text-5xl lg:text-7xl text-primary mb-8 sm:mb-12">
               Ready to elevate your <br />
               <span className="italic text-gold-accent">experience?</span>
             </h2>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Link to="/food">
-                <button className="px-8 py-4 bg-primary text-white min-w-[200px] hover:bg-primary/90 transition-colors duration-300">
-                 Contact Us
-                </button>
-              </Link>
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+              <button 
+                onClick={() => setIsContactDialogOpen(true)}
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-primary text-white min-w-[180px] sm:min-w-[200px] hover:bg-primary/90 transition-colors duration-300 rounded font-paragraph text-base"
+              >
+                Contact Us
+              </button>
             </div>
           </AnimatedElement>
         </div>
       </section>
 
-      <Footer />
+      <ContactDialog isOpen={isContactDialogOpen} onClose={() => setIsContactDialogOpen(false)} />
     </div>
   );
 }

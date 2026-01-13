@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import { Image } from '@/components/ui/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ContactDialog from '@/components/ContactDialog';
 import { BaseCrudService } from '@/integrations';
 import { Services } from '@/entities';
 import { Palette, Building2, Users, Lightbulb, Award, Compass, Mail, Send } from 'lucide-react';
@@ -61,6 +62,7 @@ const AnimatedElement: React.FC<AnimatedElementProps> = ({
 
 export default function ArtPage() {
   const [artServices, setArtServices] = useState<Services[]>([]);
+  const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
   const [email, setEmail] = useState('');
   const [contactEmail, setContactEmail] = useState('');
   const [contactMessage, setContactMessage] = useState('');
@@ -101,13 +103,13 @@ export default function ArtPage() {
       <Header />
       
       {/* Opening Quote Section */}
-      <section className="py-24 border-b border-gray-200">
-        <div className="max-w-[100rem] mx-auto px-12">
+      <section className="py-12 sm:py-16 lg:py-24 border-b border-gray-200">
+        <div className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
           <div className="text-center">
-            <p className="font-heading text-5xl lg:text-6xl text-primary italic leading-tight max-w-4xl mx-auto">
+            <p className="font-heading text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-primary italic leading-tight max-w-4xl mx-auto px-4">
               "Art is not what you see, but what you make others see."
             </p>
-            <p className="font-paragraph text-lg text-secondary mt-6">
+            <p className="font-paragraph text-base sm:text-lg text-secondary mt-4 sm:mt-6">
               — Edgar Degas
             </p>
           </div>
@@ -115,83 +117,50 @@ export default function ArtPage() {
       </section>
 
       {/* Philosophy Section with Gray Background */}
-      <section className="py-32 bg-gray-50">
-        <div className="max-w-[100rem] mx-auto px-12">
+      <section className="py-16 sm:py-24 lg:py-32 bg-gray-50">
+        <div className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="font-heading text-5xl text-primary mb-8">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-primary mb-6 sm:mb-8">
               Our Philosophy
             </h2>
-            <p className="font-paragraph text-lg text-foreground mb-8 leading-relaxed">
+            <p className="font-paragraph text-base sm:text-lg text-foreground mb-6 sm:mb-8 leading-relaxed px-4">
               At Haute Services, we believe that art is a transformative force that enriches lives, inspires creativity, and connects us to our shared humanity. Our art advisory practice is rooted in authenticity, expertise, and a deep commitment to helping clients build meaningful collections that reflect their values and vision.
             </p>
-           {/*  <p className="font-paragraph text-lg text-foreground mb-12 leading-relaxed">
-              We approach each client relationship with personalized attention, combining market knowledge with curatorial insight. Whether you're a seasoned collector, a corporate institution, or a first-time buyer, we provide guidance tailored to your unique goals and aesthetic preferences.
-            </p>
-            */}
-            <div className="w-12 h-px bg-gold-accent mx-auto mb-12" />
-            <p className="font-paragraph text-base text-secondary">
+            <div className="w-12 h-px bg-gold-accent mx-auto mb-8 sm:mb-12" />
+            <p className="font-paragraph text-sm sm:text-base text-secondary px-4">
               Our mission is to demystify the art world and empower our clients to make informed, confident decisions about their collections.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Art Advisory Overview 
-      <section className="py-20">
-        <div className="max-w-[100rem] mx-auto px-12">
-          <div className="grid grid-cols-2 gap-24 items-center">
-            <div>
-              <h2 className="font-heading text-4xl text-primary mb-8">
-                Our Approach
-              </h2>
-              <p className="font-paragraph text-base text-foreground mb-6">
-                We combine deep market knowledge with curatorial insight to create collections that are both strategically sound and aesthetically meaningful. Our personalized approach ensures that every acquisition reflects your unique vision and values.
-              </p>
-              <p className="font-paragraph text-base text-foreground">
-                From emerging contemporary artists to established modern masters, we provide comprehensive guidance across all periods and mediums.
-              </p>
-            </div>
-            
-            <div>
-              <Image 
-                src="https://static.wixstatic.com/media/e86273_7a41a60453714090bacaf707d2c53906~mv2.png?originWidth=640&originHeight=576"
-                alt="Art advisory consultation"
-                className="w-full h-[600px] object-cover"
-                width={700}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      */}
-
       {/* Services Grid */}
-      <section className="py-32">
-        <div className="max-w-[100rem] mx-auto px-12">
-          <h2 className="font-heading text-5xl text-primary text-center mb-20">
+      <section className="py-16 sm:py-24 lg:py-32">
+        <div className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-primary text-center mb-12 sm:mb-20">
             Our Services
           </h2>
           
           {artServices.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
               {artServices.map((service) => (
                 <div key={service._id} className="bg-white">
                   {service.serviceImage && (
                     <Image 
                       src={service.serviceImage}
                       alt={service.serviceName || 'Service image'}
-                      className="w-full h-[400px] object-cover mb-8"
+                      className="w-full h-[250px] sm:h-[300px] lg:h-[400px] object-cover mb-6 sm:mb-8"
                       width={600}
                     />
                   )}
-                  <h3 className="font-heading text-3xl text-primary mb-4">
+                  <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-3 sm:mb-4">
                     {service.serviceName}
                   </h3>
-                  <p className="font-paragraph text-base text-secondary mb-6">
+                  <p className="font-paragraph text-sm sm:text-base text-secondary mb-4 sm:mb-6">
                     {service.shortDescription}
                   </p>
                   {service.detailedDescription && (
-                    <p className="font-paragraph text-base text-foreground mb-6">
+                    <p className="font-paragraph text-sm sm:text-base text-foreground mb-6">
                       {service.detailedDescription}
                     </p>
                   )}
@@ -201,7 +170,7 @@ export default function ArtPage() {
                       target="_blank" 
                       rel="noopener noreferrer"
                     >
-                      <button className="bg-transparent text-foreground border border-foreground rounded px-6 py-3 font-paragraph text-base hover:bg-foreground hover:text-primary-foreground transition-colors">
+                      <button className="bg-transparent text-foreground border border-foreground rounded px-4 sm:px-6 py-2 sm:py-3 font-paragraph text-sm sm:text-base hover:bg-foreground hover:text-primary-foreground transition-colors">
                         Learn More
                       </button>
                     </a>
@@ -210,21 +179,21 @@ export default function ArtPage() {
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
               <div className="bg-white">
                 <Image 
                   src="https://static.wixstatic.com/media/e86273_59bcb9acc97741338c7c0cae8fb10323~mv2.png?originWidth=576&originHeight=384"
                   alt="Art collection building"
-                  className="w-full h-[400px] object-cover mb-8"
+                  className="w-full h-[250px] sm:h-[300px] lg:h-[400px] object-cover mb-6 sm:mb-8"
                   width={600}
                 />
-                <h3 className="font-heading text-3xl text-primary mb-4">
+                <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-3 sm:mb-4">
                   Collection Building
                 </h3>
-                <p className="font-paragraph text-base text-secondary mb-6">
+                <p className="font-paragraph text-sm sm:text-base text-secondary mb-4 sm:mb-6">
                   Strategic acquisition and collection development services.
                 </p>
-                <p className="font-paragraph text-base text-foreground mb-6">
+                <p className="font-paragraph text-sm sm:text-base text-foreground mb-6">
                   We work closely with clients to identify and acquire works that align with their vision and goals. Our services include market research, artist due diligence, negotiation, and transaction management. We ensure every acquisition is both aesthetically meaningful and strategically sound.
                 </p>
               </div>
@@ -233,16 +202,16 @@ export default function ArtPage() {
                 <Image 
                   src="https://static.wixstatic.com/media/e86273_efc4aec961cb4972a28283597cf1f662~mv2.png?originWidth=576&originHeight=384"
                   alt="Art collection management"
-                  className="w-full h-[400px] object-cover mb-8"
+                  className="w-full h-[250px] sm:h-[300px] lg:h-[400px] object-cover mb-6 sm:mb-8"
                   width={600}
                 />
-                <h3 className="font-heading text-3xl text-primary mb-4">
+                <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-3 sm:mb-4">
                   Collection Management
                 </h3>
-                <p className="font-paragraph text-base text-secondary mb-6">
+                <p className="font-paragraph text-sm sm:text-base text-secondary mb-4 sm:mb-6">
                   Comprehensive care and management of art collections.
                 </p>
-                <p className="font-paragraph text-base text-foreground mb-6">
+                <p className="font-paragraph text-sm sm:text-base text-foreground mb-6">
                   Our collection management services include cataloging, conservation coordination, insurance valuation, and installation planning. We ensure your collection is properly documented, maintained, and displayed to preserve its value and enhance its impact.
                 </p>
               </div>
@@ -251,16 +220,16 @@ export default function ArtPage() {
                 <Image 
                   src="https://static.wixstatic.com/media/e86273_ff32664b46b049fb9955f331e036f25a~mv2.png?originWidth=576&originHeight=384"
                   alt="Exhibition and curation services"
-                  className="w-full h-[400px] object-cover mb-8"
+                  className="w-full h-[250px] sm:h-[300px] lg:h-[400px] object-cover mb-6 sm:mb-8"
                   width={600}
                 />
-                <h3 className="font-heading text-3xl text-primary mb-4">
+                <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-3 sm:mb-4">
                   Exhibition & Curation
                 </h3>
-                <p className="font-paragraph text-base text-secondary mb-6">
+                <p className="font-paragraph text-sm sm:text-base text-secondary mb-4 sm:mb-6">
                   Professional curation and exhibition planning services.
                 </p>
-                <p className="font-paragraph text-base text-foreground mb-6">
+                <p className="font-paragraph text-sm sm:text-base text-foreground mb-6">
                   We design and curate exhibitions that tell compelling stories and engage audiences. From concept development to installation, we manage all aspects of exhibition planning, ensuring your collection is presented in the most impactful way.
                 </p>
               </div>
@@ -269,16 +238,16 @@ export default function ArtPage() {
                 <Image 
                   src="https://static.wixstatic.com/media/e86273_dff03bcb748b4d99ade1f82f4d8faa48~mv2.png?originWidth=576&originHeight=384"
                   alt="Art valuation and appraisal"
-                  className="w-full h-[400px] object-cover mb-8"
+                  className="w-full h-[250px] sm:h-[300px] lg:h-[400px] object-cover mb-6 sm:mb-8"
                   width={600}
                 />
-                <h3 className="font-heading text-3xl text-primary mb-4">
+                <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-3 sm:mb-4">
                   Valuation & Appraisal
                 </h3>
-                <p className="font-paragraph text-base text-secondary mb-6">
+                <p className="font-paragraph text-sm sm:text-base text-secondary mb-4 sm:mb-6">
                   Expert valuation and appraisal services for insurance and estate purposes.
                 </p>
-                <p className="font-paragraph text-base text-foreground mb-6">
+                <p className="font-paragraph text-sm sm:text-base text-foreground mb-6">
                   We provide comprehensive valuations based on current market conditions and comparable sales. Our appraisals are recognized by insurance companies and estate planners, ensuring your collection is properly valued for all purposes.
                 </p>
               </div>
@@ -288,45 +257,45 @@ export default function ArtPage() {
       </section>
 
       {/* Spaces We Work With Section */}
-      <section className="py-32">
-        <div className="max-w-[100rem] mx-auto px-12">
-          <h2 className="font-heading text-5xl text-primary text-center mb-20">
+      <section className="py-16 sm:py-24 lg:py-32">
+        <div className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-primary text-center mb-12 sm:mb-20">
             Spaces We Work With
           </h2>
           
-          <div className="grid grid-cols-2 gap-12">
-            <div className="bg-white p-8 border border-gray-200">
-              <h4 className="font-heading text-2xl text-primary mb-4 flex items-center gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
+            <div className="bg-white p-6 sm:p-8 border border-gray-200">
+              <h4 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4 flex items-center gap-3">
                 Museums & Institutions
               </h4>
-              <p className="font-paragraph text-base text-foreground">
+              <p className="font-paragraph text-sm sm:text-base text-foreground">
                 We collaborate with museums, galleries, and cultural institutions on acquisitions, exhibitions, and collection development. Our relationships with institutional partners provide access to significant works and curatorial expertise.
               </p>
             </div>
 
-            <div className="bg-white p-8 border border-gray-200">
-              <h4 className="font-heading text-2xl text-primary mb-4 flex items-center gap-3">
+            <div className="bg-white p-6 sm:p-8 border border-gray-200">
+              <h4 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4 flex items-center gap-3">
                 Private Collections
               </h4>
-              <p className="font-paragraph text-base text-foreground">
+              <p className="font-paragraph text-sm sm:text-base text-foreground">
                 We work with private collectors to build, manage, and evolve their collections. Our personalized approach ensures each collection reflects the collector's vision and values.
               </p>
             </div>
 
-            <div className="bg-white p-8 border border-gray-200">
-              <h4 className="font-heading text-2xl text-primary mb-4 flex items-center gap-3">
+            <div className="bg-white p-6 sm:p-8 border border-gray-200">
+              <h4 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4 flex items-center gap-3">
                 Galleries & Auction Houses
               </h4>
-              <p className="font-paragraph text-base text-foreground">
+              <p className="font-paragraph text-sm sm:text-base text-foreground">
                 Our extensive network includes leading galleries, auction houses, and art dealers worldwide. These relationships provide clients with access to exceptional works and market insights.
               </p>
             </div>
 
-            <div className="bg-white p-8 border border-gray-200">
-              <h4 className="font-heading text-2xl text-primary mb-4 flex items-center gap-3">
+            <div className="bg-white p-6 sm:p-8 border border-gray-200">
+              <h4 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4 flex items-center gap-3">
                 Artist Studios & Foundations
               </h4>
-              <p className="font-paragraph text-base text-foreground">
+              <p className="font-paragraph text-sm sm:text-base text-foreground">
                 We maintain direct relationships with artists' studios and artist foundations, providing clients with direct access to works and insights into artistic practice and development.
               </p>
             </div>
@@ -334,37 +303,37 @@ export default function ArtPage() {
         </div>
       </section>
 
-            {/* Why Choose Haute Services Section */}
-      <section className="py-32 bg-gray-50">
-        <div className="max-w-[100rem] mx-auto px-12">
-          <h2 className="font-heading text-5xl text-primary text-center mb-20">
+      {/* Why Choose Haute Services Section */}
+      <section className="py-16 sm:py-24 lg:py-32 bg-gray-50">
+        <div className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-primary text-center mb-12 sm:mb-20">
             Why Choose Haute Services
           </h2>
           
-          <div className="grid grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
             <div className="text-center">
-              <h3 className="font-heading text-2xl text-primary mb-4">
+              <h3 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4">
                 Deep Expertise
               </h3>
-              <p className="font-paragraph text-base text-secondary">
+              <p className="font-paragraph text-sm sm:text-base text-secondary px-4">
                 Our team brings decades of combined experience in art advisory, curation, and market analysis across all periods and mediums.
               </p>
             </div>
             
             <div className="text-center">
-              <h3 className="font-heading text-2xl text-primary mb-4">
+              <h3 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4">
                 Extensive Network
               </h3>
-              <p className="font-paragraph text-base text-secondary">
+              <p className="font-paragraph text-sm sm:text-base text-secondary px-4">
                 We maintain relationships with galleries, auction houses, artists, institutions, and collectors worldwide, providing unparalleled access to exceptional works.
               </p>
             </div>
             
             <div className="text-center">
-              <h3 className="font-heading text-2xl text-primary mb-4">
+              <h3 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4">
                 Personalized Approach
               </h3>
-              <p className="font-paragraph text-base text-secondary">
+              <p className="font-paragraph text-sm sm:text-base text-secondary px-4">
                 We take time to understand your goals, preferences, and values, providing guidance tailored specifically to your unique situation and vision.
               </p>
             </div>
@@ -373,9 +342,9 @@ export default function ArtPage() {
       </section>
 
       {/* Masonry Grid of Art Images */}
-      <section className="py-32">
-        <div className="max-w-[100rem] mx-auto px-12">
-          <h2 className="font-heading text-5xl text-primary text-center mb-20">
+      <section className="py-16 sm:py-24 lg:py-32">
+        <div className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-primary text-center mb-12 sm:mb-20">
             Our Collection
           </h2>
           
@@ -411,7 +380,7 @@ export default function ArtPage() {
       </section>
 
       {/* --- VISUAL INTERLUDE / CTA --- */}
-      <section className="relative py-40 flex items-center justify-center overflow-hidden">
+      <section className="relative py-24 sm:py-32 lg:py-40 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image 
             src="https://static.wixstatic.com/media/e86273_ac8a530d1a5f432aa03681dba1b67ebc~mv2.png?originWidth=1920&originHeight=1024"
@@ -421,22 +390,23 @@ export default function ArtPage() {
           />
         </div>
         
-        <div className="relative z-10 text-center max-w-4xl px-6">
-            <h2 className="font-heading text-5xl lg:text-7xl text-primary mb-12">
+        <div className="relative z-10 text-center max-w-4xl px-4 sm:px-6">
+            <h2 className="font-heading text-4xl sm:text-5xl lg:text-7xl text-primary mb-8 sm:mb-12">
               Ready to elevate your <br />
               <span className="italic text-gold-accent">experience?</span>
             </h2>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Link to="/food">
-                <button className="px-8 py-4 bg-primary text-white min-w-[200px] hover:bg-primary/90 transition-colors duration-300">
-                 Contact Us
-                </button>
-              </Link>
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+              <button 
+                onClick={() => setIsContactDialogOpen(true)}
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-primary text-white min-w-[180px] sm:min-w-[200px] hover:bg-primary/90 transition-colors duration-300 rounded font-paragraph text-base"
+              >
+                Contact Us
+              </button>
             </div>
         </div>
       </section>
 
-      <Footer />
+      <ContactDialog isOpen={isContactDialogOpen} onClose={() => setIsContactDialogOpen(false)} />
     </div>
   );
 }
