@@ -27,7 +27,7 @@ export default function Footer() {
           </div>
 
           <div className="w-full flex flex-col">
-            <h4 className="font-heading text-lg text-primary md:mb- mb-2">Socials</h4>
+            <h4 className="font-heading text-lg text-primary md:mb- mb-2">Follow us</h4>
             <div className="flex gap-4">
               <a 
                 href="https://www.instagram.com/hauteservices" 
