@@ -190,7 +190,7 @@ export default function HomePage() {
             </div>
             
             {/* Floating Accent Image */}
-            <div className="absolute -bottom-12 -left-6 lg:left-0 w-48 lg:w-72 aspect-[3/4] shadow-2xl">
+            <div className="absolute md:-bottom-12 md:-left-6 left-8 lg:left-0 w-48 lg:w-72 aspect-[3/4] shadow-2xl">
               <AnimatedElement animation="fade-in" delay={500} className="w-full h-full">
                 <Image 
                   src="https://static.wixstatic.com/media/e86273_57cdee80347a45fa8d0d12a449a0768b~mv2.png?originWidth=1152&originHeight=832"
