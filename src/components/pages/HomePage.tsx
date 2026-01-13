@@ -148,7 +148,7 @@ export default function HomePage() {
       <Header />
 
       {/* --- HERO SECTION --- */}
-      <section className="relative min-h-screen bg-yellow-500 flex flex-col md:justify-center justify-start pt-12 sm:pt-20 sm:pb-12">
+      <section className="relative min-h-screen bg-yellow-500 flex flex-col md:justify-center justify-start pt-12 sm:pt-20 pb-8 sm:pb-12">
         {/* Background Elements */}
         <div className="absolute top-0 right-0 w-1/3 h-full bg-gray-50/50 -z-10 hidden lg:block" />
         <div className="absolute top-1/4 left-6 sm:left-12 w-px h-64 bg-gold-accent/30 hidden lg:block" />
