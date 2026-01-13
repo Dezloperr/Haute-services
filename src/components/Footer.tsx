@@ -13,7 +13,7 @@ export default function Footer() {
           </div>
           
           <div>
-            <h4 className="font-heading text-lg text-primary mb-6">Initiatives</h4>
+            <h4 className="font-heading text-lg text-primary md:mb-6 mb-2">Initiatives</h4>
             <div className="flex flex-col gap-4">
               <a 
                 href="https://www.foodforthoughtfest.com" 
