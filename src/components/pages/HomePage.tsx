@@ -183,7 +183,7 @@ export default function HomePage() {
             <div className="absolute inset-0 lg:left-12 lg:right-0">
               <ParallaxImage 
                 id="hero-main"
-                src="https://static.wixstatic.com/media/e86273_3cf2a07072524c97affc88166c70e75d~mv2.png?originWidth=1152&originHeight=832"
+                src="https://static.wixstatic.com/media/e86273_57cdee80347a45fa8d0d12a449a0768b~mv2.png?originWidth=1152&originHeight=832"
                 alt="Elegant lifestyle event setting"
                 className="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-1000"
               />
@@ -193,7 +193,7 @@ export default function HomePage() {
             <div className="absolute md:-bottom-12 md:-left-6 right-4 -bottom-28 lg:left-0 w-48 lg:w-72 aspect-[3/4] shadow-2xl">
               <AnimatedElement animation="fade-in" delay={500} className="w-full h-full">
                 <Image 
-                  src="https://static.wixstatic.com/media/e86273_57cdee80347a45fa8d0d12a449a0768b~mv2.png?originWidth=1152&originHeight=832"
+                  src="https://static.wixstatic.com/media/e86273_3cf2a07072524c97affc88166c70e75d~mv2.png?originWidth=1152&originHeight=832"
                   alt="Artistic detail"
                   width={400}
                   className="w-full h-full object-cover border-4 border-white"
