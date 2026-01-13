@@ -235,10 +235,12 @@ export default function HomePage() {
                   <p className="text-secondary text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
                     We specialize in two distinct yet complementary areas: lifestyle events in the food sector and comprehensive art advisory services. Our approach is rooted in authenticity, creativity, and a commitment to excellence.
                   </p>
+                  <Link to="/about" >
                   <div className="flex items-center gap-2 text-primary font-medium group cursor-pointer">
                     <span className="w-8 h-px bg-primary transition-all group-hover:w-12" />
-                    <span className="text-sm sm:text-base">Read our story</span>
+                    <span className="text-sm sm:text-base  hover:text-gold-accent transition-colors">Read our story</span>
                   </div>
+                  </Link>
                 </AnimatedElement>
                 
                 <AnimatedElement delay={400} className="relative mt-8 sm:mt-12 md:mt-0">
