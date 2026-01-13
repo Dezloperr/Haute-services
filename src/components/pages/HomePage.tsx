@@ -153,7 +153,7 @@ export default function HomePage() {
         <div className="absolute top-0 right-0 w-1/3 h-full bg-gray-50/50 -z-10 hidden lg:block" />
         <div className="absolute top-1/4 left-6 sm:left-12 w-px h-64 bg-gold-accent/30 hidden lg:block" />
 
-        <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 lg:px-12 grid lg:grid-cols-12 gap-8 sm:gap-12 items-center h-full">
+        <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 bg-red-500 lg:px-12 grid lg:grid-cols-12 gap-8 sm:gap-12 items-center h-full">
           
           {/* Text Content */}
           <div className="lg:col-span-5 relative z-10 flex flex-col justify-center">
