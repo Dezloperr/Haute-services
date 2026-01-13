@@ -85,14 +85,6 @@ export default function ContactDialog({ isOpen, onClose }: ContactDialogProps) {
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
       <DialogContent className="w-full max-w-md mx-auto p-6 sm:p-8">
-        {/* Close Button */}
-        <button
-          onClick={handleClose}
-          disabled={isSubmitting}
-          className="absolute right-4 top-4 text-foreground hover:text-gold-accent transition-colors disabled:opacity-50"
-        >
-          <X size={24} />
-        </button>
 
         {isSuccess ? (
           // Success State
