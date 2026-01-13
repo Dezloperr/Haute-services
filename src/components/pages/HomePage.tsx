@@ -179,7 +179,7 @@ export default function HomePage() {
           </div>
 
           {/* Hero Image Composition */}
-          <div className="lg:col-span-7 relative h-[54vh] sm:h-[60vh] lg:h-[85vh] w-full">
+          <div className="lg:col-span-7 relative h-[50vh] sm:h-[60vh] lg:h-[85vh] w-full">
             <div className="absolute inset-0 lg:left-12 lg:right-0">
               <ParallaxImage 
                 id="hero-main"
