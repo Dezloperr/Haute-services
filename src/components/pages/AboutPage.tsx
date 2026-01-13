@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import { BaseCrudService } from '@/integrations';
 import { LeadershipBios, ClientCollaborations } from '@/entities';
 import { Linkedin, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function AboutPage() {
   const [leadership, setLeadership] = useState<LeadershipBios[]>([]);
