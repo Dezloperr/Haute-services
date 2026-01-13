@@ -5,6 +5,59 @@ import Footer from '@/components/Footer';
 import { BaseCrudService } from '@/integrations';
 import { Services } from '@/entities';
 import { Palette, Building2, Users, Lightbulb, Award, Compass, Mail, Send } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+/**
+ * AnimatedElement: A reusable component for scroll-triggered reveals using IntersectionObserver.
+ * Adheres to the "Safety & Performance" mandate.
+ */
+type AnimatedElementProps = {
+  children: React.ReactNode;
+  className?: string;
+  delay?: number;
+  animation?: 'fade-up' | 'fade-in' | 'slide-in-right';
+};
+
+const AnimatedElement: React.FC<AnimatedElementProps> = ({ 
+  children, 
+  className = '', 
+  delay = 0,
+  animation = 'fade-up' 
+}) => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        // Add a small delay via style if needed, or just let CSS handle the transition
+        setTimeout(() => {
+          element.classList.add('is-visible');
+        }, delay);
+        observer.unobserve(element);
+      }
+    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [delay]);
+
+  const getAnimationClass = () => {
+    switch (animation) {
+      case 'fade-in': return 'opacity-0 transition-opacity duration-1000 ease-out';
+      case 'slide-in-right': return 'opacity-0 translate-x-10 transition-all duration-1000 ease-out';
+      case 'fade-up': default: return 'opacity-0 translate-y-8 transition-all duration-1000 ease-out';
+    }
+  };
+
+  return (
+    <div ref={ref} className={`${getAnimationClass()} ${className} group`}>
+      {children}
+    </div>
+  );
+};
 
 export default function ArtPage() {
   const [artServices, setArtServices] = useState<Services[]>([]);
@@ -357,60 +410,31 @@ export default function ArtPage() {
         </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section className="py-32">
-        <div className="max-w-2xl mx-auto px-12">
-          <h2 className="font-heading text-5xl text-primary text-center mb-8">
-            Get in Touch
-          </h2>
-          <p className="font-paragraph text-lg text-secondary text-center mb-16">
-            Ready to discuss your art collection or explore our advisory services? Contact us today.
-          </p>
-
-          <form onSubmit={handleContactSubmit} className="space-y-6">
-            <div>
-              <label className="block font-paragraph text-base text-primary mb-2">
-                Email Address
-              </label>
-              <input
-                type="email"
-                value={contactEmail}
-                onChange={(e) => setContactEmail(e.target.value)}
-                required
-                className="w-full px-6 py-3 border border-gray-300 focus:border-gold-accent focus:outline-none transition-colors"
-                placeholder="your@email.com"
-              />
+      {/* --- VISUAL INTERLUDE / CTA --- */}
+      <section className="relative py-40 flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src="https://static.wixstatic.com/media/e86273_ac8a530d1a5f432aa03681dba1b67ebc~mv2.png?originWidth=1920&originHeight=1024"
+            alt="Abstract texture"
+            className="w-full h-full object-cover opacity-5"
+            width={1920}
+          />
+        </div>
+        
+        <div className="relative z-10 text-center max-w-4xl px-6">
+          <AnimatedElement animation="fade-up">
+            <h2 className="font-heading text-5xl lg:text-7xl text-primary mb-12">
+              Ready to elevate your <br />
+              <span className="italic text-gold-accent">experience?</span>
+            </h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Link to="/food">
+                <button className="px-8 py-4 bg-primary text-white min-w-[200px] hover:bg-primary/90 transition-colors duration-300">
+                 Contact Us
+                </button>
+              </Link>
             </div>
-
-            <div>
-              <label className="block font-paragraph text-base text-primary mb-2">
-                Message
-              </label>
-              <textarea
-                value={contactMessage}
-                onChange={(e) => setContactMessage(e.target.value)}
-                required
-                rows={6}
-                className="w-full px-6 py-3 border border-gray-300 focus:border-gold-accent focus:outline-none transition-colors resize-none"
-                placeholder="Tell us about your art interests or collection goals..."
-              />
-            </div>
-
-            <button
-              type="submit"
-              disabled={submitStatus === 'loading'}
-              className="w-full px-8 py-4 bg-gold-accent text-secondary-foreground hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center justify-center gap-2 font-paragraph text-base"
-            >
-              <Send size={18} />
-              Send Message
-            </button>
-
-            {submitStatus === 'success' && (
-              <p className="text-center text-gold-accent font-paragraph">
-                Thank you for reaching out! We'll be in touch soon.
-              </p>
-            )}
-          </form>
+          </AnimatedElement>
         </div>
       </section>
 

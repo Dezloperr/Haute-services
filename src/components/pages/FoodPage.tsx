@@ -5,6 +5,60 @@ import Footer from '@/components/Footer';
 import { BaseCrudService } from '@/integrations';
 import { Services } from '@/entities';
 import { ExternalLink, Award, Globe, Users, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+
+/**
+ * AnimatedElement: A reusable component for scroll-triggered reveals using IntersectionObserver.
+ * Adheres to the "Safety & Performance" mandate.
+ */
+type AnimatedElementProps = {
+  children: React.ReactNode;
+  className?: string;
+  delay?: number;
+  animation?: 'fade-up' | 'fade-in' | 'slide-in-right';
+};
+
+const AnimatedElement: React.FC<AnimatedElementProps> = ({ 
+  children, 
+  className = '', 
+  delay = 0,
+  animation = 'fade-up' 
+}) => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        // Add a small delay via style if needed, or just let CSS handle the transition
+        setTimeout(() => {
+          element.classList.add('is-visible');
+        }, delay);
+        observer.unobserve(element);
+      }
+    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [delay]);
+
+  const getAnimationClass = () => {
+    switch (animation) {
+      case 'fade-in': return 'opacity-0 transition-opacity duration-1000 ease-out';
+      case 'slide-in-right': return 'opacity-0 translate-x-10 transition-all duration-1000 ease-out';
+      case 'fade-up': default: return 'opacity-0 translate-y-8 transition-all duration-1000 ease-out';
+    }
+  };
+
+  return (
+    <div ref={ref} className={`${getAnimationClass()} ${className} group`}>
+      {children}
+    </div>
+  );
+};
 
 export default function FoodPage() {
   const [foodServices, setFoodServices] = useState<Services[]>([]);
@@ -147,6 +201,35 @@ export default function FoodPage() {
               </li>
             </ul>
           </div>
+        </div>
+      </section>
+
+
+      {/* --- VISUAL INTERLUDE / CTA --- */}
+      <section className="relative py-40 flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src="https://static.wixstatic.com/media/e86273_ac8a530d1a5f432aa03681dba1b67ebc~mv2.png?originWidth=1920&originHeight=1024"
+            alt="Abstract texture"
+            className="w-full h-full object-cover opacity-5"
+            width={1920}
+          />
+        </div>
+        
+        <div className="relative z-10 text-center max-w-4xl px-6">
+          <AnimatedElement animation="fade-up">
+            <h2 className="font-heading text-5xl lg:text-7xl text-primary mb-12">
+              Ready to elevate your <br />
+              <span className="italic text-gold-accent">experience?</span>
+            </h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Link to="/food">
+                <button className="px-8 py-4 bg-primary text-white min-w-[200px] hover:bg-primary/90 transition-colors duration-300">
+                 Contact Us
+                </button>
+              </Link>
+            </div>
+          </AnimatedElement>
         </div>
       </section>
 
