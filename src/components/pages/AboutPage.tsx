@@ -301,6 +301,8 @@ export default function AboutPage() {
       </section>
 
       <ContactDialog isOpen={isContactDialogOpen} onClose={() => setIsContactDialogOpen(false)} />
+
+      <Footer />
     </div>
   );
 }

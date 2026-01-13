@@ -407,6 +407,8 @@ export default function ArtPage() {
       </section>
 
       <ContactDialog isOpen={isContactDialogOpen} onClose={() => setIsContactDialogOpen(false)} />
+
+      <Footer />
     </div>
   );
 }

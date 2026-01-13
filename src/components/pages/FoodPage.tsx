@@ -235,6 +235,8 @@ export default function FoodPage() {
       </section>
 
       <ContactDialog isOpen={isContactDialogOpen} onClose={() => setIsContactDialogOpen(false)} />
+
+      <Footer />
     </div>
   );
 }

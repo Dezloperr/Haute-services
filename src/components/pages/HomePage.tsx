@@ -388,6 +388,8 @@ export default function HomePage() {
       </section>
 
       <ContactDialog isOpen={isContactDialogOpen} onClose={() => setIsContactDialogOpen(false)} />
+
+      <Footer />
     </div>
   );
 }
