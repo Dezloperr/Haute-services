@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-[100rem] mx-auto px-6 lg:px-12 py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           <div>
-            <h3 className="font-heading text-xl lg:text-2xl text-primary mb-6">Haute Services</h3>
+            <h3 className="font-heading text-xl lg:text-2xl text-primary md:mb-6 mb-2">Haute Services</h3>
             <p className="font-paragraph text-sm lg:text-base text-secondary max-w-md">
               A boutique consultancy specializing in culinary events and art advisory services.
             </p>
