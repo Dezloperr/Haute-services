@@ -244,12 +244,12 @@ export default function HomePage() {
                 </AnimatedElement>
                 
                 <AnimatedElement delay={400} className="relative mt-8 sm:mt-12 md:mt-0">
-                  <div className="aspect-video bg-gray-100 overflow-hidden">
+                  <div className="aspect-[3/4] bg-gray-100 overflow-hidden">
                     <Image 
                       src="https://static.wixstatic.com/media/e86273_733e8cac0d2a4461b6e62be12e290674~mv2.jpg"
                       alt="Curated art piece"
                       width={600}
-                      className="w-full h-full shrink-0 hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                     />
                   </div>
                 </AnimatedElement>
