@@ -98,19 +98,19 @@ export default function HomePage() {
   const missionText = "Haute Services is a boutique consultancy dedicated to creating exceptional experiences in the lifestyle and art sectors. We combine deep industry expertise with a passion for excellence to deliver unparalleled service to our clients.";
   
   const services = [
+        {
+      id: 'art',
+      title: 'Art Services',
+      description: "Comprehensive art advisory services rooted in authenticity, creativity, and a commitment to excellence.",
+      link: '/art',
+      image: "https://static.wixstatic.com/media/e86273_5544b433099a4239815d3c652fa6d118~mv2.png?originWidth=1152&originHeight=576"
+    },
     {
       id: 'food',
       title: 'Food Services',
       description: "Whether you're looking to create a memorable culinary experience or build a distinguished art collection, our team brings the expertise and connections to make it happen.",
       link: '/food',
       image: "https://static.wixstatic.com/media/e86273_6ed3ac2e3a1043aab162cb3b20065ea5~mv2.png?originWidth=1152&originHeight=576"
-    },
-    {
-      id: 'art',
-      title: 'Art Services',
-      description: "Comprehensive art advisory services rooted in authenticity, creativity, and a commitment to excellence.",
-      link: '/art',
-      image: "https://static.wixstatic.com/media/e86273_5544b433099a4239815d3c652fa6d118~mv2.png?originWidth=1152&originHeight=576"
     }
   ];
 
