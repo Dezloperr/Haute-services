@@ -270,6 +270,32 @@ export default function AboutPage() {
         </div>
       </section>
 
+       {/* --- VISUAL INTERLUDE / CTA --- */}
+      <section className="relative py-40 flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src="https://static.wixstatic.com/media/e86273_ac8a530d1a5f432aa03681dba1b67ebc~mv2.png?originWidth=1920&originHeight=1024"
+            alt="Abstract texture"
+            className="w-full h-full object-cover opacity-5"
+            width={1920}
+          />
+        </div>
+        
+        <div className="relative z-10 text-center max-w-4xl px-6">
+            <h2 className="font-heading text-5xl lg:text-7xl text-primary mb-12">
+              Ready to elevate your <br />
+              <span className="italic text-gold-accent">experience?</span>
+            </h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Link to="/food">
+                <button className="px-8 py-4 bg-primary text-white min-w-[200px] hover:bg-primary/90 transition-colors duration-300">
+                 Contact Us
+                </button>
+              </Link>
+            </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
