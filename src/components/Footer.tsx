@@ -35,7 +35,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="font-paragraph text-sm lg:text-base text-foreground hover:text-gold-accent transition-colors flex items-center gap-2"
               >
-              <Instagram size={20} /> Instagram
+              <Instagram size={14} /> Instagram
               </a>
               <a 
                 href="https://www.linkedin.com/company/hauteservices" 
@@ -43,7 +43,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="font-paragraph text-sm lg:text-base text-foreground hover:text-gold-accent transition-colors flex items-center gap-2"
               >
-              <Linkedin size={20} /> Linkdin
+              <Linkedin size={14} /> Linkdin
               </a>
             </div>
           </div>
