@@ -13,7 +13,7 @@ export default function Footer() {
           </div>
           
           <div>
-            <h4 className="font-heading text-lg text-primary mb-6">Our Initiatives</h4>
+            <h4 className="font-heading text-lg text-primary mb-6">Initiatives</h4>
             <div className="flex flex-col gap-4">
               <a 
                 href="https://www.foodforthoughtfest.com" 
@@ -43,10 +43,11 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="font-paragraph text-sm lg:text-base text-foreground hover:text-gold-accent transition-colors flex items-center gap-2"
               >
-              <Linkedin size={20} /> Linkedin
+              <Linkedin size={20} /> Linkdin
               </a>
             </div>
           </div>
+        </div>
         
         <div className="mt-12 pt-8 border-t border-gray-200">
           <p className="font-paragraph text-xs lg:text-sm text-secondary text-center">
