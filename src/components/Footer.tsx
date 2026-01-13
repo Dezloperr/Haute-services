@@ -1,4 +1,5 @@
 import { ExternalLink, Instagram, Linkedin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -12,6 +13,30 @@ export default function Footer() {
             </p>
           </div>
           
+          <div>
+            <h4 className="font-heading text-lg text-primary md:mb-6 mb-2">About us</h4>
+            <div className="flex flex-col gap-4">
+              <Link
+                to="/art"
+                className="font-paragraph text-sm lg:text-base text-foreground hover:text-gold-accent transition-colors flex items-center gap-2"
+              >
+                Art
+              </Link>
+              <Link
+                to="/food"
+                className="font-paragraph text-sm lg:text-base text-foreground hover:text-gold-accent transition-colors flex items-center gap-2"
+              >
+                Culinary Events
+              </Link>
+              <Link
+                to="/about"
+                className="font-paragraph text-sm lg:text-base text-foreground hover:text-gold-accent transition-colors flex items-center gap-2"
+              >
+                Haute Services
+              </Link>
+            </div>
+          </div>
+
           <div>
             <h4 className="font-heading text-lg text-primary md:mb-6 mb-2">Initiatives</h4>
             <div className="flex flex-col gap-4">
