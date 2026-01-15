@@ -15,7 +15,7 @@ export interface ClientCollaborations {
   clientName?: string;
   /** @wixFieldType text */
   collaborationDescription?: string;
-  /** @wixFieldType image */
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   clientLogo?: string;
   /** @wixFieldType text */
   projectType?: string;
@@ -40,7 +40,7 @@ export interface LeadershipBios {
   title?: string;
   /** @wixFieldType text */
   bio?: string;
-  /** @wixFieldType image */
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   photo?: string;
   /** @wixFieldType url */
   linkedinUrl?: string;
@@ -65,7 +65,7 @@ export interface Services {
   shortDescription?: string;
   /** @wixFieldType text */
   detailedDescription?: string;
-  /** @wixFieldType image */
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   serviceImage?: string;
   /** @wixFieldType url */
   callToActionUrl?: string;

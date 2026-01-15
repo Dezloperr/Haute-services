@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Image } from '@/components/ui/image';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,8 +10,13 @@ export default function Header() {
     <header className="bg-background border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-[100rem] mx-auto px-6 lg:px-12">
         <nav className="flex items-center justify-between h-20">
-          <Link to="/" className="font-heading text-xl lg:text-2xl text-primary flex-shrink-0">
-            Haute Services
+          <Link to="/" className="flex-shrink-0">
+            <Image 
+              src="https://static.wixstatic.com/media/e86273_6a31b9369f2148b293befb62b4e5b115~mv2.png"
+              alt="Haute Services"
+              width={200}
+              className="h-12 w-auto"
+            />
           </Link>
           
           {/* Desktop Navigation */}
