@@ -95,14 +95,6 @@ export default function FoodPage() {
       {/* Food For Thought Fest Section */}
       <section className="py-16 sm:py-24 lg:py-32">
         <div className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="mb-12 sm:mb-20">
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-primary mb-4 sm:mb-8">
-              Food For Thought Fest
-            </h2>
-            <p className="font-paragraph text-base sm:text-lg text-secondary max-w-3xl">
-              Our flagship initiative celebrating culinary excellence, innovation, and the intersection of food with culture and creativity.
-            </p>
-          </div>
 
           <div className="lg:col-span-4 lg:sticky lg:top-32">
                 <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-primary mb-6">
