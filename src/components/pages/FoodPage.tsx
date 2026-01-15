@@ -143,7 +143,7 @@ export default function FoodPage() {
           </div>
 
           {/* Festival Details Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 mb-12 sm:mb-20">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 mb-12 sm:mb-20">
             <div className="bg-white p-6 sm:p-8 border border-gray-200">
               <h4 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4 flex items-center gap-3">
                 Global Reach
@@ -168,15 +168,6 @@ export default function FoodPage() {
               </h4>
               <p className="font-paragraph text-sm sm:text-base text-foreground">
                 We collaborate with Michelin-starred chefs, emerging culinary talents, food writers, restaurateurs, and passionate food enthusiasts. The festival brings together a diverse community united by their appreciation for exceptional food and meaningful culinary experiences.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 sm:p-8 border border-gray-200">
-              <h4 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4 flex items-center gap-3">
-                Media & Recognition
-              </h4>
-              <p className="font-paragraph text-sm sm:text-base text-foreground">
-                Food For Thought Fest has garnered significant media coverage from leading food publications, lifestyle media, and international press. The festival is recognized as a premier platform for culinary innovation and cultural exchange in the food sector.
               </p>
             </div>
           </div>
