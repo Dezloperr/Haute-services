@@ -96,7 +96,7 @@ export default function FoodPage() {
       <section className="py-16 sm:py-24 lg:py-32">
         <div className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
 
-          <div className="lg:col-span-4 mb-12 lg:sticky lg:top-32">
+          <div className="lg:col-span-4 mb-12">
                 <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-primary mb-6">
                   Our Initiative
                 </h2>
