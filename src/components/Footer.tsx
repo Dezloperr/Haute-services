@@ -1,5 +1,6 @@
 import { ExternalLink, Instagram, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Image } from '@/components/ui/image';
 
 export default function Footer() {
   return (
@@ -7,7 +8,14 @@ export default function Footer() {
       <div className="max-w-[100rem] mx-auto px-6 lg:px-12 py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           <div>
-           
+           <Link to="/" className="flex-shrink-0">
+            <Image 
+              src="https://static.wixstatic.com/media/e86273_6a31b9369f2148b293befb62b4e5b115~mv2.png"
+              alt="Haute Services"
+              width={200}
+              className="h-12 w-auto"
+            />
+          </Link>
             <p className="font-paragraph text-sm lg:text-base text-secondary max-w-md">
               A boutique consultancy specializing in culinary events and art advisory services.
             </p>
