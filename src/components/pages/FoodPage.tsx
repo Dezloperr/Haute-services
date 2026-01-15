@@ -81,7 +81,7 @@ const mediaImages = [
   { src: 'https://static.wixstatic.com/media/e86273_fe1c4c0e00254df5acf90747819020b7~mv2.png?originWidth=384&originHeight=256', alt: 'Press conference' },
   { src: 'https://plus.unsplash.com/premium_photo-1694547926001-f2151e4a476b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zm9vZCUyMHBob3RvZ3JhcGh5fGVufDB8fDB8fHww', alt: 'Media event' },
   { src: 'https://static.wixstatic.com/media/e86273_0e30de44c5f341169694fee0dd8c0e61~mv2.png?originWidth=384&originHeight=256', alt: 'Food photography' },
-  { src: 'https://static.wixstatic.com/media/e86273_0e140532703b4c5ebb49704aa5140f1b~mv2.png?originWidth=384&originHeight=256', alt: 'Festival atmosphere' },
+  { src: 'https://thumbs.dreamstime.com/b/different-meals-served-breakfast-wooden-table-flat-lay-375298017.jpg', alt: 'Festival atmosphere' },
 ];
 
 export default function FoodPage() {
