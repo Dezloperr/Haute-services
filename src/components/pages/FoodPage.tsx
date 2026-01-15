@@ -196,41 +196,40 @@ export default function FoodPage() {
           </div>
 
 
-
- {/* Chefs Marquee */}
-          <div className="w-full h-[30vh] overflow-hidden relative bg-gray-50 flex items-center">
-            <motion.div
-              className="flex gap-12 items-center"
-              animate={{
-                x: [0, -1920],
-              }}
-              transition={{
-                x: {
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  duration: 40,
-                  ease: "linear",
-                },
-              }}
-            >
-              {[...Array(2)].map((_, setIndex) => (
-                <div key={setIndex} className="flex gap-12 items-center">
-                  {chefData.map((chef, index) => (
-                    <div key={`${setIndex}-${index}`} className="flex-shrink-0 text-center">
-                      <Image
-                        src={chef.image}
-                        alt={chef.name}
-                        className="w-32 h-32 rounded-full object-cover mb-3 mx-auto"
-                        width={128}
-                      />
-                      <h4 className="font-heading text-lg text-primary">{chef.name}</h4>
-                      <p className="font-paragraph text-sm text-secondary">{chef.role}</p>
-                    </div>
-                  ))}
-                </div>
-              ))}
-            </motion.div>
+{/* Chefs Marquee */}
+<div className="w-full h-[30vh] overflow-hidden bg-gray-50 flex items-center">
+  <motion.div
+    className="flex gap-12 items-center will-change-transform"
+    animate={{
+      x: ["0%", "-100%"],
+    }}
+    transition={{
+      duration: 40,
+      ease: "linear",
+      repeat: Infinity,
+    }}
+  >
+    {/* Twice for seamless loop */}
+    {[...Array(2)].map((_, loopIndex) => (
+      <div key={loopIndex} className="flex gap-12 items-center">
+        {chefData.map((chef, index) => (
+          <div key={`${loopIndex}-${index}`} className="flex-shrink-0 text-center">
+            <Image
+              src={chef.image}
+              alt={chef.name}
+              className="w-32 h-32 rounded-full object-cover mb-3 mx-auto"
+              width={128}
+              height={128}
+            />
+            <h4 className="font-heading text-lg text-primary">{chef.name}</h4>
+            <p className="font-paragraph text-sm text-secondary">{chef.role}</p>
           </div>
+        ))}
+      </div>
+    ))}
+  </motion.div>
+</div>
+
 
           {/* Media coverage images  */}
 
