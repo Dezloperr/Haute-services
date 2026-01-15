@@ -74,8 +74,8 @@ const chefData = [
 
 // Media images for masonry grid
 const mediaImages = [
-  { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbw5KQNis2TDrwILPZVntuuyO6nL5-u0RhYA&s', alt: 'Food festival coverage' },
   { src: 'https://static.wixstatic.com/media/e86273_5739e4378254475a8666886ad594d671~mv2.png?originWidth=384&originHeight=256', alt: 'Chef interview' },
+  { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbw5KQNis2TDrwILPZVntuuyO6nL5-u0RhYA&s', alt: 'Food festival coverage' },
   { src: 'https://kashi.gov.in/cmsadmin/storage/CMS/65d2fbcc303531708325836.jpg', alt: 'Culinary showcase' },
   { src: 'https://static.wixstatic.com/media/e86273_6c70315f2cec47608b282c5606b128b9~mv2.png?originWidth=384&originHeight=256', alt: 'Festival highlights' },
   { src: 'https://static.wixstatic.com/media/e86273_fe1c4c0e00254df5acf90747819020b7~mv2.png?originWidth=384&originHeight=256', alt: 'Press conference' },
