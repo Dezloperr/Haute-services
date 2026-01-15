@@ -172,6 +172,9 @@ export default function FoodPage() {
             </div>
           </div>
 
+
+          <div className="w-full h-[30vh] bg-red-500"></div>
+
           {/* Media coverage images
 
          <div className="bg-white p-6 sm:p-8 border border-gray-200">
