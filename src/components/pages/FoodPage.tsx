@@ -106,12 +106,15 @@ export default function FoodPage() {
 
           <div className="lg:col-span-4 lg:sticky lg:top-32">
                 <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-primary mb-6">
-                  Our Mission
+                  Our Initiative
                 </h2>
                 <div className="w-full h-px bg-gray-200 mb-6" />
-                <p className="text-xs sm:text-sm text-gold-accent uppercase tracking-widest font-medium">
-                  Est. 2024
-                </p>
+                <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-primary mb-4 sm:mb-8">
+              Food For Thought Fest
+            </h2>
+            <p className="font-paragraph text-base sm:text-lg text-secondary max-w-3xl">
+              Our flagship initiative celebrating culinary excellence, innovation, and the intersection of food with culture and creativity.
+            </p>
             </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-24 items-start mb-12 sm:mb-20">
