@@ -105,7 +105,6 @@ export default function FoodPage() {
           </div>
 
           <div className="lg:col-span-4 lg:sticky lg:top-32">
-              <AnimatedElement>
                 <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-primary mb-6">
                   Our Mission
                 </h2>
@@ -113,7 +112,6 @@ export default function FoodPage() {
                 <p className="text-xs sm:text-sm text-gold-accent uppercase tracking-widest font-medium">
                   Est. 2024
                 </p>
-              </AnimatedElement>
             </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-24 items-start mb-12 sm:mb-20">
