@@ -182,7 +182,7 @@ export default function FoodPage() {
 
           {/* Media coverage images  */}
 
-         <div className="bg-white text-center mt-12">
+         <div className="bg-white text-center my-12">
               <h4 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4 flex justify-center w-full items-center gap-3">
                 Media & Recognition
               </h4>
