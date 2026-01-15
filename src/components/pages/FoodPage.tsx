@@ -235,26 +235,33 @@ export default function FoodPage() {
           {/* Media coverage images  */}
 
          <div className="bg-white text-center my-12">
-              <h4 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4 flex justify-center w-full items-center gap-3">
-                Media & Recognition
-              </h4>
-              <p className="font-paragraph text-sm sm:text-base text-foreground mb-8">
-                Food For Thought Fest has garnered significant media coverage from leading food publications, lifestyle media, and international press. The festival is recognized as a premier platform for culinary innovation and cultural exchange in the food sector.
-              </p>
+  <h4 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4 flex justify-center w-full items-center gap-3">
+    Media & Recognition
+  </h4>
 
-              <div className="columns-2 sm:columns-3 lg:columns-4 gap-4 space-y-4">
-                {mediaImages.map((img, index) => (
-                  <div key={index} className="break-inside-avoid">
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      className="w-full h-auto object-cover"
-                      width={400}
-                    />
-                  </div>
-                ))}
-              </div>
-        </div>
+  <p className="font-paragraph text-sm sm:text-base text-foreground mb-8">
+    Food For Thought Fest has garnered significant media coverage from leading food publications, lifestyle media, and international press. The festival is recognized as a premier platform for culinary innovation and cultural exchange in the food sector.
+  </p>
+
+  {/* Masonry Grid */}
+  <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+    {mediaImages.map((img, index) => (
+      <div
+        key={index}
+        className="break-inside-avoid-column overflow-hidden mb-4"
+      >
+        <Image
+          src={img.src}
+          alt={img.alt}
+          className="w-full h-auto object-cover rounded-lg shadow-sm"
+          width={500}
+          height={500}
+        />
+      </div>
+    ))}
+  </div>
+</div>
+
 
           {/* Festival Purpose */}
           <div className="bg-gray-50 p-6 sm:p-8 lg:p-12">
