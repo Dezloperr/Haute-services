@@ -247,7 +247,7 @@ export default function FoodPage() {
     Media & Recognition
   </h4>
 <div className="w-full flex items-center justify-center">
-  <p className="font-paragraph w-full flex items-center justify-center max-w-3xl text-sm sm:text-base text-foreground mb-8">
+  <p className="font-paragraph w-full flex items-center justify-center max-w-4xl text-sm sm:text-base text-foreground mb-8">
     Food For Thought Fest has garnered significant media coverage from leading food publications, lifestyle media, and international press. The festival is recognized as a premier platform for culinary innovation and cultural exchange in the food sector.
   </p>
   </div>
