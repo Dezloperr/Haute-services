@@ -82,7 +82,7 @@ export default function FoodPage() {
       <section className="py-12 sm:py-16 lg:py-20 border-b">
         <div className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
           <div className="text-center mb-12 sm:mb-20">
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-primary mb-4 sm:mb-8">
+            <h1 className="font-heading text-4xl italic sm:text-5xl lg:text-6xl text-primary mb-4 sm:mb-8">
               Culinary Events
             </h1>
             <p className="font-paragraph text-base sm:text-lg lg:text-xl text-secondary max-w-3xl mx-auto px-4">
