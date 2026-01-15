@@ -190,7 +190,7 @@ export default function FoodPage() {
                 Food For Thought Fest has garnered significant media coverage from leading food publications, lifestyle media, and international press. The festival is recognized as a premier platform for culinary innovation and cultural exchange in the food sector.
               </p>
 
-              <div className="w-full bg-green-400 h-[40vh]"></div>
+              <div className="w-full bg-green-400 h-[60vh]"></div>
         </div>
 
           {/* Festival Purpose */}
