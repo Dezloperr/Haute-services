@@ -79,7 +79,7 @@ const mediaImages = [
   { src: 'https://static.wixstatic.com/media/e86273_d83cd7f009e244ab90fc02a66062ce2e~mv2.png?originWidth=384&originHeight=256', alt: 'Culinary showcase' },
   { src: 'https://static.wixstatic.com/media/e86273_6c70315f2cec47608b282c5606b128b9~mv2.png?originWidth=384&originHeight=256', alt: 'Festival highlights' },
   { src: 'https://static.wixstatic.com/media/e86273_fe1c4c0e00254df5acf90747819020b7~mv2.png?originWidth=384&originHeight=256', alt: 'Press conference' },
-  { src: 'https://static.wixstatic.com/media/e86273_f6ddca2389f64a369805b946601e1a91~mv2.png?originWidth=384&originHeight=256', alt: 'Media event' },
+  { src: 'https://plus.unsplash.com/premium_photo-1694547926001-f2151e4a476b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zm9vZCUyMHBob3RvZ3JhcGh5fGVufDB8fDB8fHww', alt: 'Media event' },
   { src: 'https://static.wixstatic.com/media/e86273_0e30de44c5f341169694fee0dd8c0e61~mv2.png?originWidth=384&originHeight=256', alt: 'Food photography' },
   { src: 'https://static.wixstatic.com/media/e86273_0e140532703b4c5ebb49704aa5140f1b~mv2.png?originWidth=384&originHeight=256', alt: 'Festival atmosphere' },
 ];
