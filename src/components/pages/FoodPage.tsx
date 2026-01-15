@@ -7,6 +7,7 @@ import { BaseCrudService } from '@/integrations';
 import { Services } from '@/entities';
 import { ExternalLink, Award, Globe, Users, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 
 /**
@@ -60,6 +61,28 @@ const AnimatedElement: React.FC<AnimatedElementProps> = ({
     </div>
   );
 };
+
+// Chef data for marquee
+const chefData = [
+  { name: 'Elena Rodriguez', role: 'Executive Chef', image: 'https://static.wixstatic.com/media/e86273_2fe0218bfef0411ca55155a1c607750b~mv2.png?originWidth=128&originHeight=128' },
+  { name: 'Marcus Chen', role: 'Pastry Chef', image: 'https://static.wixstatic.com/media/e86273_2e4445ba5c244a3c946825482e316269~mv2.png?originWidth=128&originHeight=128' },
+  { name: 'Sophie Laurent', role: 'Sous Chef', image: 'https://static.wixstatic.com/media/e86273_ce46e0e14b1e4765964e88c13a18889a~mv2.png?originWidth=128&originHeight=128' },
+  { name: 'James Thompson', role: 'Head Chef', image: 'https://static.wixstatic.com/media/e86273_01f46e89b380484ea5080bbe050d9cb0~mv2.png?originWidth=128&originHeight=128' },
+  { name: 'Aria Patel', role: 'Culinary Director', image: 'https://static.wixstatic.com/media/e86273_30acbe531c7d488b91c05746c1edb258~mv2.png?originWidth=128&originHeight=128' },
+  { name: 'Diego Martinez', role: 'Chef de Cuisine', image: 'https://static.wixstatic.com/media/e86273_b999ac919daf4eaca1ad365b09f51ea4~mv2.png?originWidth=128&originHeight=128' },
+];
+
+// Media images for masonry grid
+const mediaImages = [
+  { src: 'https://static.wixstatic.com/media/e86273_5c8b17b9b9ac4c98b8208b47bb46a8aa~mv2.png?originWidth=384&originHeight=256', alt: 'Food festival coverage' },
+  { src: 'https://static.wixstatic.com/media/e86273_5739e4378254475a8666886ad594d671~mv2.png?originWidth=384&originHeight=256', alt: 'Chef interview' },
+  { src: 'https://static.wixstatic.com/media/e86273_d83cd7f009e244ab90fc02a66062ce2e~mv2.png?originWidth=384&originHeight=256', alt: 'Culinary showcase' },
+  { src: 'https://static.wixstatic.com/media/e86273_6c70315f2cec47608b282c5606b128b9~mv2.png?originWidth=384&originHeight=256', alt: 'Festival highlights' },
+  { src: 'https://static.wixstatic.com/media/e86273_fe1c4c0e00254df5acf90747819020b7~mv2.png?originWidth=384&originHeight=256', alt: 'Press conference' },
+  { src: 'https://static.wixstatic.com/media/e86273_f6ddca2389f64a369805b946601e1a91~mv2.png?originWidth=384&originHeight=256', alt: 'Media event' },
+  { src: 'https://static.wixstatic.com/media/e86273_0e30de44c5f341169694fee0dd8c0e61~mv2.png?originWidth=384&originHeight=256', alt: 'Food photography' },
+  { src: 'https://static.wixstatic.com/media/e86273_0e140532703b4c5ebb49704aa5140f1b~mv2.png?originWidth=384&originHeight=256', alt: 'Festival atmosphere' },
+];
 
 export default function FoodPage() {
   const [foodServices, setFoodServices] = useState<Services[]>([]);
@@ -174,10 +197,39 @@ export default function FoodPage() {
 
 
 
- {/* chefs Images */}
-          <div className="w-full h-[30vh] bg-red-500">
-          
-          
+ {/* Chefs Marquee */}
+          <div className="w-full h-[30vh] overflow-hidden relative bg-gray-50 flex items-center">
+            <motion.div
+              className="flex gap-12 items-center"
+              animate={{
+                x: [0, -1920],
+              }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 40,
+                  ease: "linear",
+                },
+              }}
+            >
+              {[...Array(2)].map((_, setIndex) => (
+                <div key={setIndex} className="flex gap-12 items-center">
+                  {chefData.map((chef, index) => (
+                    <div key={`${setIndex}-${index}`} className="flex-shrink-0 text-center">
+                      <Image
+                        src={chef.image}
+                        alt={chef.name}
+                        className="w-32 h-32 rounded-full object-cover mb-3 mx-auto"
+                        width={128}
+                      />
+                      <h4 className="font-heading text-lg text-primary">{chef.name}</h4>
+                      <p className="font-paragraph text-sm text-secondary">{chef.role}</p>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </motion.div>
           </div>
 
           {/* Media coverage images  */}
@@ -186,11 +238,22 @@ export default function FoodPage() {
               <h4 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4 flex justify-center w-full items-center gap-3">
                 Media & Recognition
               </h4>
-              <p className="font-paragraph text-sm sm:text-base text-foreground">
+              <p className="font-paragraph text-sm sm:text-base text-foreground mb-8">
                 Food For Thought Fest has garnered significant media coverage from leading food publications, lifestyle media, and international press. The festival is recognized as a premier platform for culinary innovation and cultural exchange in the food sector.
               </p>
 
-              <div className="w-full bg-green-400 h-[60vh]"></div>
+              <div className="columns-2 sm:columns-3 lg:columns-4 gap-4 space-y-4">
+                {mediaImages.map((img, index) => (
+                  <div key={index} className="break-inside-avoid">
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      className="w-full h-auto object-cover"
+                      width={400}
+                    />
+                  </div>
+                ))}
+              </div>
         </div>
 
           {/* Festival Purpose */}
