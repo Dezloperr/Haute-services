@@ -197,32 +197,41 @@ export default function FoodPage() {
 
 
 {/* Chefs Marquee */}
-<div className="w-full h-[30vh] overflow-hidden bg-gray-50 flex items-center">
+<div className="w-full overflow-hidden bg-gray-50 py-10">
   <motion.div
-    className="flex gap-12 items-center will-change-transform"
-    animate={{
-      x: ["0%", "-100%"],
-    }}
+    className="flex items-center will-change-transform"
+    animate={{ x: ["0%", "-100%"] }}
     transition={{
       duration: 40,
       ease: "linear",
       repeat: Infinity,
     }}
   >
-    {/* Twice for seamless loop */}
+    {/* Duplicate for seamless loop */}
     {[...Array(2)].map((_, loopIndex) => (
-      <div key={loopIndex} className="flex gap-12 items-center">
+      <div key={loopIndex} className="flex items-center">
         {chefData.map((chef, index) => (
-          <div key={`${loopIndex}-${index}`} className="flex-shrink-0 text-center">
-            <Image
-              src={chef.image}
-              alt={chef.name}
-              className="w-32 h-32 rounded-full object-cover mb-3 mx-auto"
-              width={128}
-              height={128}
-            />
-            <h4 className="font-heading text-lg text-primary">{chef.name}</h4>
-            <p className="font-paragraph text-sm text-secondary">{chef.role}</p>
+          <div
+            key={`${loopIndex}-${index}`}
+            className="flex-shrink-0 text-center mx-8" // spacing between items
+            style={{ minWidth: "180px" }}             // ⬅ prevents overlap
+          >
+            <div className="w-32 h-32 mx-auto mb-3">
+              <Image
+                src={chef.image}
+                alt={chef.name}
+                width={128}
+                height={128}
+                className="rounded-full object-cover w-full h-full"
+              />
+            </div>
+
+            <h4 className="font-heading text-lg text-primary">
+              {chef.name}
+            </h4>
+            <p className="font-paragraph text-sm text-secondary">
+              {chef.role}
+            </p>
           </div>
         ))}
       </div>
