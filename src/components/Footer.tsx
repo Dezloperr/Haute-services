@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="max-w-[100rem] mx-auto px-6 lg:px-12 py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           <div>
-           <Link to="/" className="flex-shrink-0">
+           <Link to="/" className="flex-shrink-0 mb-2">
             <Image 
               src="https://static.wixstatic.com/media/e86273_6a31b9369f2148b293befb62b4e5b115~mv2.png"
               alt="Haute Services"
