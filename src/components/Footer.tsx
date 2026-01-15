@@ -16,7 +16,7 @@ export default function Footer() {
               className="h-12 w-auto"
             />
           </Link>
-            <p className="font-paragraph mt-2 md:text-sm text-xs lg:text-base text-secondary max-w-md">
+            <p className="font-paragraph mt-2 text-sm lg:text-base text-secondary max-w-md">
               A boutique consultancy specializing in culinary events and art advisory services.
             </p>
           </div>
