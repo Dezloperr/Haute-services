@@ -173,9 +173,14 @@ export default function FoodPage() {
           </div>
 
 
-          <div className="w-full h-[30vh] bg-red-500"></div>
 
-          {/* Media coverage images
+ {/* chefs Images */}
+          <div className="w-full h-[30vh] bg-red-500">
+          
+          
+          </div>
+
+          {/* Media coverage images  */}
 
          <div className="bg-white p-6 sm:p-8 border border-gray-200">
               <h4 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4 flex items-center gap-3">
@@ -185,7 +190,6 @@ export default function FoodPage() {
                 Food For Thought Fest has garnered significant media coverage from leading food publications, lifestyle media, and international press. The festival is recognized as a premier platform for culinary innovation and cultural exchange in the food sector.
               </p>
         </div>
-        */}
 
           {/* Festival Purpose */}
           <div className="bg-gray-50 p-6 sm:p-8 lg:p-12">
