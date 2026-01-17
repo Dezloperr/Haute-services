@@ -289,34 +289,6 @@ export default function FoodPage() {
 </div>
 
 
-          {/* Festival Purpose */}
-          <div className="bg-gray-50 p-6 sm:p-8 lg:p-12">
-            <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-4 sm:mb-6">
-              Our Purpose
-            </h3>
-            <p className="font-paragraph text-sm sm:text-base text-foreground mb-4 sm:mb-6">
-              Food For Thought Fest exists to celebrate the transformative power of food. We believe that culinary experiences can inspire creativity, foster cultural understanding, and create lasting connections between people. Through our festival, we aim to:
-            </p>
-            <ul className="space-y-3 sm:space-y-4">
-              <li className="font-paragraph text-sm sm:text-base text-foreground flex gap-3">
-                <span className="text-gold-accent font-bold flex-shrink-0">•</span>
-                <span>Showcase culinary innovation and excellence from around the world</span>
-              </li>
-              <li className="font-paragraph text-sm sm:text-base text-foreground flex gap-3">
-                <span className="text-gold-accent font-bold flex-shrink-0">•</span>
-                <span>Create platforms for meaningful dialogue about food, sustainability, and culture</span>
-              </li>
-              <li className="font-paragraph text-sm sm:text-base text-foreground flex gap-3">
-                <span className="text-gold-accent font-bold flex-shrink-0">•</span>
-                <span>Support emerging culinary talent and foster community within the food sector</span>
-              </li>
-              <li className="font-paragraph text-sm sm:text-base text-foreground flex gap-3">
-                <span className="text-gold-accent font-bold flex-shrink-0">•</span>
-                <span>Celebrate the intersection of food, art, and culture</span>
-              </li>
-            </ul>
-          </div>
-
           {/* --- VALUES (Sticky Horizontal Layout) --- */}
       <section className="py-16 sm:py-24 lg:py-32 bg-gray-50 relative overflow-hidden">
         {/* Decorative Background Text */}
