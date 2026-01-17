@@ -194,7 +194,13 @@ export default function FoodPage() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="w-full h-full bg-green-300"> </div>
+            <div className="w-full h-full bg-green-300">
+            <Image 
+                src="https://static.wixstatic.com/media/e86273_8be9805e88524811816df8ccd741b923~mv2.png?originWidth=640&originHeight=448"
+                alt="Food For Thought Fest event"
+                className="w-full h-full object-cover"
+              />
+            </div>
             </div>
               <h4 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4 flex items-center gap-3">
                 Global Reach
