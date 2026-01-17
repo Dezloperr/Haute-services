@@ -50,10 +50,10 @@ export default function ArtPage() {
             
             <div>
               <p className="font-paragraph text-sm sm:text-base text-foreground mb-4 sm:mb-6">
-                Haute Services’ art practice is a refined blend of connoisseurship, creativity, and cultural insight. From curating exhibitions to advising on portfolio acquisitions, we offer a full spectrum of art services that connect collectors, creators, and spaces with meaningful visual narratives.
+                Haute Services’ art practice is a refined blend of connoisseurship, creativity, and cultural insight. We offer a full spectrum of art services that connect collectors, creators, and spaces with meaningful visual narratives.
               </p>
               <p className="font-paragraph text-sm sm:text-base text-foreground mb-6 sm:mb-8">
-                Our work spans modern, contemporary, photographic, and sculptural art—delivered through curated shows, restoration projects, and bespoke installations in homes, galleries, and corporate environments. We believe art is more than decor; it is identity, investment, and dialogue—shaped with care and purpose.
+                Our work spans modern, contemporary, photographic, and sculptural art—delivered through curated shows, restoration projects, and bespoke installations in homes, galleries, and corporate environments. We believe art is more than decor; it is identity, investment, and dialogue shaped with care and purpose.
               </p>
               <a 
                 href="https://www.foodforthoughtfest.com" 
