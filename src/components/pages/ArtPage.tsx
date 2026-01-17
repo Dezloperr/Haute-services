@@ -339,7 +339,7 @@ export default function ArtPage() {
             Our Collection
           </h2>
           
-          <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 sm:gap-6">
+          <div className="columns-2 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 sm:gap-6">
             {[
               "https://static.wixstatic.com/media/e86273_ef52a94d65e04eb5baba36492d97c2c4~mv2.png?originWidth=576&originHeight=512",
               "https://static.wixstatic.com/media/e86273_363dd37680ec4558a9be7c69722f88c3~mv2.png?originWidth=576&originHeight=512",
