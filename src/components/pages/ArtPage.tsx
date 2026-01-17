@@ -30,14 +30,11 @@ export default function ArtPage() {
       {/* Parallax Image with Text Overlay */}
       <div className="lg:col-span-4 mb-12">
                 <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-primary mb-6">
-                  Our Initiative
+                  Art Services
                 </h2>
                 <div className="w-full h-px bg-gray-200 mb-6" />
-                <h2 className="font-heading text-xl sm:text-4xl lg:text-5xl text-gold-accent uppercase tracking-widest font-medium mb-4 sm:mb-8">
-              Food For Thought Fest
-            </h2>
             <p className="font-paragraph text-base sm:text-lg text-secondary max-w-3xl">
-              Our flagship initiative celebrating culinary excellence, innovation, and the intersection of food with culture and creativity.
+              We believe that art is a transformative force that enriches lives, inspires creativity, and connects us to our shared humanity.
             </p>
             </div>
 
