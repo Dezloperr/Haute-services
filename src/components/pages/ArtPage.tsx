@@ -294,44 +294,6 @@ export default function ArtPage() {
         </div>
       </section>
 
-      {/* Why Choose Haute Services Section */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-gray-50">
-        <div className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-primary text-center mb-12 sm:mb-20">
-            Why Choose Haute Services
-          </h2>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
-            <div className="text-center">
-              <h3 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4">
-                Deep Expertise
-              </h3>
-              <p className="font-paragraph text-sm sm:text-base text-secondary px-4">
-                Our team brings decades of combined experience in art advisory, curation, and market analysis across all periods and mediums.
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <h3 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4">
-                Extensive Network
-              </h3>
-              <p className="font-paragraph text-sm sm:text-base text-secondary px-4">
-                We maintain relationships with galleries, auction houses, artists, institutions, and collectors worldwide, providing unparalleled access to exceptional works.
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <h3 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4">
-                Personalized Approach
-              </h3>
-              <p className="font-paragraph text-sm sm:text-base text-secondary px-4">
-                We take time to understand your goals, preferences, and values, providing guidance tailored specifically to your unique situation and vision.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Masonry Grid of Art Images */}
       <section className="py-16 sm:py-24 lg:py-32">
         <div className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
