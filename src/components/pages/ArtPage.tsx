@@ -44,6 +44,60 @@ export default function ArtPage() {
     title: "Haute Services: Events. Hospitality. Art",
     summary:
       "A featured vendor profile of Haute Services outlines its blend of hospitality, events, and art. The article highlights the firm’s curated art events and exhibitions across hotels, emphasizing its role in luxury and cultural experiences.",
+  },
+  {
+    image: "https://static.wixstatic.com/media/e86273_dc97805d416d4fd9b7ba256ebd586c6d~mv2.jpeg"
+    alt: "New Wave Art Initiative – VEVA Art x Maneesh Baheti",
+    source: "Event Poster",
+    date: "Oct 5, 2024",
+    title: "New Wave Art Initiative – Inaugural Show",
+    summary:
+      "Maneesh Baheti co-hosted the launch of the 'New Wave Art Initiative' with VEVA Art, spotlighting emerging artists from the defense and civil services at The Park Hotel, Delhi.",
+  },
+  {
+    image: "https://static.wixstatic.com/media/e86273_5d4332a4599c4caf9d5f29024590904a~mv2.jpeg",
+    alt: "Present Future – A Legacy of Masters",
+    source: "ICAC / CCA Gallery",
+    date: "March 11, 2024",
+    title: "Present Future – A Legacy of Masters",
+    summary:
+      "Maneesh Baheti was a Guest of Honour at the ICAC exhibition at Bikaner House, showcasing legendary works by Indian masters and curated by Ravindra Mardia.",
+  },
+  {
+    image: "https://static.wixstatic.com/media/e86273_b9a3e9a634e64a63b461f216fc3d2a1f~mv2.jpeg",
+    alt: "Medley of Indian Visual Art – Article by Maneesh Baheti",
+    source: "CFB Connect Magazine",
+    date: "Sept 2014",
+    title: "Medley of Indian Visual Art",
+    summary:
+      "In this article, Maneesh Baheti explores the evolution and patronage of modern Indian art across centuries, tracing its institutional, royal, and regional roots.",
+  },
+  {
+    image: "https://static.wixstatic.com/media/e86273_7b42844a4d90490a9ef630c6633e7991~mv2.jpeg",
+    alt: "Atypical Corollaries – Art Magnum",
+    source: "Art Magnum Gallery",
+    date: "Oct 20, 2023",
+    title: "Atypical Corollaries – Guest of Honour",
+    summary:
+      "Art Magnum hosted this curated show featuring artists from Baroda. Maneesh Baheti was invited as Guest of Honour for his continued patronage and leadership in art advisory.",
+  },
+  {
+    image: "https://static.wixstatic.com/media/e86273_416886f4fae741b2b9e751b80983d9ec~mv2.jpeg",
+    alt: "A Way to Bengal – Affordable Contemporary Art Show",
+    source: "Newspaper Feature",
+    date: "March 22, 2023",
+    title: "A Way to Bengal – Bengal Contemporary Art Exhibition",
+    summary:
+      "This show, supported by Haute Services, brought Bengal's finest contemporary artists to the capital. It highlighted Kalighat-inspired techniques and affordable modern art.",
+  },
+  {
+    image: "https://static.wixstatic.com/media/e86273_c9dc5a71319a4f1981a7a30ffe340045~mv2.jpeg",
+    alt: "Art for Concern Annual Show 2019",
+    source: "Le Meridien Gurgaon",
+    date: "July 17, 2019",
+    title: "Art for Concern – Annual Show with Maneesh Baheti",
+    summary:
+      "Promoted by Haute Services and Secure Giving, this annual exhibition brought together emerging and mid-career artists. The event featured a preview cocktail evening.",
   }
 ];
 
