@@ -19,15 +19,6 @@ export default function ArtPage() {
       "Manish K Baheti - Zee Business News feature",
   },
   {
-    image: "https://static.wixstatic.com/media/e86273_74c9b196b37b4ddf8324ae6e852626e5~mv2.png", // replace with real image if needed
-    alt: "Outlook India - Maneesh Baheti",
-    source: "Outlook India",
-    date: "Nov 28, 2009",
-    title: "Maneesh Baheti: A Visionary In Lifestyle Consultancy & Gastronomy",
-    summary:
-      "Outlook India’s Hub4Business profile highlights Maneesh Baheti’s founding of Haute Services, offering Art Advisory and Lifestyle Events. It references curated exhibitions like the AIRA Waterside Bar launch and emphasizes Haute’s mission to integrate art, lifestyle, and culinary excellence.",
-  },
-  {
     image: "https://i.ytimg.com/vi/GSCzD65RhG0/maxresdefault.jpg", // placeholder for Awadh Art Festival
     alt: "Awadh Art Festival",
     source: "Press Corridor",
@@ -35,6 +26,15 @@ export default function ArtPage() {
     title: "AWADH ART FESTIVAL – The 5th Edition at Visual Arts Gallery, Delhi",
     summary:
       "Maneesh Baheti was a guest at the 5th Awadh Art Festival, held at India Habitat Centre. The event featured artists from India and Bangladesh and recognized Maneesh for his contributions to the art community through Haute Services.",
+  },
+  {
+    image: "https://static.wixstatic.com/media/e86273_74c9b196b37b4ddf8324ae6e852626e5~mv2.png", // replace with real image if needed
+    alt: "Outlook India - Maneesh Baheti",
+    source: "Outlook India",
+    date: "Nov 28, 2009",
+    title: "Maneesh Baheti: A Visionary In Lifestyle Consultancy & Gastronomy",
+    summary:
+      "Outlook India’s Hub4Business profile highlights Maneesh Baheti’s founding of Haute Services, offering Art Advisory and Lifestyle Events. It references curated exhibitions like the AIRA Waterside Bar launch and emphasizes Haute’s mission to integrate art, lifestyle, and culinary excellence.",
   },
   {
     image: "https://images.unsplash.com/photo-1549921296-3a12ce38d6f8", // placeholder, swap with GCR image if available
@@ -381,7 +381,7 @@ export default function ArtPage() {
             <div key={i} className="bg-white overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
               <div className="overflow-hidden">
                 <Image 
-                  src="https://static.wixstatic.com/media/e86273_ef52a94d65e04eb5baba36492d97c2c4~mv2.png?originWidth=576&originHeight=512"
+                  src={art.image}
                   alt="Featured in Art Magazine"
                   className="w-full h-[240px] object-cover hover:scale-105 transition-transform duration-500"
                   width={600}
@@ -389,13 +389,13 @@ export default function ArtPage() {
               </div>
               <div className="p-6">
                 <p className="font-paragraph text-xs sm:text-sm text-secondary mb-2">
-                  Art Magazine • December 2025
+                  {art.source} • {art.date}
                 </p>
                 <h3 className="font-heading text-xl sm:text-2xl text-primary mb-3">
-                  The Future of Art Advisory
+                  {art.title}
                 </h3>
                 <p className="font-paragraph text-sm sm:text-base text-foreground">
-                  Haute Services is redefining the art advisory landscape with innovative approaches to collection building and client relationships.
+                  {art.summary}
                 </p>
               </div>
             </div>
