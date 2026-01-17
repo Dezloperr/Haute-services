@@ -8,6 +8,37 @@ import { ExternalLink } from 'lucide-react';
 export default function ArtPage() {
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
 
+  const artFeatures = [
+  {
+    image: "https://static.wixstatic.com/media/e86273_74c9b196b37b4ddf8324ae6e852626e5~mv2.png", // replace with real image if needed
+    alt: "Outlook India - Maneesh Baheti",
+    source: "Outlook India",
+    date: "Nov 28, 2024",
+    title: "Maneesh Baheti: A Visionary In Lifestyle Consultancy & Gastronomy",
+    summary:
+      "Outlook India’s Hub4Business profile highlights Maneesh Baheti’s founding of Haute Services, offering Art Advisory and Lifestyle Events. It references curated exhibitions like the AIRA Waterside Bar launch and emphasizes Haute’s mission to integrate art, lifestyle, and culinary excellence.",
+  },
+  {
+    image: "https://i.ytimg.com/vi/GSCzD65RhG0/maxresdefault.jpg", // placeholder for Awadh Art Festival
+    alt: "Awadh Art Festival",
+    source: "Press Corridor",
+    date: "Feb 13, 2023",
+    title: "AWADH ART FESTIVAL – The 5th Edition at Visual Arts Gallery, Delhi",
+    summary:
+      "Maneesh Baheti was a guest at the 5th Awadh Art Festival, held at India Habitat Centre. The event featured artists from India and Bangladesh and recognized Maneesh for his contributions to the art community through Haute Services.",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1549921296-3a12ce38d6f8", // placeholder, swap with GCR image if available
+    alt: "Haute Services – Global Consultants Review",
+    source: "Global Consultants Review",
+    date: "Nov 2017",
+    title: "Haute Services: Events. Hospitality. Art",
+    summary:
+      "A featured vendor profile of Haute Services outlines its blend of hospitality, events, and art. The article highlights the firm’s curated art events and exhibitions across hotels, emphasizing its role in luxury and cultural experiences.",
+  }
+];
+
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -337,8 +368,9 @@ export default function ArtPage() {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+          {artFeatures.map(art, i) => (
             {/* Media Card 1 */}
-            <div className="bg-white overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+            <div key={i} className="bg-white overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
               <div className="overflow-hidden">
                 <Image 
                   src="https://static.wixstatic.com/media/e86273_ef52a94d65e04eb5baba36492d97c2c4~mv2.png?originWidth=576&originHeight=512"
@@ -359,6 +391,7 @@ export default function ArtPage() {
                 </p>
               </div>
             </div>
+          )}
 
             {/* Media Card 2 */}
             <div className="bg-white overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
