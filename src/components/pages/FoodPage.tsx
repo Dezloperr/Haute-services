@@ -273,7 +273,7 @@ export default function FoodPage() {
   </div>
 
   {/* Masonry Grid */}
-  <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+  <div className="columns-2 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
     {mediaImages.map((img, index) => (
       <div
         key={index}
