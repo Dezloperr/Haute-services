@@ -123,7 +123,6 @@ export default function FoodPage() {
                 <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-primary mb-6">
                   Our Initiative
                 </h2>
-                <div className="w-full h-px bg-gray-200 mb-6" />
                 <h2 className="font-heading text-xl sm:text-4xl lg:text-5xl text-gold-accent uppercase tracking-widest font-medium mb-4 sm:mb-8">
               Food For Thought Fest
             </h2>
