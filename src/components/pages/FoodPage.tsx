@@ -214,7 +214,6 @@ export default function FoodPage() {
           <div
             key={`${loopIndex}-${index}`}
             className="flex-shrink-0 text-center mx-8" // spacing between items
-            style={{ minWidth: "180px" }}             // ⬅ prevents overlap
           >
             <div className="w-32 h-32 mx-auto mb-3">
               <Image
