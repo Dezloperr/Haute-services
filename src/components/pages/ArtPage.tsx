@@ -41,7 +41,7 @@ export default function ArtPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-24 items-start mb-12 sm:mb-20">
             <div>
               <Image 
-                src="https://static.wixstatic.com/media/e86273_8be9805e88524811816df8ccd741b923~mv2.png?originWidth=640&originHeight=448"
+                src="https://static.wixstatic.com/media/e86273_2a2d0a14f8234859bb245ae0f44ab2fa~mv2.webp"
                 alt="Food For Thought Fest event"
                 className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover mb-4 sm:mb-8"
                 width={700}
