@@ -46,7 +46,7 @@ export default function ArtPage() {
       "A featured vendor profile of Haute Services outlines its blend of hospitality, events, and art. The article highlights the firm’s curated art events and exhibitions across hotels, emphasizing its role in luxury and cultural experiences.",
   },
   {
-    image: "https://static.wixstatic.com/media/e86273_dc97805d416d4fd9b7ba256ebd586c6d~mv2.jpeg"
+    image: "https://static.wixstatic.com/media/e86273_dc97805d416d4fd9b7ba256ebd586c6d~mv2.jpeg",
     alt: "New Wave Art Initiative – VEVA Art x Maneesh Baheti",
     source: "Event Poster",
     date: "Oct 5, 2024",
