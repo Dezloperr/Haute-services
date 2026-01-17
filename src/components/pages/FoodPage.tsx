@@ -322,7 +322,7 @@ export default function FoodPage() {
         {/* Decorative Background Text */}
         <div className="absolute top-20 left-0 w-full overflow-hidden opacity-[0.03] pointer-events-none">
           <div className="whitespace-nowrap font-heading text-[8rem] sm:text-[12rem] lg:text-[15rem] leading-none">
-            Values Values Values Values
+            Food Food Food Food
           </div>
         </div>
 
