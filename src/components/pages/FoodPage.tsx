@@ -186,7 +186,7 @@ export default function FoodPage() {
           {/* Festival Details Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 mb-12 sm:mb-20">
             <div className="bg-white p-6 sm:p-8 border border-gray-200">
-            <div className="w-full h-[25vh] bg-red-400 mb-2">
+            <div className="w-full flex overflow-hidden h-[25vh] bg-red-400 mb-2">
             <div className="w-full h-full bg-blue-300"> </div>
             <div className="w-full h-full bg-green-300"> </div>
             </div>
