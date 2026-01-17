@@ -137,7 +137,7 @@ export default function FoodPage() {
               <Image 
                 src="https://static.wixstatic.com/media/e86273_8be9805e88524811816df8ccd741b923~mv2.png?originWidth=640&originHeight=448"
                 alt="Food For Thought Fest event"
-                className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover mb-6 sm:mb-8"
+                className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover mb-4 sm:mb-8"
                 width={700}
               />
             </div>
