@@ -223,7 +223,9 @@ export default function FoodPage() {
             </div>
 
             <div className="bg-white p-6 sm:p-8 border border-gray-200">
-            <div className="w-full h-[25vh] bg-red-400 mb-2"></div>
+            <div className="w-full h-[25vh] bg-red-400 mb-2"
+            <Image src={"https://static.wixstatic.com/media/e86273_4b4406396ff744c6a2c5167c049683cb~mv2.webp"} alt="festival format" className="w-full h-full object-cover" />
+            </div>
               <h4 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4 flex items-center gap-3">
                 Participants & Community
               </h4>
