@@ -189,14 +189,14 @@ export default function FoodPage() {
             <div className="w-full flex overflow-hidden h-[25vh] bg-red-400 mb-2">
             <div className="w-full h-full bg-blue-300">
              <Image 
-                src="https://static.wixstatic.com/media/e86273_8be9805e88524811816df8ccd741b923~mv2.png?originWidth=640&originHeight=448"
+                src="https://static.wixstatic.com/media/e86273_52d140f0002546278574bc771a4ff761~mv2.avif"
                 alt="Food For Thought Fest event"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="w-full h-full bg-green-300">
             <Image 
-                src="https://static.wixstatic.com/media/e86273_8be9805e88524811816df8ccd741b923~mv2.png?originWidth=640&originHeight=448"
+                src="https://static.wixstatic.com/media/e86273_c27bff7ad88a45dbad18f3d5d26d1756~mv2.avif"
                 alt="Food For Thought Fest event"
                 className="w-full h-full object-cover"
               />
