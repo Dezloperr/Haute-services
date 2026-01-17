@@ -26,6 +26,7 @@ export default function ArtPage() {
         </div>
       </section>
 
+<section className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
       {/* Parallax Image with Text Overlay */}
       <div className="lg:col-span-4 mb-12">
                 <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-primary mb-6">
@@ -72,6 +73,7 @@ export default function ArtPage() {
               </a>
             </div>
           </div>
+          </section>
 
       {/* Our Services Section with Enhanced Boxes */}
       <section className="py-16 sm:py-24 lg:py-32">
