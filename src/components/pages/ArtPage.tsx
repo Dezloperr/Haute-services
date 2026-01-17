@@ -19,7 +19,7 @@ export default function ArtPage() {
       "Manish K Baheti - Zee Business News feature",
   },
   {
-    image: "https://i.ytimg.com/vi/GSCzD65RhG0/maxresdefault.jpg", // placeholder for Awadh Art Festival
+    image: "https://static.wixstatic.com/media/e86273_6348e1a2c4b049ebacad9b8a8135238b~mv2.jpeg",
     alt: "Awadh Art Festival",
     source: "Press Corridor",
     date: "Feb 13, 2023",
