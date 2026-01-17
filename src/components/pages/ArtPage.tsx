@@ -437,7 +437,7 @@ export default function ArtPage() {
                 <Image 
                   src={art.image}
                   alt="Featured in Art Magazine"
-                  className="w-full h-[240px] object-cover hover:scale-105 transition-transform duration-500"
+                  className="w-full h-[300px] object-cover hover:scale-105 transition-transform duration-500"
                   width={600}
                 />
               </div>
