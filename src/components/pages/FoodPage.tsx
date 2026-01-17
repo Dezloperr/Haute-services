@@ -213,7 +213,7 @@ export default function FoodPage() {
         {chefData.map((chef, index) => (
           <div
             key={`${loopIndex}-${index}`}
-            className="flex-shrink-0 text-center bg-red-400 mx-8" // spacing between items
+            className="flex-shrink-0 text-center mx-8"
           >
             <div className="w-32 h-32 mx-auto mb-3">
               <Image
