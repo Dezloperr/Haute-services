@@ -368,7 +368,7 @@ export default function ArtPage() {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
-          {artFeatures.map(art, i) => (
+          {artFeatures.map((art, i) => (
             <div key={i} className="bg-white overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
               <div className="overflow-hidden">
                 <Image 
@@ -390,7 +390,7 @@ export default function ArtPage() {
                 </p>
               </div>
             </div>
-          )}
+          ))}
 
             {/* Media Card 2 */}
             <div className="bg-white overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
