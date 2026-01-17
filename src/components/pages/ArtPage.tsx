@@ -25,20 +25,6 @@ export default function ArtPage() {
         </div>
       </section>
 
-      {/* Inspirational Quote Section */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-gray-50">
-        <div className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="text-center max-w-5xl mx-auto">
-            <p className="font-heading text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-primary italic leading-tight px-4">
-              "Every artist dips his brush in his own soul, and paints his own nature into his pictures."
-            </p>
-            <p className="font-paragraph text-base sm:text-lg text-secondary mt-6 sm:mt-8">
-              — Henry Ward Beecher
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Parallax Image with Text Overlay */}
       <section className="relative h-[500px] sm:h-[600px] lg:h-[700px] overflow-hidden">
         <div 
