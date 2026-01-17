@@ -332,7 +332,6 @@ export default function FoodPage() {
             {/* Sticky Header */}
             <div className="lg:col-span-4">
               <div className="lg:sticky lg:top-32">
-                <AnimatedElement>
                   <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-primary mb-6 sm:mb-8">
                     Core Values
                   </h2>
@@ -340,7 +339,6 @@ export default function FoodPage() {
                     The principles that guide our every interaction and decision.
                   </p>
                   <div className="hidden lg:block w-24 h-px bg-gold-accent" />
-                </AnimatedElement>
               </div>
             </div>
 
