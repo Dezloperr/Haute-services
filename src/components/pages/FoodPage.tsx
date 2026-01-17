@@ -143,7 +143,7 @@ export default function FoodPage() {
             </div>
             
             <div>
-              <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-4 sm:mb-4">
+              <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-4 sm:mb-6">
                 Festival Overview
               </h3>
               <p className="font-paragraph text-sm sm:text-base text-foreground mb-4 sm:mb-6">
