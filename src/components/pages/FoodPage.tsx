@@ -298,6 +298,57 @@ export default function FoodPage() {
               </li>
             </ul>
           </div>
+
+          {/* --- VALUES (Sticky Horizontal Layout) --- */}
+      <section className="py-16 sm:py-24 lg:py-32 bg-gray-50 relative overflow-hidden">
+        {/* Decorative Background Text */}
+        <div className="absolute top-20 left-0 w-full overflow-hidden opacity-[0.03] pointer-events-none">
+          <div className="whitespace-nowrap font-heading text-[8rem] sm:text-[12rem] lg:text-[15rem] leading-none">
+            Values Values Values Values
+          </div>
+        </div>
+
+        <div className="max-w-[120rem] mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="grid lg:grid-cols-12 gap-8 sm:gap-12">
+            
+            {/* Sticky Header */}
+            <div className="lg:col-span-4">
+              <div className="lg:sticky lg:top-32">
+                <AnimatedElement>
+                  <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-primary mb-6 sm:mb-8">
+                    Core Values
+                  </h2>
+                  <p className="text-secondary text-base sm:text-lg max-w-xs mb-8 sm:mb-12">
+                    The principles that guide our every interaction and decision.
+                  </p>
+                  <div className="hidden lg:block w-24 h-px bg-gold-accent" />
+                </AnimatedElement>
+              </div>
+            </div>
+
+            {/* Cards Grid */}
+            <div className="lg:col-span-8">
+              <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
+                {values.map((value, idx) => (
+                  <AnimatedElement 
+                    key={value.title} 
+                    delay={idx * 100}
+                    className={`bg-white p-6 sm:p-10 border border-gray-100 hover:border-gold-accent/30 transition-colors duration-300 ${idx === 2 ? 'md:col-span-2 md:w-1/2' : ''}`}
+                  >
+                    <value.icon className="w-8 h-8 text-gold-accent mb-6" strokeWidth={1.5} />
+                    <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-4">
+                      {value.title}
+                    </h3>
+                    <p className="text-secondary text-sm sm:text-base leading-relaxed">
+                      {value.description}
+                    </p>
+                  </AnimatedElement>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
         </div>
       </section>
 
