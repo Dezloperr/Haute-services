@@ -65,17 +65,17 @@ const AnimatedElement: React.FC<AnimatedElementProps> = ({
 const values = [
     {
       title: "Excellence",
-      description: "We maintain the highest standards in everything we do, ensuring exceptional results for our clients.",
+      description: "Showcase culinary innovation and excellence from around the world.",
       icon: Star
     },
     {
       title: "Authenticity",
-      description: "We believe in genuine connections and authentic experiences that resonate with audiences.",
+      description: "Create platforms for meaningful dialogue about food, sustainability, and culture.",
       icon: Heart
     },
     {
       title: "Innovation",
-      description: "We continuously explore new ideas and approaches to create unique and memorable experiences.",
+      description: "Celebrate the intersection of food, art, and culture.",
       icon: Lightbulb
     }
   ];
@@ -333,10 +333,10 @@ export default function FoodPage() {
             <div className="lg:col-span-4">
               <div className="lg:sticky lg:top-32">
                   <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-primary mb-6 sm:mb-8">
-                    Core Values
+                    Our Purpose
                   </h2>
                   <p className="text-secondary text-base sm:text-lg max-w-xs mb-8 sm:mb-12">
-                    The principles that guide our every interaction and decision.
+                    Food For Thought Fest exists to celebrate the transformative power of food. We believe that culinary experiences can inspire creativity, foster cultural understanding, and create lasting connections between people. Through our festival, we aim to:
                   </p>
                   <div className="hidden lg:block w-24 h-px bg-gold-accent" />
               </div>
