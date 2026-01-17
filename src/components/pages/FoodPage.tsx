@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import ContactDialog from '@/components/ContactDialog';
 import { BaseCrudService } from '@/integrations';
 import { Services } from '@/entities';
-import { ExternalLink, Award, Globe, Users, Sparkles } from 'lucide-react';
+import { ExternalLink, Award, Star, Heart, Lightbulb, Globe, Users, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
