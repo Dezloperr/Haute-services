@@ -3,6 +3,7 @@ import { Image } from '@/components/ui/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactDialog from '@/components/ContactDialog';
+import { ExternalLink } from 'lucide-react';
 
 export default function ArtPage() {
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
@@ -26,27 +27,51 @@ export default function ArtPage() {
       </section>
 
       {/* Parallax Image with Text Overlay */}
-      <section className="relative h-[500px] sm:h-[600px] lg:h-[700px] overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-fixed"
-          style={{
-            backgroundImage: 'url(https://static.wixstatic.com/media/e86273_ac8a530d1a5f432aa03681dba1b67ebc~mv2.png?originWidth=1920&originHeight=1024)',
-          }}
-        >
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
-        
-        <div className="relative z-10 h-full flex items-center justify-center px-4 sm:px-6">
-          <div className="text-center max-w-4xl">
-            <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white mb-6 sm:mb-8">
-              Transforming Spaces Through Art
+      <div className="lg:col-span-4 mb-12">
+                <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-primary mb-6">
+                  Our Initiative
+                </h2>
+                <div className="w-full h-px bg-gray-200 mb-6" />
+                <h2 className="font-heading text-xl sm:text-4xl lg:text-5xl text-gold-accent uppercase tracking-widest font-medium mb-4 sm:mb-8">
+              Food For Thought Fest
             </h2>
-            <p className="font-paragraph text-lg sm:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto">
-              We bring vision to life through carefully curated collections that inspire and elevate
+            <p className="font-paragraph text-base sm:text-lg text-secondary max-w-3xl">
+              Our flagship initiative celebrating culinary excellence, innovation, and the intersection of food with culture and creativity.
             </p>
+            </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-24 items-start mb-12 sm:mb-20">
+            <div>
+              <Image 
+                src="https://static.wixstatic.com/media/e86273_8be9805e88524811816df8ccd741b923~mv2.png?originWidth=640&originHeight=448"
+                alt="Food For Thought Fest event"
+                className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover mb-4 sm:mb-8"
+                width={700}
+              />
+            </div>
+            
+            <div>
+              <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-2 sm:mb-6">
+                Festival Overview
+              </h3>
+              <p className="font-paragraph text-sm sm:text-base text-foreground mb-4 sm:mb-6">
+                Food For Thought Fest is an annual celebration of culinary excellence that brings together renowned chefs, food artisans, innovators, and enthusiasts from around the world. The festival is a platform for exploring contemporary cuisine, celebrating culinary traditions, and fostering meaningful conversations about the future of food.
+              </p>
+              <p className="font-paragraph text-sm sm:text-base text-foreground mb-6 sm:mb-8">
+                Each edition features interactive demonstrations, exclusive tastings, panel discussions with industry leaders, and immersive experiences that engage all the senses. It's where innovation meets tradition, and where food becomes art.
+              </p>
+              <a 
+                href="https://www.foodforthoughtfest.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <button className="bg-gold-accent text-secondary-foreground border-none rounded px-4 sm:px-6 py-2 sm:py-3 font-paragraph text-sm sm:text-base hover:opacity-90 transition-opacity flex items-center gap-2">
+                  Visit Festival Website
+                  <ExternalLink size={16} />
+                </button>
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
 
       {/* Our Services Section with Enhanced Boxes */}
       <section className="py-16 sm:py-24 lg:py-32">
