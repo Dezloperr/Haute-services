@@ -1,102 +1,11 @@
-import { useEffect, useState, useRef } from 'react';
+import { useState } from 'react';
 import { Image } from '@/components/ui/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactDialog from '@/components/ContactDialog';
-import { BaseCrudService } from '@/integrations';
-import { Services } from '@/entities';
-import { Palette, Building2, Users, Lightbulb, Award, Compass, Mail, Send } from 'lucide-react';
-import { Link } from 'react-router-dom';
-
-/**
- * AnimatedElement: A reusable component for scroll-triggered reveals using IntersectionObserver.
- * Adheres to the "Safety & Performance" mandate.
- */
-type AnimatedElementProps = {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-  animation?: 'fade-up' | 'fade-in' | 'slide-in-right';
-};
-
-const AnimatedElement: React.FC<AnimatedElementProps> = ({ 
-  children, 
-  className = '', 
-  delay = 0,
-  animation = 'fade-up' 
-}) => {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
-
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        // Add a small delay via style if needed, or just let CSS handle the transition
-        setTimeout(() => {
-          element.classList.add('is-visible');
-        }, delay);
-        observer.unobserve(element);
-      }
-    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
-
-    observer.observe(element);
-    return () => observer.disconnect();
-  }, [delay]);
-
-  const getAnimationClass = () => {
-    switch (animation) {
-      case 'fade-in': return 'opacity-0 transition-opacity duration-1000 ease-out';
-      case 'slide-in-right': return 'opacity-0 translate-x-10 transition-all duration-1000 ease-out';
-      case 'fade-up': default: return 'opacity-0 translate-y-8 transition-all duration-1000 ease-out';
-    }
-  };
-
-  return (
-    <div ref={ref} className={`${getAnimationClass()} ${className} group`}>
-      {children}
-    </div>
-  );
-};
 
 export default function ArtPage() {
-  const [artServices, setArtServices] = useState<Services[]>([]);
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
-  const [email, setEmail] = useState('');
-  const [contactEmail, setContactEmail] = useState('');
-  const [contactMessage, setContactMessage] = useState('');
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-
-  useEffect(() => {
-    async function loadServices() {
-      const { items } = await BaseCrudService.getAll<Services>('services');
-      const art = items.filter(s => s.serviceCategory === 'Art');
-      setArtServices(art);
-    }
-    loadServices();
-  }, []);
-
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitStatus('loading');
-    setTimeout(() => {
-      setSubmitStatus('success');
-      setEmail('');
-      setTimeout(() => setSubmitStatus('idle'), 3000);
-    }, 500);
-  };
-
-  const handleContactSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitStatus('loading');
-    setTimeout(() => {
-      setSubmitStatus('success');
-      setContactEmail('');
-      setContactMessage('');
-      setTimeout(() => setSubmitStatus('idle'), 3000);
-    }, 500);
-  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -183,182 +92,210 @@ export default function ArtPage() {
             </p>
           </div>
           
-          {artServices.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
-              {artServices.map((service) => (
-                <div key={service._id} className="bg-white border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                  {service.serviceImage && (
-                    <div className="overflow-hidden">
-                      <Image 
-                        src={service.serviceImage}
-                        alt={service.serviceName || 'Service image'}
-                        className="w-full h-[280px] sm:h-[320px] lg:h-[380px] object-cover hover:scale-105 transition-transform duration-500"
-                        width={700}
-                      />
-                    </div>
-                  )}
-                  <div className="p-6 sm:p-8">
-                    <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-4">
-                      {service.serviceName}
-                    </h3>
-                    <p className="font-paragraph text-sm sm:text-base text-secondary mb-4">
-                      {service.shortDescription}
-                    </p>
-                    {service.detailedDescription && (
-                      <p className="font-paragraph text-sm sm:text-base text-foreground mb-6">
-                        {service.detailedDescription}
-                      </p>
-                    )}
-                    {service.callToActionUrl && (
-                      <a 
-                        href={service.callToActionUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                      >
-                        <button className="bg-transparent text-foreground border border-foreground rounded px-6 py-3 font-paragraph text-sm sm:text-base hover:bg-foreground hover:text-primary-foreground transition-colors">
-                          Learn More
-                        </button>
-                      </a>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
-              <div className="bg-white border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                <div className="overflow-hidden">
-                  <Image 
-                    src="https://static.wixstatic.com/media/e86273_59bcb9acc97741338c7c0cae8fb10323~mv2.png?originWidth=576&originHeight=384"
-                    alt="Art collection building"
-                    className="w-full h-[280px] sm:h-[320px] lg:h-[380px] object-cover hover:scale-105 transition-transform duration-500"
-                    width={700}
-                  />
-                </div>
-                <div className="p-6 sm:p-8">
-                  <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-4">
-                    Collection Building
-                  </h3>
-                  <p className="font-paragraph text-sm sm:text-base text-secondary mb-4">
-                    Strategic acquisition and collection development services.
-                  </p>
-                  <p className="font-paragraph text-sm sm:text-base text-foreground">
-                    We work closely with clients to identify and acquire works that align with their vision and goals. Our services include market research, artist due diligence, negotiation, and transaction management.
-                  </p>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
+            {/* Curation of Art Shows & Events */}
+            <div className="bg-white border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div className="overflow-hidden">
+                <Image 
+                  src="https://static.wixstatic.com/media/e86273_ff32664b46b049fb9955f331e036f25a~mv2.png?originWidth=576&originHeight=384"
+                  alt="Curation of Art Shows & Events"
+                  className="w-full h-[280px] sm:h-[320px] lg:h-[380px] object-cover hover:scale-105 transition-transform duration-500"
+                  width={700}
+                />
               </div>
-              
-              <div className="bg-white border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                <div className="overflow-hidden">
-                  <Image 
-                    src="https://static.wixstatic.com/media/e86273_efc4aec961cb4972a28283597cf1f662~mv2.png?originWidth=576&originHeight=384"
-                    alt="Art collection management"
-                    className="w-full h-[280px] sm:h-[320px] lg:h-[380px] object-cover hover:scale-105 transition-transform duration-500"
-                    width={700}
-                  />
-                </div>
-                <div className="p-6 sm:p-8">
-                  <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-4">
-                    Collection Management
-                  </h3>
-                  <p className="font-paragraph text-sm sm:text-base text-secondary mb-4">
-                    Comprehensive care and management of art collections.
-                  </p>
-                  <p className="font-paragraph text-sm sm:text-base text-foreground">
-                    Our collection management services include cataloging, conservation coordination, insurance valuation, and installation planning. We ensure your collection is properly documented and maintained.
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-white border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                <div className="overflow-hidden">
-                  <Image 
-                    src="https://static.wixstatic.com/media/e86273_ff32664b46b049fb9955f331e036f25a~mv2.png?originWidth=576&originHeight=384"
-                    alt="Exhibition and curation services"
-                    className="w-full h-[280px] sm:h-[320px] lg:h-[380px] object-cover hover:scale-105 transition-transform duration-500"
-                    width={700}
-                  />
-                </div>
-                <div className="p-6 sm:p-8">
-                  <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-4">
-                    Exhibition & Curation
-                  </h3>
-                  <p className="font-paragraph text-sm sm:text-base text-secondary mb-4">
-                    Professional curation and exhibition planning services.
-                  </p>
-                  <p className="font-paragraph text-sm sm:text-base text-foreground">
-                    We design and curate exhibitions that tell compelling stories and engage audiences. From concept development to installation, we manage all aspects of exhibition planning.
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-white border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                <div className="overflow-hidden">
-                  <Image 
-                    src="https://static.wixstatic.com/media/e86273_dff03bcb748b4d99ade1f82f4d8faa48~mv2.png?originWidth=576&originHeight=384"
-                    alt="Art valuation and appraisal"
-                    className="w-full h-[280px] sm:h-[320px] lg:h-[380px] object-cover hover:scale-105 transition-transform duration-500"
-                    width={700}
-                  />
-                </div>
-                <div className="p-6 sm:p-8">
-                  <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-4">
-                    Valuation & Appraisal
-                  </h3>
-                  <p className="font-paragraph text-sm sm:text-base text-secondary mb-4">
-                    Expert valuation and appraisal services for insurance and estate purposes.
-                  </p>
-                  <p className="font-paragraph text-sm sm:text-base text-foreground">
-                    We provide comprehensive valuations based on current market conditions and comparable sales. Our appraisals are recognized by insurance companies and estate planners.
-                  </p>
-                </div>
+              <div className="p-6 sm:p-8">
+                <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-4">
+                  Curation of Art Shows & Events
+                </h3>
+                <p className="font-paragraph text-sm sm:text-base text-secondary mb-4">
+                  Professional curation and exhibition planning services.
+                </p>
+                <p className="font-paragraph text-sm sm:text-base text-foreground mb-6">
+                  We design and curate exhibitions that tell compelling stories and engage audiences. From concept development to installation, we manage all aspects of exhibition planning.
+                </p>
+                <button className="bg-transparent text-foreground border border-foreground rounded px-6 py-3 font-paragraph text-sm sm:text-base hover:bg-foreground hover:text-primary-foreground transition-colors">
+                  Learn More
+                </button>
               </div>
             </div>
-          )}
+
+            {/* Buying & Selling of Artworks */}
+            <div className="bg-white border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div className="overflow-hidden">
+                <Image 
+                  src="https://static.wixstatic.com/media/e86273_59bcb9acc97741338c7c0cae8fb10323~mv2.png?originWidth=576&originHeight=384"
+                  alt="Buying & Selling of Artworks"
+                  className="w-full h-[280px] sm:h-[320px] lg:h-[380px] object-cover hover:scale-105 transition-transform duration-500"
+                  width={700}
+                />
+              </div>
+              <div className="p-6 sm:p-8">
+                <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-4">
+                  Buying & Selling of Artworks
+                </h3>
+                <p className="font-paragraph text-sm sm:text-base text-secondary mb-4">
+                  Strategic acquisition and sales services for collectors.
+                </p>
+                <p className="font-paragraph text-sm sm:text-base text-foreground mb-6">
+                  We work closely with clients to identify and acquire works that align with their vision. Our services include market research, artist due diligence, negotiation, and transaction management.
+                </p>
+                <button className="bg-transparent text-foreground border border-foreground rounded px-6 py-3 font-paragraph text-sm sm:text-base hover:bg-foreground hover:text-primary-foreground transition-colors">
+                  Learn More
+                </button>
+              </div>
+            </div>
+
+            {/* Art Restoration */}
+            <div className="bg-white border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div className="overflow-hidden">
+                <Image 
+                  src="https://static.wixstatic.com/media/e86273_54073ef0a80d47d39fcdfe1283821701~mv2.png?originWidth=576&originHeight=512"
+                  alt="Art Restoration"
+                  className="w-full h-[280px] sm:h-[320px] lg:h-[380px] object-cover hover:scale-105 transition-transform duration-500"
+                  width={700}
+                />
+              </div>
+              <div className="p-6 sm:p-8">
+                <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-4">
+                  Art Restoration
+                </h3>
+                <p className="font-paragraph text-sm sm:text-base text-secondary mb-4">
+                  Expert restoration and conservation services.
+                </p>
+                <p className="font-paragraph text-sm sm:text-base text-foreground mb-6">
+                  Our restoration specialists work with the finest conservators to restore and preserve artworks. We coordinate all aspects of conservation, ensuring your pieces are handled with the utmost care.
+                </p>
+                <button className="bg-transparent text-foreground border border-foreground rounded px-6 py-3 font-paragraph text-sm sm:text-base hover:bg-foreground hover:text-primary-foreground transition-colors">
+                  Learn More
+                </button>
+              </div>
+            </div>
+
+            {/* Valuation of Art Portfolios */}
+            <div className="bg-white border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div className="overflow-hidden">
+                <Image 
+                  src="https://static.wixstatic.com/media/e86273_dff03bcb748b4d99ade1f82f4d8faa48~mv2.png?originWidth=576&originHeight=384"
+                  alt="Valuation of Art Portfolios"
+                  className="w-full h-[280px] sm:h-[320px] lg:h-[380px] object-cover hover:scale-105 transition-transform duration-500"
+                  width={700}
+                />
+              </div>
+              <div className="p-6 sm:p-8">
+                <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-4">
+                  Valuation of Art Portfolios
+                </h3>
+                <p className="font-paragraph text-sm sm:text-base text-secondary mb-4">
+                  Expert valuation and appraisal services for insurance and estate purposes.
+                </p>
+                <p className="font-paragraph text-sm sm:text-base text-foreground mb-6">
+                  We provide comprehensive valuations based on current market conditions and comparable sales. Our appraisals are recognized by insurance companies and estate planners.
+                </p>
+                <button className="bg-transparent text-foreground border border-foreground rounded px-6 py-3 font-paragraph text-sm sm:text-base hover:bg-foreground hover:text-primary-foreground transition-colors">
+                  Learn More
+                </button>
+              </div>
+            </div>
+
+            {/* Art Portfolio Management */}
+            <div className="bg-white border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div className="overflow-hidden">
+                <Image 
+                  src="https://static.wixstatic.com/media/e86273_efc4aec961cb4972a28283597cf1f662~mv2.png?originWidth=576&originHeight=384"
+                  alt="Art Portfolio Management"
+                  className="w-full h-[280px] sm:h-[320px] lg:h-[380px] object-cover hover:scale-105 transition-transform duration-500"
+                  width={700}
+                />
+              </div>
+              <div className="p-6 sm:p-8">
+                <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-4">
+                  Art Portfolio Management
+                </h3>
+                <p className="font-paragraph text-sm sm:text-base text-secondary mb-4">
+                  Comprehensive care and management of art collections.
+                </p>
+                <p className="font-paragraph text-sm sm:text-base text-foreground mb-6">
+                  Our portfolio management services include cataloging, conservation coordination, insurance valuation, and installation planning. We ensure your collection is properly documented and maintained.
+                </p>
+                <button className="bg-transparent text-foreground border border-foreground rounded px-6 py-3 font-paragraph text-sm sm:text-base hover:bg-foreground hover:text-primary-foreground transition-colors">
+                  Learn More
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Spaces We Work With Section */}
-      <section className="py-16 sm:py-24 lg:py-32">
+      <section className="py-16 sm:py-24 lg:py-32 bg-gray-50">
         <div className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-primary text-center mb-12 sm:mb-20">
             Spaces We Work With
           </h2>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
-            <div className="bg-white p-6 sm:p-8 border border-gray-200">
-              <h4 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4 flex items-center gap-3">
-                Museums & Institutions
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+            {/* Art Types */}
+            <div className="bg-white p-6 sm:p-8 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+              <h4 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4">
+                Contemporary Art
               </h4>
               <p className="font-paragraph text-sm sm:text-base text-foreground">
-                We collaborate with museums, galleries, and cultural institutions on acquisitions, exhibitions, and collection development. Our relationships with institutional partners provide access to significant works and curatorial expertise.
+                We specialize in contemporary art from emerging and established artists, helping clients discover works that push boundaries and challenge conventions.
               </p>
             </div>
 
-            <div className="bg-white p-6 sm:p-8 border border-gray-200">
-              <h4 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4 flex items-center gap-3">
-                Private Collections
+            <div className="bg-white p-6 sm:p-8 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+              <h4 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4">
+                Photography & Print Art
               </h4>
               <p className="font-paragraph text-sm sm:text-base text-foreground">
-                We work with private collectors to build, manage, and evolve their collections. Our personalized approach ensures each collection reflects the collector's vision and values.
+                Our expertise in photography and print art spans historical and contemporary works, from iconic images to cutting-edge digital art.
               </p>
             </div>
 
-            <div className="bg-white p-6 sm:p-8 border border-gray-200">
-              <h4 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4 flex items-center gap-3">
-                Galleries & Auction Houses
+            <div className="bg-white p-6 sm:p-8 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+              <h4 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4">
+                Sculptures & Installations
               </h4>
               <p className="font-paragraph text-sm sm:text-base text-foreground">
-                Our extensive network includes leading galleries, auction houses, and art dealers worldwide. These relationships provide clients with access to exceptional works and market insights.
+                We work with sculptors and installation artists to bring three-dimensional works into private and public spaces, creating immersive experiences.
               </p>
             </div>
 
-            <div className="bg-white p-6 sm:p-8 border border-gray-200">
-              <h4 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4 flex items-center gap-3">
-                Artist Studios & Foundations
+            {/* Space Types */}
+            <div className="bg-white p-6 sm:p-8 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+              <h4 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4">
+                Luxury Residences
               </h4>
               <p className="font-paragraph text-sm sm:text-base text-foreground">
-                We maintain direct relationships with artists' studios and artist foundations, providing clients with direct access to works and insights into artistic practice and development.
+                We curate art collections for luxury homes, creating cohesive environments that reflect the homeowner's taste and enhance their living spaces.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 sm:p-8 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+              <h4 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4">
+                Corporate Headquarters
+              </h4>
+              <p className="font-paragraph text-sm sm:text-base text-foreground">
+                We develop art programs for corporate environments that inspire employees, impress clients, and communicate brand values.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 sm:p-8 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+              <h4 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4">
+                Hotels & Hospitality Spaces
+              </h4>
+              <p className="font-paragraph text-sm sm:text-base text-foreground">
+                We create art experiences for hotels and hospitality venues that enhance guest experiences and establish memorable brand identities.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 sm:p-8 border border-gray-200 hover:shadow-lg transition-shadow duration-300 sm:col-span-2 lg:col-span-1">
+              <h4 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4">
+                Galleries & Public Installations
+              </h4>
+              <p className="font-paragraph text-sm sm:text-base text-foreground">
+                We collaborate with galleries and public institutions to create exhibitions and installations that engage diverse audiences and foster cultural dialogue.
               </p>
             </div>
           </div>
@@ -410,34 +347,183 @@ export default function ArtPage() {
             Our Collection
           </h2>
           
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-0 w-full">
-  {/* Masonry Item */}
-  {[
-    "https://static.wixstatic.com/media/e86273_ef52a94d65e04eb5baba36492d97c2c4~mv2.png?originWidth=576&originHeight=512",
-    "https://static.wixstatic.com/media/e86273_363dd37680ec4558a9be7c69722f88c3~mv2.png?originWidth=576&originHeight=512",
-    "https://static.wixstatic.com/media/e86273_53f7aabafa704ecfbaf8b5de9b86a6d1~mv2.png?originWidth=576&originHeight=512",
-    "https://static.wixstatic.com/media/e86273_9c63793f9dc84320a9bc773d9cb44836~mv2.png?originWidth=576&originHeight=512",
-    "https://static.wixstatic.com/media/e86273_54073ef0a80d47d39fcdfe1283821701~mv2.png?originWidth=576&originHeight=512",
-    "https://static.wixstatic.com/media/e86273_74c9b196b37b4ddf8324ae6e852626e5~mv2.png?originWidth=576&originHeight=512"
-  ].map((src, i) => (
-    <div
-      key={i}
-      className="relative overflow-hidden transition-all duration-300"
-    >
-       <Image
-         src={src}
-         alt="Art image"
-         width={900}
-         height={1200}
-         className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-       /> 
+          <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 sm:gap-6">
+            {[
+              "https://static.wixstatic.com/media/e86273_ef52a94d65e04eb5baba36492d97c2c4~mv2.png?originWidth=576&originHeight=512",
+              "https://static.wixstatic.com/media/e86273_363dd37680ec4558a9be7c69722f88c3~mv2.png?originWidth=576&originHeight=512",
+              "https://static.wixstatic.com/media/e86273_53f7aabafa704ecfbaf8b5de9b86a6d1~mv2.png?originWidth=576&originHeight=512",
+              "https://static.wixstatic.com/media/e86273_9c63793f9dc84320a9bc773d9cb44836~mv2.png?originWidth=576&originHeight=512",
+              "https://static.wixstatic.com/media/e86273_54073ef0a80d47d39fcdfe1283821701~mv2.png?originWidth=576&originHeight=512",
+              "https://static.wixstatic.com/media/e86273_74c9b196b37b4ddf8324ae6e852626e5~mv2.png?originWidth=576&originHeight=512",
+              "https://static.wixstatic.com/media/e86273_ac8a530d1a5f432aa03681dba1b67ebc~mv2.png?originWidth=1920&originHeight=1024",
+              "https://static.wixstatic.com/media/e86273_59bcb9acc97741338c7c0cae8fb10323~mv2.png?originWidth=576&originHeight=384",
+              "https://static.wixstatic.com/media/e86273_efc4aec961cb4972a28283597cf1f662~mv2.png?originWidth=576&originHeight=384",
+              "https://static.wixstatic.com/media/e86273_ff32664b46b049fb9955f331e036f25a~mv2.png?originWidth=576&originHeight=384",
+              "https://static.wixstatic.com/media/e86273_dff03bcb748b4d99ade1f82f4d8faa48~mv2.png?originWidth=576&originHeight=384",
+              "https://static.wixstatic.com/media/e86273_df45a75af41f4bd8857c3f737ba244fe~mv2.png?originWidth=576&originHeight=512"
+            ].map((src, i) => (
+              <div
+                key={i}
+                className="relative overflow-hidden mb-4 sm:mb-6 break-inside-avoid"
+              >
+                <Image
+                  src={src}
+                  alt={`Art collection piece ${i + 1}`}
+                  width={600}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      {/* White Shadow at Bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white to-transparent"></div>
-    </div>
-  ))}
-</div>
+      {/* Media Coverage Section */}
+      <section className="py-16 sm:py-24 lg:py-32 bg-gray-50">
+        <div className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-primary text-center mb-12 sm:mb-20">
+            Media Coverage
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+            {/* Media Card 1 */}
+            <div className="bg-white overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+              <div className="overflow-hidden">
+                <Image 
+                  src="https://static.wixstatic.com/media/e86273_ef52a94d65e04eb5baba36492d97c2c4~mv2.png?originWidth=576&originHeight=512"
+                  alt="Featured in Art Magazine"
+                  className="w-full h-[240px] object-cover hover:scale-105 transition-transform duration-500"
+                  width={600}
+                />
+              </div>
+              <div className="p-6">
+                <p className="font-paragraph text-xs sm:text-sm text-secondary mb-2">
+                  Art Magazine • December 2025
+                </p>
+                <h3 className="font-heading text-xl sm:text-2xl text-primary mb-3">
+                  The Future of Art Advisory
+                </h3>
+                <p className="font-paragraph text-sm sm:text-base text-foreground">
+                  Haute Services is redefining the art advisory landscape with innovative approaches to collection building and client relationships.
+                </p>
+              </div>
+            </div>
 
+            {/* Media Card 2 */}
+            <div className="bg-white overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+              <div className="overflow-hidden">
+                <Image 
+                  src="https://static.wixstatic.com/media/e86273_363dd37680ec4558a9be7c69722f88c3~mv2.png?originWidth=576&originHeight=512"
+                  alt="Featured in Luxury Living"
+                  className="w-full h-[240px] object-cover hover:scale-105 transition-transform duration-500"
+                  width={600}
+                />
+              </div>
+              <div className="p-6">
+                <p className="font-paragraph text-xs sm:text-sm text-secondary mb-2">
+                  Luxury Living • November 2025
+                </p>
+                <h3 className="font-heading text-xl sm:text-2xl text-primary mb-3">
+                  Curating Exceptional Spaces
+                </h3>
+                <p className="font-paragraph text-sm sm:text-base text-foreground">
+                  How Haute Services transforms luxury residences through carefully curated art collections that reflect personal style.
+                </p>
+              </div>
+            </div>
+
+            {/* Media Card 3 */}
+            <div className="bg-white overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+              <div className="overflow-hidden">
+                <Image 
+                  src="https://static.wixstatic.com/media/e86273_53f7aabafa704ecfbaf8b5de9b86a6d1~mv2.png?originWidth=576&originHeight=512"
+                  alt="Featured in Contemporary Art Review"
+                  className="w-full h-[240px] object-cover hover:scale-105 transition-transform duration-500"
+                  width={600}
+                />
+              </div>
+              <div className="p-6">
+                <p className="font-paragraph text-xs sm:text-sm text-secondary mb-2">
+                  Contemporary Art Review • October 2025
+                </p>
+                <h3 className="font-heading text-xl sm:text-2xl text-primary mb-3">
+                  Emerging Artists to Watch
+                </h3>
+                <p className="font-paragraph text-sm sm:text-base text-foreground">
+                  Our team shares insights on the most promising emerging artists and trends shaping the contemporary art market.
+                </p>
+              </div>
+            </div>
+
+            {/* Media Card 4 */}
+            <div className="bg-white overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+              <div className="overflow-hidden">
+                <Image 
+                  src="https://static.wixstatic.com/media/e86273_9c63793f9dc84320a9bc773d9cb44836~mv2.png?originWidth=576&originHeight=512"
+                  alt="Featured in Design Quarterly"
+                  className="w-full h-[240px] object-cover hover:scale-105 transition-transform duration-500"
+                  width={600}
+                />
+              </div>
+              <div className="p-6">
+                <p className="font-paragraph text-xs sm:text-sm text-secondary mb-2">
+                  Design Quarterly • September 2025
+                </p>
+                <h3 className="font-heading text-xl sm:text-2xl text-primary mb-3">
+                  Art in Corporate Spaces
+                </h3>
+                <p className="font-paragraph text-sm sm:text-base text-foreground">
+                  Exploring how thoughtfully curated art programs enhance corporate environments and employee well-being.
+                </p>
+              </div>
+            </div>
+
+            {/* Media Card 5 */}
+            <div className="bg-white overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+              <div className="overflow-hidden">
+                <Image 
+                  src="https://static.wixstatic.com/media/e86273_54073ef0a80d47d39fcdfe1283821701~mv2.png?originWidth=576&originHeight=512"
+                  alt="Featured in Collector's Journal"
+                  className="w-full h-[240px] object-cover hover:scale-105 transition-transform duration-500"
+                  width={600}
+                />
+              </div>
+              <div className="p-6">
+                <p className="font-paragraph text-xs sm:text-sm text-secondary mb-2">
+                  Collector's Journal • August 2025
+                </p>
+                <h3 className="font-heading text-xl sm:text-2xl text-primary mb-3">
+                  Building a Legacy Collection
+                </h3>
+                <p className="font-paragraph text-sm sm:text-base text-foreground">
+                  Expert advice on creating art collections that stand the test of time and appreciate in value.
+                </p>
+              </div>
+            </div>
+
+            {/* Media Card 6 */}
+            <div className="bg-white overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+              <div className="overflow-hidden">
+                <Image 
+                  src="https://static.wixstatic.com/media/e86273_74c9b196b37b4ddf8324ae6e852626e5~mv2.png?originWidth=576&originHeight=512"
+                  alt="Featured in Hospitality Design"
+                  className="w-full h-[240px] object-cover hover:scale-105 transition-transform duration-500"
+                  width={600}
+                />
+              </div>
+              <div className="p-6">
+                <p className="font-paragraph text-xs sm:text-sm text-secondary mb-2">
+                  Hospitality Design • July 2025
+                </p>
+                <h3 className="font-heading text-xl sm:text-2xl text-primary mb-3">
+                  Art in Luxury Hotels
+                </h3>
+                <p className="font-paragraph text-sm sm:text-base text-foreground">
+                  How art curation elevates guest experiences and creates memorable brand identities in hospitality spaces.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
