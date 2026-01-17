@@ -49,9 +49,6 @@ export default function ArtPage() {
             </div>
             
             <div>
-              <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-2 sm:mb-6">
-                Festival Overview
-              </h3>
               <p className="font-paragraph text-sm sm:text-base text-foreground mb-4 sm:mb-6">
                 Food For Thought Fest is an annual celebration of culinary excellence that brings together renowned chefs, food artisans, innovators, and enthusiasts from around the world. The festival is a platform for exploring contemporary cuisine, celebrating culinary traditions, and fostering meaningful conversations about the future of food.
               </p>
@@ -64,7 +61,7 @@ export default function ArtPage() {
                 rel="noopener noreferrer"
               >
                 <button className="bg-gold-accent text-secondary-foreground border-none rounded px-4 sm:px-6 py-2 sm:py-3 font-paragraph text-sm sm:text-base hover:opacity-90 transition-opacity flex items-center gap-2">
-                  Visit Festival Website
+                  Contact Us
                   <ExternalLink size={16} />
                 </button>
               </a>
