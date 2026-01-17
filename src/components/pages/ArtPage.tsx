@@ -25,24 +25,6 @@ export default function ArtPage() {
         </div>
       </section>
 
-      {/* Philosophy Section with Gray Background */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-gray-50">
-        <div className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="max-w-6xl mx-auto text-center">
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-primary mb-6 sm:mb-8">
-              Our Philosophy
-            </h2>
-            <p className="font-paragraph text-base sm:text-lg text-foreground mb-6 sm:mb-8 leading-relaxed px-4">
-              At Haute Services, we believe that art is a transformative force that enriches lives, inspires creativity, and connects us to our shared humanity. Our art advisory practice is rooted in authenticity, expertise, and a deep commitment to helping clients build meaningful collections that reflect their values and vision.
-            </p>
-            <div className="w-12 h-px bg-gold-accent mx-auto mb-8 sm:mb-12" />
-            <p className="font-paragraph text-sm sm:text-base text-secondary px-4">
-              Our mission is to demystify the art world and empower our clients to make informed, confident decisions about their collections.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Inspirational Quote Section */}
       <section className="py-16 sm:py-24 lg:py-32 bg-gray-50">
         <div className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
