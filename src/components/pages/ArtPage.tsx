@@ -10,10 +10,19 @@ export default function ArtPage() {
 
   const artFeatures = [
   {
+    image: "https://static.wixstatic.com/media/e86273_74c9b196b37b4ddf8324ae6e852626e5~mv2.png",
+    alt: "Art as an Investment",
+    source: "Youtube",
+    date: "Nov 28, 2009",
+    title: "Art as an Investment",
+    summary:
+      "Manish K Baheti - Zee Business News feature",
+  },
+  {
     image: "https://static.wixstatic.com/media/e86273_74c9b196b37b4ddf8324ae6e852626e5~mv2.png", // replace with real image if needed
     alt: "Outlook India - Maneesh Baheti",
     source: "Outlook India",
-    date: "Nov 28, 2024",
+    date: "Nov 28, 2009",
     title: "Maneesh Baheti: A Visionary In Lifestyle Consultancy & Gastronomy",
     summary:
       "Outlook India’s Hub4Business profile highlights Maneesh Baheti’s founding of Haute Services, offering Art Advisory and Lifestyle Events. It references curated exhibitions like the AIRA Waterside Bar launch and emphasizes Haute’s mission to integrate art, lifestyle, and culinary excellence.",
