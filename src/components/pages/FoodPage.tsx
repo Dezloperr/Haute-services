@@ -62,6 +62,24 @@ const AnimatedElement: React.FC<AnimatedElementProps> = ({
   );
 };
 
+const values = [
+    {
+      title: "Excellence",
+      description: "We maintain the highest standards in everything we do, ensuring exceptional results for our clients.",
+      icon: Star
+    },
+    {
+      title: "Authenticity",
+      description: "We believe in genuine connections and authentic experiences that resonate with audiences.",
+      icon: Heart
+    },
+    {
+      title: "Innovation",
+      description: "We continuously explore new ideas and approaches to create unique and memorable experiences.",
+      icon: Lightbulb
+    }
+  ];
+
 // Chef data for marquee
 const chefData = [
   { name: 'Elena Rodriguez', role: 'Executive Chef', image: 'https://static.wixstatic.com/media/e86273_2fe0218bfef0411ca55155a1c607750b~mv2.png?originWidth=128&originHeight=128' },
