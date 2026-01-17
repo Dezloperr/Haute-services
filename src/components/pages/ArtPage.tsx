@@ -10,7 +10,7 @@ export default function ArtPage() {
 
   const artFeatures = [
   {
-    image: "https://static.wixstatic.com/media/e86273_74c9b196b37b4ddf8324ae6e852626e5~mv2.png",
+    image: "https://static.wixstatic.com/media/e86273_c55c4aea8b994e739a709dfbf28af727~mv2.webp",
     alt: "Art as an Investment",
     source: "Youtube",
     date: "Nov 28, 2009",
