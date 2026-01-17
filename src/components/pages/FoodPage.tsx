@@ -348,10 +348,10 @@ export default function FoodPage() {
             <div className="lg:col-span-8">
               <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
                 {values.map((value, idx) => (
-                  <AnimatedElement 
+                  <div 
                     key={value.title} 
-                    delay={idx * 100}
-                    className={`bg-white p-6 sm:p-10 border border-gray-100 hover:border-gold-accent/30 transition-colors duration-300 ${idx === 2 ? 'md:col-span-2 md:w-1/2' : ''}`}
+
+                    className={`bg-white p-6 sm:p-10 border border-gray-100 hover:border-gold-accent/30 transition-colors duration-300 md:col-span-2 md:w-1/2`}
                   >
                     <value.icon className="w-8 h-8 text-gold-accent mb-6" strokeWidth={1.5} />
                     <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-4">
@@ -360,7 +360,7 @@ export default function FoodPage() {
                     <p className="text-secondary text-sm sm:text-base leading-relaxed">
                       {value.description}
                     </p>
-                  </AnimatedElement>
+                  </div>
                 ))}
               </div>
             </div>
