@@ -345,10 +345,6 @@ export default function FoodPage() {
 
                     className={`bg-white p-6 sm:p-10 border border-gray-100 hover:border-gold-accent/30 transition-colors duration-300 md:col-span-2 md:w-1/2`}
                   >
-                    <value.icon className="w-8 h-8 text-gold-accent mb-6" strokeWidth={1.5} />
-                    <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-4">
-                      {value.title}
-                    </h3>
                     <p className="text-secondary text-sm sm:text-base leading-relaxed">
                       {value.description}
                     </p>
