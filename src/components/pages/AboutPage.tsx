@@ -96,7 +96,7 @@ She brings a global strategic lens to business development and manages cross-sec
           <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-foreground mb-4 sm:mb-6">
             About Haute Services
           </h1>
-          <p className="font-paragraph text-base sm:text-lg lg:text-xl text-secondary leading-relaxed">
+          <p className="font-paragraph text-base sm:text-lg lg:text-xl text-center text-secondary leading-relaxed">
             Where culinary excellence meets artistic vision. We are a boutique consultancy specializing in food, art, and hospitality experiences that transcend the ordinary.
           </p>
         </motion.div>
