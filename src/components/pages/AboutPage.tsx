@@ -306,7 +306,7 @@ She brings a global strategic lens to business development and manages cross-sec
         </div>
       </section>
 
-      {/* Values Section */}
+      {/* Testimonials Section */}
       <section className="w-full bg-gray-50 py-12 sm:py-16 lg:py-20">
         <div className="max-w-[120rem] mx-auto px-4 sm:px-6 lg:px-12">
           <motion.div
@@ -317,39 +317,55 @@ She brings a global strategic lens to business development and manages cross-sec
             className="text-center mb-8 sm:mb-12"
           >
             <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-foreground mb-3 sm:mb-4">
-              Our Values
+              Client Testimonials
             </h2>
+            <p className="font-paragraph text-sm sm:text-base lg:text-lg text-secondary max-w-3xl mx-auto">
+              What our clients say about working with Haute Services
+            </p>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {[
               {
-                title: 'Excellence',
-                description: 'We pursue the highest standards in everything we do, from culinary experiences to art curation.',
+                quote: 'Haute Services transformed our hotel\'s dining experience into something truly extraordinary. Their attention to detail and creative vision exceeded all expectations.',
+                author: 'Trident Hotels',
+                role: 'Hospitality Partner',
               },
               {
-                title: 'Innovation',
-                description: 'We constantly explore new ideas and approaches to create unique, memorable experiences.',
+                quote: 'The art curation and cultural programming brought by Haute Services added immense value to our embassy events. Professional, insightful, and deeply knowledgeable.',
+                author: 'Embassy of Indonesia',
+                role: 'Cultural Institution',
               },
               {
-                title: 'Cultural Bridge',
-                description: 'We connect diverse cultures through the universal languages of food and art.',
+                quote: 'Working with Haute Services on our fashion events was seamless. They understand the intersection of design, food, and art like no one else.',
+                author: 'Shantanu & Nikhil',
+                role: 'Fashion House',
               },
-            ].map((value, index) => (
+            ].map((testimonial, index) => (
               <motion.div
-                key={value.title}
+                key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center bg-white p-6 sm:p-8 rounded-lg"
+                className="bg-white p-6 sm:p-8 rounded-lg border border-gray-200"
               >
-                <h3 className="font-heading text-xl sm:text-2xl text-foreground mb-3 sm:mb-4">
-                  {value.title}
-                </h3>
-                <p className="font-paragraph text-sm sm:text-base text-secondary leading-relaxed">
-                  {value.description}
+                <div className="mb-4 sm:mb-6">
+                  <svg className="w-8 h-8 sm:w-10 sm:h-10 text-gold-accent opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+                <p className="font-paragraph text-sm sm:text-base text-foreground leading-relaxed mb-4 sm:mb-6">
+                  "{testimonial.quote}"
                 </p>
+                <div className="border-t border-gray-200 pt-4">
+                  <p className="font-heading text-base sm:text-lg text-foreground">
+                    {testimonial.author}
+                  </p>
+                  <p className="font-paragraph text-xs sm:text-sm text-secondary">
+                    {testimonial.role}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
