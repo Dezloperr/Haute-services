@@ -293,8 +293,6 @@ She brings a global strategic lens to business development and manages cross-sec
                           rel="noopener noreferrer"
                           className="text-gold-accent hover:text-foreground transition-colors flex items-center gap-1"
                         >
-                          <span>Visit</span>
-                          <ExternalLink size={14} />
                         </a>
                       )}
                     </div>
