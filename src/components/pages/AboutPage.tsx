@@ -33,7 +33,9 @@ export default function AboutPage() {
       title: 'Managing Director & Co-Founder',
       bio: `A seasoned hotelier and passionate art collector, Maneesh Baheti comes from a family of art connoisseurs. He holds a diploma in Hotel Management and an MBA, and trained with The Oberoi Group, later serving as General Manager at Trident Hilton, Bhubaneswar and Director of Marketing at Hyatt Regency Delhi.
 
-He founded SAAG (South Asian Association for Gastronomy) and has taught hospitality at institutions such as NIFT and FHRAI. Baheti has been featured as Guest of Honour and Chief Guest at major art events, with notable appearances including Times of India feature on his art collection and Zee Business interview on "Art as an Alternative Asset Class in India".
+He founded SAAG (South Asian Association for Gastronomy) and has taught hospitality at institutions such as NIFT and FHRAI. Baheti has been featured as Guest of Honour and Chief Guest at major art events, with notable appearances including:
+• Times of India feature on his art collection
+• Zee Business interview on "Art as an Alternative Asset Class in India"
 
 He is passionate about food policy, regional gastronomy, and building inclusive communities through culture.`,
       image: 'https://static.wixstatic.com/media/e86273_ff9c35720df4457592eb6cfe677899db~mv2.png?originWidth=576&originHeight=448'
