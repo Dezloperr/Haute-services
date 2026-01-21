@@ -115,7 +115,7 @@ She brings a global strategic lens to business development and manages cross-sec
             Our Founders
           </h2>
           <p className="font-paragraph text-sm sm:text-base lg:text-lg text-secondary max-w-3xl">
-            Visionary leaders with decades of combined experience in hospitality, art, and global business development.
+            Leaders with decades of combined experience in hospitality, art, and global business development.
           </p>
         </motion.div>
 
