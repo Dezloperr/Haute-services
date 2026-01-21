@@ -84,7 +84,7 @@ export default function ContactDialog({ isOpen, onClose }: ContactDialogProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
-      <DialogContent className="w-full max-w-md m-4 mx-auto p-6 sm:p-8">
+      <DialogContent className="w-full max-w-md mx-auto p-6 sm:p-8">
 
         {isSuccess ? (
           // Success State
