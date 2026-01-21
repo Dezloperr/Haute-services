@@ -86,7 +86,7 @@ She brings a global strategic lens to business development and manages cross-sec
       <Header />
       
       {/* Hero Section */}
-      <section className="w-full max-w-[120rem] bg-red-400 mx-auto px-4 sm:px-6 lg:px-12 pt-24 sm:pt-32 pb-12 sm:pb-16">
+      <section className="w-full max-w-[120rem] bg-red-400 mx-auto px-4 sm:px-6 lg:px-12 pt-12 sm:pt-32 pb-12 sm:pb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
