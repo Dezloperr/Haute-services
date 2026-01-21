@@ -64,7 +64,7 @@ export default function AboutPage() {
                     {leader.name}
                   </h3>
                   {leader.title && (
-                    <p className="font-paragraph text-base sm:text-lg text-gold-accent mb-4 sm:mb-6">
+                    <p className="font-paragraph text-base sm:text-lg text-salmon-dark mb-4 sm:mb-6">
                       {leader.title}
                     </p>
                   )}
@@ -79,7 +79,7 @@ export default function AboutPage() {
                         href={leader.linkedinUrl} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="text-foreground hover:text-gold-accent transition-colors"
+                        className="text-foreground hover:text-salmon-dark transition-colors"
                       >
                         <Linkedin size={20} />
                       </a>
@@ -87,7 +87,7 @@ export default function AboutPage() {
                     {leader.email && (
                       <a 
                         href={`mailto:${leader.email}`}
-                        className="text-foreground hover:text-gold-accent transition-colors"
+                        className="text-foreground hover:text-salmon-dark transition-colors"
                       >
                         <Mail size={20} />
                       </a>
@@ -108,7 +108,7 @@ export default function AboutPage() {
                 <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-2">
                   Leadership Team
                 </h3>
-                <p className="font-paragraph text-base sm:text-lg text-gold-accent mb-4 sm:mb-6">
+                <p className="font-paragraph text-base sm:text-lg text-salmon-dark mb-4 sm:mb-6">
                   Founders & Partners
                 </p>
                 <p className="font-paragraph text-sm sm:text-base text-foreground mb-6">
@@ -126,7 +126,7 @@ export default function AboutPage() {
                 <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-2">
                   Advisory Board
                 </h3>
-                <p className="font-paragraph text-base sm:text-lg text-gold-accent mb-4 sm:mb-6">
+                <p className="font-paragraph text-base sm:text-lg text-salmon-dark mb-4 sm:mb-6">
                   Industry Experts
                 </p>
                 <p className="font-paragraph text-sm sm:text-base text-foreground mb-6">
@@ -163,7 +163,7 @@ export default function AboutPage() {
                     {client.clientName}
                   </h3>
                   {client.projectType && (
-                    <p className="font-paragraph text-sm sm:text-base text-gold-accent mb-3 sm:mb-4">
+                    <p className="font-paragraph text-sm sm:text-base text-salmon-dark mb-3 sm:mb-4">
                       {client.projectType}
                     </p>
                   )}
@@ -182,7 +182,7 @@ export default function AboutPage() {
                       href={client.clientWebsiteUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-block mt-4 font-paragraph text-sm sm:text-base text-foreground hover:text-gold-accent transition-colors"
+                      className="inline-block mt-4 font-paragraph text-sm sm:text-base text-foreground hover:text-salmon-dark transition-colors"
                     >
                       Visit Website →
                     </a>
@@ -204,7 +204,7 @@ export default function AboutPage() {
                 <h3 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4">
                   Luxury Brands
                 </h3>
-                <p className="font-paragraph text-sm sm:text-base text-gold-accent mb-3 sm:mb-4">
+                <p className="font-paragraph text-sm sm:text-base text-salmon-dark mb-3 sm:mb-4">
                   Event Production
                 </p>
                 <p className="font-paragraph text-sm sm:text-base text-foreground">
@@ -224,7 +224,7 @@ export default function AboutPage() {
                 <h3 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4">
                   Cultural Institutions
                 </h3>
-                <p className="font-paragraph text-sm sm:text-base text-gold-accent mb-3 sm:mb-4">
+                <p className="font-paragraph text-sm sm:text-base text-salmon-dark mb-3 sm:mb-4">
                   Art Advisory
                 </p>
                 <p className="font-paragraph text-sm sm:text-base text-foreground">
@@ -244,7 +244,7 @@ export default function AboutPage() {
                 <h3 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4">
                   Private Collectors
                 </h3>
-                <p className="font-paragraph text-sm sm:text-base text-gold-accent mb-3 sm:mb-4">
+                <p className="font-paragraph text-sm sm:text-base text-salmon-dark mb-3 sm:mb-4">
                   Collection Building
                 </p>
                 <p className="font-paragraph text-sm sm:text-base text-foreground">
@@ -287,7 +287,7 @@ export default function AboutPage() {
         <div className="relative z-10 text-center max-w-4xl px-4 sm:px-6">
             <h2 className="font-heading text-4xl sm:text-5xl lg:text-7xl text-primary mb-8 sm:mb-12">
               Ready to elevate your <br />
-              <span className="italic text-gold-accent">experience?</span>
+              <span className="italic text-salmon-dark">experience?</span>
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
               <button 

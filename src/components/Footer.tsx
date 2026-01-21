@@ -26,19 +26,19 @@ export default function Footer() {
             <div className="flex flex-col gap-4">
               <Link
                 to="/art"
-                className="font-paragraph text-sm lg:text-base text-foreground hover:text-gold-accent transition-colors flex items-center gap-2"
+                className="font-paragraph text-sm lg:text-base text-foreground hover:text-salmon-dark transition-colors flex items-center gap-2"
               >
                 Art
               </Link>
               <Link
                 to="/food"
-                className="font-paragraph text-sm lg:text-base text-foreground hover:text-gold-accent transition-colors flex items-center gap-2"
+                className="font-paragraph text-sm lg:text-base text-foreground hover:text-salmon-dark transition-colors flex items-center gap-2"
               >
                 Culinary Events
               </Link>
               <Link
                 to="/about"
-                className="font-paragraph text-sm lg:text-base text-foreground hover:text-gold-accent transition-colors flex items-center gap-2"
+                className="font-paragraph text-sm lg:text-base text-foreground hover:text-salmon-dark transition-colors flex items-center gap-2"
               >
                 Haute Services
               </Link>
@@ -52,7 +52,7 @@ export default function Footer() {
                 href="https://www.foodforthoughtfest.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="font-paragraph text-sm lg:text-base text-foreground hover:text-gold-accent transition-colors flex items-center gap-2"
+                className="font-paragraph text-sm lg:text-base text-foreground hover:text-salmon-dark transition-colors flex items-center gap-2"
               >
                 Food For Thought Fest
               </a>
@@ -66,7 +66,7 @@ export default function Footer() {
                 href="https://www.instagram.com/hauteservices" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="font-paragraph text-sm lg:text-base text-foreground hover:text-gold-accent transition-colors flex items-center gap-2"
+                className="font-paragraph text-sm lg:text-base text-foreground hover:text-salmon-dark transition-colors flex items-center gap-2"
               >
               <Instagram size={14} /> Instagram
               </a>
@@ -74,7 +74,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/hauteservices" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="font-paragraph text-sm lg:text-base text-foreground hover:text-gold-accent transition-colors flex items-center gap-2"
+                className="font-paragraph text-sm lg:text-base text-foreground hover:text-salmon-dark transition-colors flex items-center gap-2"
               >
               <Linkedin size={14} /> Linkdin
               </a>

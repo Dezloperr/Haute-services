@@ -154,7 +154,7 @@ export default function ArtPage() {
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                <button className="bg-gold-accent text-secondary-foreground border-none rounded px-4 sm:px-6 py-2 sm:py-3 font-paragraph text-sm sm:text-base hover:opacity-90 transition-opacity flex items-center gap-2">
+                <button className="bg-salmon-dark text-secondary-foreground border-none rounded px-4 sm:px-6 py-2 sm:py-3 font-paragraph text-sm sm:text-base hover:opacity-90 transition-opacity flex items-center gap-2">
                   Contact Us
                   <ExternalLink size={16} />
                 </button>
@@ -472,7 +472,7 @@ export default function ArtPage() {
         <div className="relative z-10 text-center max-w-4xl px-4 sm:px-6">
             <h2 className="font-heading text-4xl sm:text-5xl lg:text-7xl text-primary mb-8 sm:mb-12">
               Ready to elevate your <br />
-              <span className="italic text-gold-accent">experience?</span>
+              <span className="italic text-salmon-dark">experience?</span>
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
               <button 
