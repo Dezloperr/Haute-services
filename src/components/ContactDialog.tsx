@@ -89,7 +89,7 @@ export default function ContactDialog({ isOpen, onClose }: ContactDialogProps) {
         {isSuccess ? (
           // Success State
           <div className="flex flex-col items-center justify-center py-12 text-center">
-            <CheckCircle size={48} className="text-salmon-dark mb-4" />
+            <CheckCircle size={48} className="text-gold-accent mb-4" />
             <h2 className="font-heading text-2xl text-primary mb-2">Thank You!</h2>
             <p className="font-paragraph text-base text-secondary">
               Your message has been received. We'll get back to you soon.
@@ -120,7 +120,7 @@ export default function ContactDialog({ isOpen, onClose }: ContactDialogProps) {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   disabled={isSubmitting}
-                  className="font-paragraph text-base border border-gray-300 rounded px-4 py-2 focus:outline-none focus:border-salmon-dark focus:ring-1 focus:ring-salmon-dark disabled:opacity-50"
+                  className="font-paragraph text-base border border-gray-300 rounded px-4 py-2 focus:outline-none focus:border-gold-accent focus:ring-1 focus:ring-gold-accent disabled:opacity-50"
                 />
               </div>
 
@@ -136,7 +136,7 @@ export default function ContactDialog({ isOpen, onClose }: ContactDialogProps) {
                   onChange={(e) => setMessage(e.target.value)}
                   disabled={isSubmitting}
                   rows={5}
-                  className="font-paragraph text-base border border-gray-300 rounded px-4 py-2 focus:outline-none focus:border-salmon-dark focus:ring-1 focus:ring-salmon-dark resize-none disabled:opacity-50"
+                  className="font-paragraph text-base border border-gray-300 rounded px-4 py-2 focus:outline-none focus:border-gold-accent focus:ring-1 focus:ring-gold-accent resize-none disabled:opacity-50"
                 />
               </div>
 

@@ -133,7 +133,7 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-primary font-paragraph selection:bg-salmon-accent selection:text-white overflow-clip">
+    <div className="min-h-screen bg-background text-primary font-paragraph selection:bg-gold-accent selection:text-white overflow-clip">
       <style>{`
         .is-visible {
           opacity: 1 !important;
@@ -151,14 +151,14 @@ export default function HomePage() {
       <section className="relative min-h-screen flex flex-col md:justify-center justify-start pt-12 sm:pt-20 pb-8 sm:pb-12">
         {/* Background Elements */}
         <div className="absolute top-0 right-0 w-1/3 h-full bg-gray-50/50 -z-10 hidden lg:block" />
-        <div className="absolute top-1/4 left-6 sm:left-12 w-px h-64 bg-salmon-dark/30 hidden lg:block" />
+        <div className="absolute top-1/4 left-6 sm:left-12 w-px h-64 bg-gold-accent/30 hidden lg:block" />
 
         <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 lg:px-12 grid lg:grid-cols-12 gap-8 sm:gap-12 items-center h-full">
           
           {/* Text Content */}
           <div className="lg:col-span-5 relative z-10 flex flex-col justify-center">
             <AnimatedElement animation="fade-up" delay={100}>
-              <span className="inline-block py-1 px-3 border border-salmon-dark/40 rounded-full text-xs tracking-widest uppercase text-salmon-dark mb-6 w-fit">
+              <span className="inline-block py-1 px-3 border border-gold-accent/30 rounded-full text-xs tracking-widest uppercase text-gold-accent mb-6 w-fit">
                 Boutique Consultancy
               </span>
             </AnimatedElement>
@@ -216,7 +216,7 @@ export default function HomePage() {
                   Our Mission
                 </h2>
                 <div className="w-full h-px bg-gray-200 mb-6" />
-                <p className="text-xs sm:text-sm text-salmon-dark uppercase tracking-widest font-medium">
+                <p className="text-xs sm:text-sm text-gold-accent uppercase tracking-widest font-medium">
                   Est. 2024
                 </p>
               </AnimatedElement>
@@ -238,7 +238,7 @@ export default function HomePage() {
                   <Link to="/about" >
                   <div className="flex items-center gap-2 text-primary font-medium group cursor-pointer">
                     <span className="w-8 h-px bg-primary transition-all group-hover:w-12" />
-                    <span className="text-sm sm:text-base  hover:text-salmon-dark transition-colors">Read our story</span>
+                    <span className="text-sm sm:text-base  hover:text-gold-accent transition-colors">Read our story</span>
                   </div>
                   </Link>
                 </AnimatedElement>
@@ -283,7 +283,7 @@ export default function HomePage() {
                     <span className="text-5xl sm:text-6xl font-heading text-gray-100 absolute -translate-y-8 -translate-x-8 select-none z-0">
                       0{index + 1}
                     </span>
-                    <span className="relative z-10 text-xs font-bold tracking-widest uppercase text-salmon-dark">
+                    <span className="relative z-10 text-xs font-bold tracking-widest uppercase text-gold-accent">
                       {service.title}
                     </span>
                   </div>
@@ -296,8 +296,8 @@ export default function HomePage() {
                     {service.description}
                   </p>
 
-                  <Link to={service.link} className="relative z-10 inline-flex items-center gap-3 text-primary hover:text-salmon-dark transition-colors group/btn">
-                    <span className="text-base sm:text-lg border-b border-primary/30 pb-1 group-hover/btn:border-salmon-dark">
+                  <Link to={service.link} className="relative z-10 inline-flex items-center gap-3 text-primary hover:text-gold-accent transition-colors group/btn">
+                    <span className="text-base sm:text-lg border-b border-primary/30 pb-1 group-hover/btn:border-gold-accent">
                       Explore {service.title}
                     </span>
                     <ArrowRight className="w-5 h-5 transform group-hover/btn:translate-x-1 transition-transform" />
@@ -331,7 +331,7 @@ export default function HomePage() {
                   <p className="text-secondary text-base sm:text-lg max-w-xs mb-8 sm:mb-12">
                     The principles that guide our every interaction and decision.
                   </p>
-                  <div className="hidden lg:block w-24 h-px bg-salmon-dark" />
+                  <div className="hidden lg:block w-24 h-px bg-gold-accent" />
                 </AnimatedElement>
               </div>
             </div>
@@ -343,9 +343,9 @@ export default function HomePage() {
                   <AnimatedElement 
                     key={value.title} 
                     delay={idx * 100}
-                    className={`bg-white p-6 sm:p-10 border border-gray-100 hover:border-salmon-dark/30 transition-colors duration-300 ${idx === 2 ? 'md:col-span-2 md:w-1/2' : ''}`}
+                    className={`bg-white p-6 sm:p-10 border border-gray-100 hover:border-gold-accent/30 transition-colors duration-300 ${idx === 2 ? 'md:col-span-2 md:w-1/2' : ''}`}
                   >
-                    <value.icon className="w-8 h-8 text-salmon-dark mb-6" strokeWidth={1.5} />
+                    <value.icon className="w-8 h-8 text-gold-accent mb-6" strokeWidth={1.5} />
                     <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-4">
                       {value.title}
                     </h3>
@@ -375,7 +375,7 @@ export default function HomePage() {
           <AnimatedElement animation="fade-up">
             <h2 className="font-heading text-4xl sm:text-5xl lg:text-7xl text-primary mb-8 sm:mb-12">
               Ready to elevate your <br />
-              <span className="italic text-salmon-dark">experience?</span>
+              <span className="italic text-gold-accent">experience?</span>
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
               <button 

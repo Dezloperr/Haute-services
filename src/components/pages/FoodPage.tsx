@@ -142,7 +142,7 @@ export default function FoodPage() {
                   Our Initiative
                 </h2>
                 <div className="w-full h-px bg-gray-200 mb-6" />
-                <h2 className="font-heading text-xl sm:text-4xl lg:text-5xl text-salmon-dark uppercase tracking-widest font-medium mb-4 sm:mb-8">
+                <h2 className="font-heading text-xl sm:text-4xl lg:text-5xl text-gold-accent uppercase tracking-widest font-medium mb-4 sm:mb-8">
               Food For Thought Fest
             </h2>
             <p className="font-paragraph text-base sm:text-lg text-secondary max-w-3xl">
@@ -175,7 +175,7 @@ export default function FoodPage() {
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                <button className="bg-salmon-dark text-secondary-foreground border-none rounded px-4 sm:px-6 py-2 sm:py-3 font-paragraph text-sm sm:text-base hover:opacity-90 transition-opacity flex items-center gap-2">
+                <button className="bg-gold-accent text-secondary-foreground border-none rounded px-4 sm:px-6 py-2 sm:py-3 font-paragraph text-sm sm:text-base hover:opacity-90 transition-opacity flex items-center gap-2">
                   Visit Festival Website
                   <ExternalLink size={16} />
                 </button>
@@ -223,7 +223,7 @@ export default function FoodPage() {
             </div>
 
             <div className="bg-white p-6 sm:p-8 border border-gray-200">
-            <div className="w-full h-fit bg-red-400 mb-2">
+            <div className="w-full h-[25vh] bg-red-400 mb-2">
             <Image src={"https://static.wixstatic.com/media/e86273_4b4406396ff744c6a2c5167c049683cb~mv2.webp"} alt="festival format" className="w-full h-full object-cover" />
             </div>
               <h4 className="font-heading text-xl sm:text-2xl text-primary mb-3 sm:mb-4 flex items-center gap-3">
@@ -332,7 +332,7 @@ export default function FoodPage() {
                   <p className="text-secondary text-base sm:text-lg max-w-xs mb-8 sm:mb-12">
                     Food For Thought Fest exists to celebrate the transformative power of food. We believe that culinary experiences can inspire creativity, foster cultural understanding, and create lasting connections between people. Through our festival, we aim to:
                   </p>
-                  <div className="hidden lg:block w-24 h-px bg-salmon-dark" />
+                  <div className="hidden lg:block w-24 h-px bg-gold-accent" />
               </div>
             </div>
 
@@ -343,8 +343,12 @@ export default function FoodPage() {
                   <div 
                     key={value.title} 
 
-                    className={`bg-white p-6 sm:p-10 border border-gray-100 hover:border-salmon-dark/30 transition-colors duration-300 md:col-span-2 md:w-1/2`}
+                    className={`bg-white p-6 sm:p-10 border border-gray-100 hover:border-gold-accent/30 transition-colors duration-300 md:col-span-2 md:w-1/2`}
                   >
+                    <value.icon className="w-8 h-8 text-gold-accent mb-6" strokeWidth={1.5} />
+                    <h3 className="font-heading text-2xl sm:text-3xl text-primary mb-4">
+                      {value.title}
+                    </h3>
                     <p className="text-secondary text-sm sm:text-base leading-relaxed">
                       {value.description}
                     </p>
@@ -373,7 +377,7 @@ export default function FoodPage() {
         <div className="relative z-10 text-center max-w-4xl px-4 sm:px-6">
             <h2 className="font-heading text-4xl sm:text-5xl lg:text-7xl text-primary mb-8 sm:mb-12">
               Ready to elevate your <br />
-              <span className="italic text-salmon-dark">experience?</span>
+              <span className="italic text-gold-accent">experience?</span>
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
               <button 
