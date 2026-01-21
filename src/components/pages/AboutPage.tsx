@@ -258,7 +258,7 @@ She brings a global strategic lens to business development and manages cross-sec
                     className="bg-white p-4 sm:p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow"
                   >
                     {collab.clientLogo && (
-                      <div className="relative h-20 sm:h-24 mb-4 flex items-center justify-center">
+                      <div className="relative h-80 sm:h-24 mb-4 flex items-center justify-center">
                         <Image
                           src={collab.clientLogo}
                           alt={collab.clientName || 'Client logo'}
