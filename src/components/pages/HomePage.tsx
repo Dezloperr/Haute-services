@@ -158,7 +158,7 @@ export default function HomePage() {
           {/* Text Content */}
           <div className="lg:col-span-5 relative z-10 flex flex-col justify-center">
             <AnimatedElement animation="fade-up" delay={100}>
-              <span className="inline-block py-1 px-3 border bg-gold-accent/30 rounded-full text-xs tracking-widest uppercase text-gold-accent/20 mb-6 w-fit">
+              <span className="inline-block py-1 px-3 border bg-gold-accent/30 rounded-full text-xs tracking-widest uppercase text-gold-accent mb-6 w-fit">
                 Boutique Consultancy
               </span>
             </AnimatedElement>
