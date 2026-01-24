@@ -106,10 +106,10 @@ export default function HomePage() {
       image: "https://static.wixstatic.com/media/e86273_5544b433099a4239815d3c652fa6d118~mv2.png?originWidth=1152&originHeight=576"
     },
     {
-      id: 'food',
-      title: 'Food Services',
-      description: "In the food sector, we organize one of India’s biggest culinary events Food For Thought Fest where we bring together a vibrant community of food lovers, chefs, and storytellers who share their ideas, experiences, and passion for food.",
-      link: '/food',
+      id: 'lifestyle',
+      title: 'Lifestyle Events',
+      description: "In the lifestyle sector, we organize one of India's biggest culinary events Food For Thought Fest where we bring together a vibrant community of food lovers, chefs, and storytellers who share their ideas, experiences, and passion for food.",
+      link: '/lifestyle',
       image: "https://static.wixstatic.com/media/e86273_6ed3ac2e3a1043aab162cb3b20065ea5~mv2.png?originWidth=1152&originHeight=576"
     }
   ];

@@ -28,10 +28,10 @@ export default function Header() {
               Home
             </Link>
             <Link 
-              to="/food" 
+              to="/lifestyle" 
               className="font-paragraph text-base text-foreground hover:text-gold-accent transition-colors"
             >
-              Culinary Events
+              Lifestyle Events
             </Link>
             <Link 
               to="/art" 
@@ -68,11 +68,11 @@ export default function Header() {
               Home
             </Link>
             <Link 
-              to="/food" 
+              to="/lifestyle" 
               onClick={() => setIsMenuOpen(false)}
               className="block py-3 font-paragraph text-base text-foreground hover:text-gold-accent transition-colors"
             >
-              Culinary Events
+              Lifestyle Events
             </Link>
             <Link 
               to="/art" 
