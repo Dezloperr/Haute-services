@@ -26,7 +26,7 @@ export default {
                 'gold-accent': '#E3E3E3',
                 destructive: '#D32F2F',
                 'destructive-foreground': '#FFFFFF',
-                background: '#FCEEEE',
+                background: '#fdf1f1',
                 secondary: '#000000',
                 foreground: '#000000',
                 'secondary-foreground': '#FFFFFF',
