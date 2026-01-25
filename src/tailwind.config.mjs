@@ -23,15 +23,15 @@ export default {
                 paragraph: "sora-light"
             },
             colors: {
-                'gold-accent': '#E3E3E3',
+                'gold-accent': '#BDB76B',
                 destructive: '#D32F2F',
                 'destructive-foreground': '#FFFFFF',
-                background: '#fffdfd',
-                secondary: '#000000',
-                foreground: '#000000',
+                background: '#FFFFFF',
+                secondary: '#777777',
+                foreground: '#333333',
                 'secondary-foreground': '#FFFFFF',
                 'primary-foreground': '#FFFFFF',
-                primary: '#000000'
+                primary: '#333333'
             },
         },
     },

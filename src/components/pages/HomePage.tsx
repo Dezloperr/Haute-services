@@ -106,10 +106,10 @@ export default function HomePage() {
       image: "https://static.wixstatic.com/media/e86273_5544b433099a4239815d3c652fa6d118~mv2.png?originWidth=1152&originHeight=576"
     },
     {
-      id: 'lifestyle',
-      title: 'Lifestyle Events',
-      description: "In the lifestyle sector, we organize one of India's biggest culinary events Food For Thought Fest where we bring together a vibrant community of food lovers, chefs, and storytellers who share their ideas, experiences, and passion for food.",
-      link: '/lifestyle',
+      id: 'food',
+      title: 'Food Services',
+      description: "In the food sector, we organize one of India’s biggest culinary events Food For Thought Fest where we bring together a vibrant community of food lovers, chefs, and storytellers who share their ideas, experiences, and passion for food.",
+      link: '/food',
       image: "https://static.wixstatic.com/media/e86273_6ed3ac2e3a1043aab162cb3b20065ea5~mv2.png?originWidth=1152&originHeight=576"
     }
   ];
@@ -158,7 +158,7 @@ export default function HomePage() {
           {/* Text Content */}
           <div className="lg:col-span-5 relative z-10 flex flex-col justify-center">
             <AnimatedElement animation="fade-up" delay={100}>
-              <span className="inline-block py-1 px-3 border bg-gold-accent/30 rounded-full text-xs tracking-widest uppercase text-gold-accent mb-6 w-fit">
+              <span className="inline-block py-1 px-3 border border-gold-accent/30 rounded-full text-xs tracking-widest uppercase text-gold-accent mb-6 w-fit">
                 Boutique Consultancy
               </span>
             </AnimatedElement>
